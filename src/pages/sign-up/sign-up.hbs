@@ -1,0 +1,11 @@
+{{#> AuthLayout title=title description=description logo=logo }}
+{{> Input size="s" placeholder="Email" type="email" }}
+{{> Input size="s" placeholder="Login" type="text" }}
+{{> Input size="s" placeholder="First Name" type="text" }}
+{{> Input size="s" placeholder="Second Name" type="text" }}
+{{> Input size="s" placeholder="Phone Number" type="tel" }}
+{{> Input size="s" placeholder="Password" type="password" }}
+{{> Input size="s" placeholder="Confirm Password" type="password" }}
+{{> Button label="Sign up" size="l" style="action" type="submit" width="full" }}
+<p>Signed up already? {{> Link text="Sign in" href="/login" }}</p>
+{{/AuthLayout}}

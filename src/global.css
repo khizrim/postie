@@ -1,12 +1,25 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  line-height: 1.5;
-  color: rgb(255 255 255 / 87%);
-  text-rendering: optimizelegibility;
+  --color-text-contrast: #fff;
+  --color-text-primary: #000;
+  --color-text-secondary: rgb(0 0 0 / 50%);
+  --color-text-link: #327fc8;
+  --color-text-link-hover: #d36507;
+  --color-border: rgb(0 0 0 / 10%);
+  --color-brand-primary: #3697f1;
+  --color-brand-hover: #348bdc;
+  --font-family: inter, system-ui, avenir, helvetica, arial, sans-serif;
+  --heading-display-1: 600 normal 28px /36px var(--font-family);
+  --body-text-base: 400 normal 13px /18px var(--font-family);
+  --spacing-static-max: 128px;
+  --spacing-static-3xl: 72px;
+  --spacing-static-2xl: 36px;
+  --spacing-static-xl: 20px;
+  --spacing-static-l: 16px;
+  --spacing-static-m: 8px;
+  --radius-static-l: 8px;
 
-  color-scheme: light dark;
-  background-color: #242424;
+  font: var(--body-text-base);
+  text-rendering: optimizelegibility;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -14,25 +27,38 @@
   font-synthesis: none;
 }
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   display: flex;
-  place-items: center;
-
   min-width: 320px;
   min-height: 100vh;
   margin: 0;
 }
 
-#app {
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  box-sizing: border-box;
   max-width: 1280px;
+  min-height: 100vh;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0 var(--spacing-static-l);
+
   text-align: center;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #fff;
-  }
+.title {
+  margin: 0;
+  font: var(--heading-display-1);
+}
+
+.description {
+  margin: 0;
 }

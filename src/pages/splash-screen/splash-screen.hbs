@@ -1,0 +1,12 @@
+<main class="main">
+  <img class="image" src="{{ image }}" width="256" height="256" alt="{{ alt }}" />
+  <div class="content">
+    <h2 class="title">{{ title }}</h2>
+    <p class="description">{{ description }}</p>
+  </div>
+  <div class="links">
+    {{#each links}}
+      {{> Link text=text href=href}}
+    {{/each}}
+  </div>
+</main>
