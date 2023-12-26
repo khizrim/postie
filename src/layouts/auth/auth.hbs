@@ -1,0 +1,12 @@
+<main class="auth">
+  <img src="{{ logo }}" alt="postié" />
+  <div class="auth__content">
+    <div class="auth__heading">
+      <h2 class="auth__title title">{{ title }}</h2>
+      <p class="auth__description description">{{ description }}</p>
+    </div>
+    {{#> AuthForm}}
+      {{> @partial-block }}
+    {{/AuthForm}}
+  </div>
+</main>

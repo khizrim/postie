@@ -1,0 +1,33 @@
+.button {
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+
+  font: var(--body-text-base);
+  color: var(--color-text-primary);
+
+  background: transparent;
+  border: none;
+}
+
+.button_size-l {
+  height: 36px;
+  padding: 10px 16px;
+  border-radius: var(--radius-static-l);
+}
+
+.button_style-action {
+  color: var(--color-text-contrast);
+  background: var(--color-brand-primary);
+}
+
+.button_width-full {
+  width: 100%;
+}
+
+@media (hover: hover) {
+  .button:hover {
+    background: var(--color-brand-hover);
+  }
+}

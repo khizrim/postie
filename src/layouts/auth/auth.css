@@ -1,0 +1,23 @@
+.auth {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-static-2xl);
+  align-items: center;
+  justify-content: center;
+
+  max-width: 340px;
+  margin: var(--spacing-static-3xl) 0;
+}
+
+.auth__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-static-l);
+}
+
+.auth__heading {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-static-m);
+  padding: 0 var(--spacing-static-xl);
+}

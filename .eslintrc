@@ -1,8 +1,7 @@
 {
   "env": {
     "browser": true,
-    "es2021": true,
-    "node": true
+    "es2021": true
   },
   "extends": [
     "standard-with-typescript",
@@ -17,7 +16,7 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "ignorePatterns": ["server.ts"],
+  "ignorePatterns": ["server.ts", "vite.config.ts"],
   "rules": {
     "import/order": [
       "error",
@@ -49,6 +48,7 @@
         ]
       }
     ],
+    "import/no-unresolved": 0,
     "no-multiple-empty-lines": 1
   }
 }
