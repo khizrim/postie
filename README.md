@@ -1,9 +1,11 @@
 # Postié: Messenger App in TypeScript and Vite
+[![Netlify Status](https://api.netlify.com/api/v1/badges/caa0fd93-89b7-45bd-9dd6-21e954bed05f/deploy-status)](https://app.netlify.com/sites/postie-messenger/deploys)
 
 ## Description
 
 Welcome to the "Postié" project – a messenger created as part of the Yandex.Practicum course. This application allows
 users to exchange messages in real-time, providing a convenient and intuitive interface for communication.
+
 
 ## Table of Contents
 
