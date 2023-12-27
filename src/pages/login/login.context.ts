@@ -1,7 +1,7 @@
-import type { LoginPageProps } from './login.types.ts';
 import logo from '../../assets/icons/logo.svg';
+import type { AuthProps } from '../../layouts/auth/auth.type.ts';
 
-export const LoginContext: LoginPageProps = {
+export const LoginContext: AuthProps = {
   logo,
   title: 'Hey 👋, welcome! Come on in!',
   description: 'Back again? Just sign in to keep up with your friends!',

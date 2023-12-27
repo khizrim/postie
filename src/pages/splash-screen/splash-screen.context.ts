@@ -1,4 +1,4 @@
-import { type SplashScreenProps } from './splash-screen.types.ts';
+import { type SplashScreenProps } from './splash-screen.type.ts';
 import splashScreen from '../../assets/images/splash-screen.png';
 
 export const SplashScreenContext: SplashScreenProps = {

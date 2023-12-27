@@ -1,7 +1,6 @@
 import type { ErrorPageProps } from './error-page';
-import type { LoginPageProps } from './login';
-import { type SignUpPageProps } from './sign-up';
 import type { SplashScreenProps } from './splash-screen';
+import type { AuthProps } from '../layouts/auth/auth.type.ts';
 
 export type PageTypes = 'not-found' | 'server-error' | 'splash-screen' | 'login' | 'sign-up';
 
@@ -16,11 +15,7 @@ export type PageProps =
     }
   | {
       page: string;
-      context: LoginPageProps;
-    }
-  | {
-      page: string;
-      context: SignUpPageProps;
+      context: AuthProps;
     };
 
 export type PagesProps = Record<PageTypes, PageProps>;
