@@ -14,7 +14,7 @@ export const NotFoundPageContext: ErrorPageProps = {
 
 export const ServerErrorPageContext: ErrorPageProps = {
   code: '500',
-  description: 'We’re already working hart to find and fix the problem',
+  description: 'We’re already working hard to find and fix the problem',
   image: serverError,
   link: {
     text: 'Go back to chats',
