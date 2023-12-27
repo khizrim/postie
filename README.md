@@ -53,7 +53,7 @@ What I used:
    ```bash
    pnpm dev
    ```
-2. Open your browser and navigate to http://localhost:5173.
+2. Open your browser and navigate to http://localhost:3000.
 3. Sign in or create a new account to start using Postié.
 4. Explore the intuitive interface to send and receive messages in real-time.
 
