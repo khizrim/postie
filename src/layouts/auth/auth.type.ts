@@ -1,6 +1,6 @@
 import type { ButtonProps, InputProps, LinkProps } from '../../components';
 
-export interface LoginPageProps {
+export interface AuthProps {
   logo: string;
   title: string;
   description: string;

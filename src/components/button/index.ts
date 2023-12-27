@@ -1,3 +1,3 @@
-export * from './button.types.ts';
+export * from './button.type.ts';
 
 export { default as Button } from './button.hbs?raw';

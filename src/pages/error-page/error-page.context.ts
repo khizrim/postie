@@ -1,4 +1,4 @@
-import type { ErrorPageProps } from './error-page.types.ts';
+import type { ErrorPageProps } from './error-page.type.ts';
 import notFound from '../../assets/images/not-found.png';
 import serverError from '../../assets/images/server-error.png';
 
