@@ -6,15 +6,6 @@
   "printWidth": 120,
   "useTabs": false,
   "bracketSpacing": true,
-  "htmlWhitespaceSensitivity": "strict",
   "endOfLine": "lf",
-  "arrowParens": "always",
-  "overrides": [
-    {
-      "files": "**/*.hbs",
-      "options": {
-        "parser": "angular"
-      }
-    }
-  ]
+  "arrowParens": "always"
 }
