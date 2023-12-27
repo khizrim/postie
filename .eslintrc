@@ -21,13 +21,7 @@
     "import/order": [
       "error",
       {
-        "groups": [
-          "builtin",
-          "external",
-          "internal",
-          ["sibling", "parent"],
-          "index"
-        ],
+        "groups": ["builtin", "external", "internal", ["sibling", "parent"], "index"],
         "alphabetize": {
           "order": "asc",
           "orderImportKind": "asc"
@@ -48,7 +42,12 @@
         ]
       }
     ],
-    "import/no-unresolved": 0,
-    "no-multiple-empty-lines": 1
+    "no-multiple-empty-lines": 1,
+    "import/no-unresolved": [
+      2,
+      {
+        "ignore": ["\\.hbs"]
+      }
+    ]
   }
 }
