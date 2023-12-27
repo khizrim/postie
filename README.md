@@ -5,6 +5,13 @@
 Welcome to the "Postié" project – a messenger created as part of the Yandex.Practicum course. This application allows
 users to exchange messages in real-time, providing a convenient and intuitive interface for communication.
 
+## Table of Contents
+
+1. [Preview](#preview)
+2. [Design](#design)
+3. [Installation](#installation)
+4. [Getting Started](#getting-started)
+5. [Contact and Support](#contact-and-support)
 
 ## Preview
 
@@ -14,11 +21,13 @@ You can check the current deployed version here:
 
 It's deployed using [Netlify](https://www.netlify.com) from the [`deploy`](https://github.com/khizrim/postie/tree/deploy) branch.
 
-## Table of Contents
+## Design
 
-1. [Installation](#installation)
-2. [Getting Started](#getting-started)
-3. [Contact and Support](#contact-and-support)
+Design is available in Figma [here](https://www.figma.com/file/zY19U0ZsjN22U7jp6JbLc0/Postie-%7C-Pages?type=design&t=YByCR6fDA28VvzmX-6).
+
+What I used:
+— [Gravity Icons](https://www.figma.com/file/A90POkEH3t2HQPhBUWfYnf/Gravity-UI-Icons-(Community)?type=design&t=YByCR6fDA28VvzmX-6)
+— Easy illustration pack from [Ultima Free Illustrations Bundle](https://www.figma.com/file/BCikNseyJW0b8XGgbI5YDE/Ultima-Free-Illustrations-Bundle-(Community)?type=design&t=YByCR6fDA28VvzmX-6)
 
 ## Installation
 
