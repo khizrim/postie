@@ -20,9 +20,9 @@ const pages: PagesProps = {
     page: Pages.SplashScreen,
     context: Pages.SplashScreenContext,
   },
-  login: {
-    page: Pages.Login,
-    context: Pages.LoginContext,
+  'sign-in': {
+    page: Pages.SignIn,
+    context: Pages.SignInContext,
   },
   'sign-up': {
     page: Pages.SignUp,

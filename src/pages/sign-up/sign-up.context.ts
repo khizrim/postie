@@ -7,39 +7,53 @@ export const SignUpContext: AuthProps = {
   description: 'New here? Dive in! Just fill in the form and let the good times roll',
   inputs: [
     {
+      name: 'email',
       size: 's',
       placeholder: 'Email',
       type: 'email',
+      autocomplete: 'email',
     },
     {
+      name: 'login',
       size: 's',
       placeholder: 'Login',
       type: 'text',
+      autocomplete: 'username',
     },
     {
+      name: 'first_name',
       size: 's',
       placeholder: 'First Name',
       type: 'text',
+      autocomplete: 'given-name',
     },
     {
+      name: 'second_name',
       size: 's',
       placeholder: 'Second Name',
       type: 'text',
+      autocomplete: 'family-name',
     },
     {
+      name: 'phone',
       size: 's',
       placeholder: 'Phone Number',
       type: 'tel',
+      autocomplete: 'tel',
     },
     {
+      name: 'password',
       size: 's',
       placeholder: 'Password',
       type: 'password',
+      autocomplete: 'new-password',
     },
     {
+      name: 'password',
       size: 's',
       placeholder: 'Confirm Password',
       type: 'password',
+      autocomplete: 'new-password',
     },
   ],
   button: {
