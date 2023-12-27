@@ -4,8 +4,7 @@ import serverError from '../../assets/images/server-error.png';
 
 export const NotFoundPageContext: ErrorPageProps = {
   code: '404',
-  description:
-    "There's no page that you're looking for. Please check the link to see if it's correct",
+  description: "There's no page that you're looking for. Please check the link to see if it's correct",
   image: notFound,
   link: {
     text: 'Go back to chats',
