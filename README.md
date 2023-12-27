@@ -5,6 +5,15 @@
 Welcome to the "Postié" project – a messenger created as part of the Yandex.Practicum course. This application allows
 users to exchange messages in real-time, providing a convenient and intuitive interface for communication.
 
+
+## Preview
+
+You can check the current deployed version here:
+
+[https://postie.khizrim.ru](https://postie.khizrim.ru)
+
+It's deployed using [Netlify](https://www.netlify.com) from the [`deploy`](https://github.com/khizrim/postie/tree/deploy) branch.
+
 ## Table of Contents
 
 1. [Installation](#installation)
