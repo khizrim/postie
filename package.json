@@ -30,7 +30,6 @@
     "stylelint": "^16.1.0",
     "stylelint-config-clean-order": "^5.2.0",
     "stylelint-config-standard": "^36.0.0",
-    "stylelint-no-unresolved-module": "^2.2.1",
     "stylelint-order": "^6.0.4",
     "ts-node": "^10.9.2",
     "tslib": "^2.6.2",
