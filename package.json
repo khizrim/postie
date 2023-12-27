@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "start": "pnpm run build && node --loader ts-node/esm ./server.ts",
+    "start": "npm run build && node --loader ts-node/esm ./server.ts",
     "dev": "vite --open --port 3000",
     "build": "tsc && vite build",
     "preview": "vite preview",
@@ -12,8 +12,8 @@
     "lint:styles": "stylelint './src/**/*.css'",
     "lint:prettier": "prettier --check './src' './public'",
     "lint:prettier:fix": "prettier --write './src' './public'",
-    "lint:fix": "pnpm lint:code --fix && pnpm lint:styles --fix && pnpm lint:prettier:fix",
-    "lint": "pnpm lint:code && pnpm lint:styles && pnpm lint:prettier"
+    "lint:fix": "npm run lint:code --fix && npm run lint:styles --fix && npm run lint:prettier:fix",
+    "lint": "npm run lint:code && npm run lint:styles && npm run lint:prettier"
   },
   "devDependencies": {
     "@types/express": "^4.17.21",
