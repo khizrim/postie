@@ -9,7 +9,7 @@ export const SplashScreenContext: SplashScreenProps = {
   links: [
     {
       text: 'Login',
-      href: '/login',
+      href: '/sign-in',
     },
     {
       text: 'Sign Up',
