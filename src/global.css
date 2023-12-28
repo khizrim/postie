@@ -1,4 +1,5 @@
 :root {
+  /* Color Tokens */
   --color-text-contrast: #fff;
   --color-text-primary: #000;
   --color-text-secondary: rgb(0 0 0 / 50%);
@@ -7,9 +8,8 @@
   --color-border: rgb(0 0 0 / 10%);
   --color-brand-primary: #3697f1;
   --color-brand-hover: #348bdc;
-  --font-family: inter, system-ui, avenir, helvetica, arial, sans-serif;
-  --heading-display-1: 600 normal 28px /36px var(--font-family);
-  --body-text-base: 400 normal 13px /18px var(--font-family);
+
+  /* Spacing Tokens */
   --spacing-static-max: 128px;
   --spacing-static-3xl: 72px;
   --spacing-static-2xl: 36px;
@@ -17,6 +17,11 @@
   --spacing-static-l: 16px;
   --spacing-static-m: 8px;
   --radius-static-l: 8px;
+
+  /* Typography Tokens */
+  --font-family: inter, system-ui, avenir, helvetica, arial, sans-serif;
+  --heading-display-1: 600 normal 28px /36px var(--font-family);
+  --body-text-base: 400 normal 13px /18px var(--font-family);
 
   font: var(--body-text-base);
   text-rendering: optimizelegibility;
@@ -44,12 +49,12 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 
   box-sizing: border-box;
-  max-width: 1280px;
+  width: 100%;
   min-height: 100dvh;
-  margin: 0 auto;
-  padding: 0 var(--spacing-static-l);
+  margin: 0;
 
   text-align: center;
 }
