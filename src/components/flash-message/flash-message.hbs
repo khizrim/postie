@@ -1,0 +1,12 @@
+<section class="flash-message">
+  {{#if image }}
+    <img class="flash-message__image" src="{{ image }}" width="256" height="256" alt="{{ alt }}" loading="lazy" />
+  {{/if}}
+  <div class="flash-message__content">
+    <h2 class="flash-message__title title">{{ title }}</h2>
+    <p class="flash-message__description description">{{ description }}</p>
+  </div>
+  {{#if link }}
+    {{> Link text=link.text href=link.href}}
+  {{/if}}
+</section>
