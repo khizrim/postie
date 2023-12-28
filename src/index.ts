@@ -3,11 +3,15 @@ import Handlebars from 'handlebars';
 import * as Components from './components';
 import * as Layouts from './layouts';
 import * as Pages from './pages';
-import { type PageProps, type PagesProps, type PageTypes } from './pages/index.type.ts';
+import type { PageProps, PagesProps, PageTypes } from './pages/index.type.ts';
 
 import './index.css';
 
 const pages: PagesProps = {
+  chats: {
+    page: Pages.ChatsPage,
+    context: Pages.ChatsContext,
+  },
   'not-found': {
     page: Pages.ErrorPage,
     context: Pages.NotFoundPageContext,

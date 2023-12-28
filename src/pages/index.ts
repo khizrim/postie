@@ -1,3 +1,4 @@
+export * from './chats';
 export * from './error-page';
 export * from './sign-in';
 export * from './sign-up';

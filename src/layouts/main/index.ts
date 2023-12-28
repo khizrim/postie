@@ -1,1 +1,1 @@
-export { default as Main } from './main.hbs?raw';
+export { default as MainLayout } from './main.hbs?raw';
