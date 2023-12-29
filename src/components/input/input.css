@@ -10,7 +10,7 @@
 
 .input__element {
   display: flex;
-  gap: var(--spacing-static-m);
+  gap: var(--spacing-static-s);
   align-items: center;
 
   width: 100%;

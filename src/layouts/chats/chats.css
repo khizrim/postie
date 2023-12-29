@@ -4,17 +4,3 @@
   width: 100dvw;
   height: 100dvh;
 }
-
-.chats__list {
-  display: flex;
-}
-
-.chats__chat {
-  display: none;
-}
-
-@media (width > 760px) {
-  .chats__chat {
-    display: flex;
-  }
-}
