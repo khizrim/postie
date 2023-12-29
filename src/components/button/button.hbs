@@ -1,9 +1,12 @@
 <button
   class="button"
-  data-size="{{ button.size }}"
-  data-style="{{ button.style }}"
+  data-size="{{#if button.size}}{{ button.size }}{{else}}l{{/if}}"
+  data-style="{{#if button.style}}{{ button.style }}{{else}}flat{{/if}}"
   data-width="{{ button.width }}"
   type="{{ button.type }}"
 >
+  {{#if button.icon}}
+    <img class="button__icon" src="{{ button.icon }}" alt="" />
+  {{/if}}
   {{ button.label }}
 </button>

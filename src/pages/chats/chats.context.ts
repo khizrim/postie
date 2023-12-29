@@ -1,4 +1,5 @@
 import type { ChatsPageProps } from './chats.types.ts';
+import newChat from '../../assets/icons/new-chat.svg';
 import noChat from '../../assets/images/no-chat.png';
 import userAvatar from '../../assets/images/user-avatar.png';
 import { formatDate } from '../../helpers/format-date.ts';
@@ -41,5 +42,12 @@ export const ChatsContext: ChatsPageProps = {
     description: 'Select a chat from the list to begin a conversation',
     image: noChat,
     alt: 'Chat is not selected yet',
+  },
+  newChatButton: {
+    icon: newChat,
+    size: 'xl',
+    type: 'button',
+    width: 'content',
+    label: 'Start new conversation',
   },
 };
