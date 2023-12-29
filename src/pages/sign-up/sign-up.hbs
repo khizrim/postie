@@ -1,7 +1,7 @@
 {{#> AuthLayout title=title description=description logo=logo }}
-  {{#each inputs}}
-    {{> Input size=size type=type placeholder=placeholder}}
-  {{/each}}
-  {{> Button label=button.label size=button.size style=button.style type=button.type width=button.width }}
-  <p>Signed up already? {{> Link text=link.text href=link.href }}</p>
+{{#each inputs}}
+{{> Input size=size type=type placeholder=placeholder}}
+{{/each}}
+{{> Button label=button.label size=button.size style=button.style type=button.type width=button.width }}
+<p>Signed up already? {{> Link text=link.text href=link.href }}</p>
 {{/AuthLayout}}

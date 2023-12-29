@@ -1,8 +1,15 @@
 {{#> ChatsLayout}}
-  <section class="chats__list">
-    <p class="description">There will be a list of chats, account info etc.</p>
-  </section>
-  <section class="chats__chat">
-    {{> FlashMessage title=title description=description image=image alt=alt }}
-  </section>
+<section class="chats__chats">
+  {{> TopPanel top-panel=top-panel }}
+  <div class="chats__list">
+    {{#each chat-previews}}
+    {{> ChatPreview chat=chat}}
+    {{/each}}
+  </div>
+</section>
+<section class="chats__chat">
+  {{#if no-chat}}
+  {{> FlashMessage title=no-chat.title description=no-chat.description image=no-chat.image alt=no-chat.alt }}
+  {{/if}}
+</section>
 {{/ChatsLayout}}
