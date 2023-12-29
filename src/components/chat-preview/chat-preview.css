@@ -18,7 +18,7 @@
 
 .chat-preview__heading {
   display: flex;
-  gap: var(--spacing-static-s);
+  gap: var(--spacing-static-m);
 }
 
 .chat-preview__name {
@@ -28,6 +28,7 @@
 
 .chat-preview__info {
   display: flex;
+  gap: var(--spacing-static-m);
 }
 
 .chat-preview__last-message {
