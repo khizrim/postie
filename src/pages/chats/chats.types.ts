@@ -1,4 +1,4 @@
-import type { ChatPreviewProps, InputProps, PersonaProps } from '../../components';
+import type { ButtonProps, ChatPreviewProps, InputProps, PersonaProps } from '../../components';
 
 export interface ChatsPageProps {
   topPanel: {
@@ -6,10 +6,11 @@ export interface ChatsPageProps {
     user: PersonaProps;
   };
   chatPreviews: ChatPreviewProps[];
-  noChat: {
+  noChat?: {
     title: string;
     description: string;
     image: string;
     alt: string;
   };
+  newChatButton: ButtonProps;
 }

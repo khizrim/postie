@@ -1,8 +1,9 @@
 export type ButtonProps = {
-  size: string;
   label: string;
-  style: 'action' | 'flat';
   width: 'full' | 'content';
+  style?: 'action' | 'flat';
+  icon?: string;
+  size?: string;
   link?: {
     text: string;
     href: string;

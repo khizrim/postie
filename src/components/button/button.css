@@ -2,6 +2,7 @@
   cursor: pointer;
 
   display: flex;
+  gap: var(--spacing-static-m);
   justify-content: center;
 
   font: var(--body-text-base);
@@ -11,9 +12,20 @@
   border: none;
 }
 
+.button__icon {
+  width: 20px;
+  height: 20px;
+}
+
 .button[data-size='l'] {
   height: 36px;
   padding: 10px 16px;
+  border-radius: var(--radius-static-l);
+}
+
+.button[data-size='xl'] {
+  height: 44px;
+  padding: 12px 24px;
   border-radius: var(--radius-static-l);
 }
 
@@ -22,12 +34,21 @@
   background: var(--color-brand-primary);
 }
 
+.button[data-style='flat'] {
+  color: var(--color-text-link);
+  background: transparent;
+}
+
 .button[data-width='full'] {
   width: 100%;
 }
 
 @media (hover: hover) {
-  .button:hover {
+  .button[data-style='action']:hover {
     background: var(--color-brand-hover);
+  }
+
+  .button[data-style='flat']:hover {
+    background: var(--color-simple-hover);
   }
 }
