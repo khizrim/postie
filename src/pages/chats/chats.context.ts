@@ -4,7 +4,7 @@ import userAvatar from '../../assets/images/user-avatar.png';
 import { formatDate } from '../../helpers/format-date.ts';
 
 export const ChatsContext: ChatsPageProps = {
-  'top-panel': {
+  topPanel: {
     search: {
       name: 'search',
       size: 's',
@@ -16,7 +16,7 @@ export const ChatsContext: ChatsPageProps = {
       name: 'Khizri Makhmudov',
     },
   },
-  'chat-previews': [
+  chatPreviews: [
     {
       user: {
         image: userAvatar,
@@ -36,7 +36,7 @@ export const ChatsContext: ChatsPageProps = {
       time: formatDate(new Date('August 22, 2023 15:00:00')),
     },
   ],
-  'no-chat': {
+  noChat: {
     title: '👋 Hey, let’s get started!',
     description: 'Select a chat from the list to begin a conversation',
     image: noChat,

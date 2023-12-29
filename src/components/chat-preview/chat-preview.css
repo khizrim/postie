@@ -1,9 +1,10 @@
 .chat-preview {
   display: flex;
-  align-items: center;
   gap: var(--spacing-static-m);
-  padding: var(--spacing-static-s) var(--spacing-static-l);
+  align-items: center;
+
   height: 80px;
+  padding: var(--spacing-static-s) var(--spacing-static-l);
 }
 
 .chat-preview__content {
@@ -55,7 +56,7 @@
 
 @media (hover: hover) {
   .chat-preview:hover {
-    background-color: var(--color-simple-hover);
     cursor: pointer;
+    background-color: var(--color-simple-hover);
   }
 }

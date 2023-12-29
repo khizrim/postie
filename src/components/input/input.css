@@ -26,6 +26,6 @@
   font: var(--body-text-base);
 }
 
-.input__element_size-s {
+.input__element[data-size='s'] {
   height: 36px;
 }

@@ -1,8 +1,8 @@
 {{#> MainLayout}}
-{{> FlashMessage title=title description=description image=image alt=title }}
-<div class="links">
-  {{#each links}}
-  {{> Link text=text href=href}}
-  {{/each}}
-</div>
+  {{> FlashMessage message=content }}
+  <div class="links">
+    {{#each links as |link|}}
+      {{> Link link=link}}
+    {{/each}}
+  </div>
 {{/MainLayout}}

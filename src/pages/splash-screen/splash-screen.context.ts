@@ -2,10 +2,12 @@ import { type SplashScreenProps } from './splash-screen.type.ts';
 import splashScreen from '../../assets/images/splash-screen.png';
 
 export const SplashScreenContext: SplashScreenProps = {
-  title: 'The first sprint is done 🚀',
-  description: 'Here is a list of the completed pages for the first iteration',
-  image: splashScreen,
-  alt: 'You’re done with the first sprint! Congrats!',
+  content: {
+    title: 'The first sprint is done 🚀',
+    description: 'Here is a list of the completed pages for the first iteration',
+    image: splashScreen,
+    alt: 'You’re done with the first sprint! Congrats!',
+  },
   links: [
     {
       text: 'Login',

@@ -1,5 +1,5 @@
 <section class="chat-preview">
-  {{> Persona image-only=true is-large=true }}
+  {{> Persona isImageOnly=true isLarge=true }}
   <div class="chat-preview__content">
     <div class="chat-preview__heading">
       <h2 class="chat-preview__name subheader">{{ user.name }}</h2>
@@ -8,9 +8,9 @@
     <div class="chat-preview__info">
       <p class="chat-preview__last-message description">{{ lastMessage }}</p>
       {{#if unread }}
-      <span class="chat-preview__unread">
-        {{ unread }}
-      </span>
+        <span class="chat-preview__unread">
+          {{ unread }}
+        </span>
       {{/if}}
     </div>
   </div>
