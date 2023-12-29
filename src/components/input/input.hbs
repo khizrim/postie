@@ -6,7 +6,7 @@
       name="{{ input.name }}"
       placeholder="{{ input.placeholder }}"
       type="{{ input.type }}"
-      autocomplete="{{ input.autocomplete }}"
+      autocomplete="{{#if input.autocomplete}}{{ input.autocomplete }}{{else}}off{{/if}}"
     />
   </label>
 </div>
