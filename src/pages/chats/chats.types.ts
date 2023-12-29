@@ -1,12 +1,12 @@
 import type { ChatPreviewProps, InputProps, PersonaProps } from '../../components';
 
 export interface ChatsPageProps {
-  'top-panel': {
+  topPanel: {
     search: InputProps;
     user: PersonaProps;
   };
-  'chat-previews': ChatPreviewProps[];
-  'no-chat': {
+  chatPreviews: ChatPreviewProps[];
+  noChat: {
     title: string;
     description: string;
     image: string;

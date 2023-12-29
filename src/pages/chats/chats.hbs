@@ -1,15 +1,15 @@
 {{#> ChatsLayout}}
-<section class="chats__chats">
-  {{> TopPanel top-panel=top-panel }}
-  <div class="chats__list">
-    {{#each chat-previews}}
-    {{> ChatPreview chat=chat}}
-    {{/each}}
-  </div>
-</section>
-<section class="chats__chat">
-  {{#if no-chat}}
-  {{> FlashMessage title=no-chat.title description=no-chat.description image=no-chat.image alt=no-chat.alt }}
-  {{/if}}
-</section>
+  <section class="chats__chats">
+    {{> TopPanel top-panel=topPanel }}
+    <div class="chats__list">
+      {{#each chatPreviews}}
+        {{> ChatPreview chat=chat}}
+      {{/each}}
+    </div>
+  </section>
+  <section class="chats__chat">
+    {{#if noChat}}
+      {{> FlashMessage message=noChat }}
+    {{/if}}
+  </section>
 {{/ChatsLayout}}

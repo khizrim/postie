@@ -11,18 +11,18 @@
   border: none;
 }
 
-.button_size-l {
+.button[data-size='l'] {
   height: 36px;
   padding: 10px 16px;
   border-radius: var(--radius-static-l);
 }
 
-.button_style-action {
+.button[data-style='action'] {
   color: var(--color-text-contrast);
   background: var(--color-brand-primary);
 }
 
-.button_width-full {
+.button[data-width='full'] {
   width: 100%;
 }
 

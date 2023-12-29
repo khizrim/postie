@@ -1,6 +1,6 @@
 <section class="top-panel">
-  {{> Input name=top-panel.search.name size=top-panel.search.size type=top-panel.search.type placeholder=top-panel.search.placeholder autocomplete=top-panel.search.autocomplete}}
-  <a href="/account" class="top-panel__user-account" aria-label="{{ top - panel.user.name }}">
-    {{> Persona user=top-panel.user image-only=true }}
+  {{> Input input=topPanel.search}}
+  <a href="/account" class="top-panel__user-account" aria-label="{{ topPanel.user.name }}">
+    {{> Persona user=topPanel.user isImageOnly=true }}
   </a>
 </section>
