@@ -12,6 +12,10 @@ const pages: PagesProps = {
     page: Pages.ChatsPage,
     context: Pages.ChatsContext,
   },
+  account: {
+    page: Pages.AccountPage,
+    context: Pages.AccountContext,
+  },
   'not-found': {
     page: Pages.ErrorPage,
     context: Pages.NotFoundPageContext,

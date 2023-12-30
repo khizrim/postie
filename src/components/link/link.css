@@ -3,8 +3,16 @@
   text-decoration: none;
 }
 
+.link[data-is-warning='true'] {
+  color: var(--color-text-warning);
+}
+
 @media (hover: hover) {
   .link:hover {
     color: var(--color-text-link-hover);
+  }
+
+  .link[data-is-warning='true']:hover {
+    color: var(--color-text-warning-hover);
   }
 }

@@ -1,12 +1,17 @@
 <div class="input">
   <label class="input__label">
+    {{#if input.label}}<span>{{ input.label }}:</span>{{else}}{{/if}}
     <input
       class="input__element"
-      data-size="{{ input.size }}"
+      data-style="{{#if input.style}}{{ input.style }}{{else}}normal{{/if}}"
+      data-is-disabled="{{ input.disabled }}"
+      data-size="{{#if input.size}}{{ input.size }}{{else}}s{{/if}}"
       name="{{ input.name }}"
       placeholder="{{ input.placeholder }}"
       type="{{ input.type }}"
+      value="{{#if input.value}}{{ input.value }}{{else}}{{/if}}"
       autocomplete="{{#if input.autocomplete}}{{ input.autocomplete }}{{else}}off{{/if}}"
+      {{#if disabled }}disabled{{/if}}
     />
   </label>
 </div>
