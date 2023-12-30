@@ -1,7 +1,8 @@
 :root {
   /* Color Tokens */
-  --color-text-contrast: #fff;
-  --color-text-primary: #000;
+  --color-base-background: #121112;
+  --color-text-contrast: #000;
+  --color-text-primary: #fff;
   --color-text-secondary: rgb(0 0 0 / 50%);
   --color-text-link: #2e669e;
   --color-text-link-hover: #d36507;
@@ -10,9 +11,9 @@
   --color-warning: #e9ae56;
   --color-brand-primary: #3697f1;
   --color-brand-hover: #348bdc;
-  --color-border: rgb(0 0 0 / 10%);
-  --color-dark-hover: rgb(0 0 0 / 70%);
-  --color-simple-hover: rgb(0 0 0 / 5%);
+  --color-border: rgb(255 255 255 / 10%);
+  --color-dark-hover: rgb(255 255 255 / 70%);
+  --color-simple-hover: rgb(255 255 255 / 5%);
 
   /* Spacing Tokens */
   --spacing-static-max: 128px;
@@ -32,7 +33,11 @@
   --body-text-base: 400 normal 13px /18px var(--font-family);
 
   font: var(--body-text-base);
+  color: var(--color-text-primary);
   text-rendering: optimizelegibility;
+
+  color-scheme: light dark;
+  background-color: var(--color-base-background);
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -79,4 +84,15 @@ body {
 
 .description {
   margin: 0;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-base-background: #fff;
+    --color-text-contrast: #fff;
+    --color-text-primary: #000;
+    --color-border: rgb(0 0 0 / 10%);
+    --color-dark-hover: rgb(0 0 0 / 70%);
+    --color-simple-hover: rgb(0 0 0 / 5%);
+  }
 }
