@@ -1,8 +1,12 @@
 {{#> MainLayout}}
   {{> FlashMessage message=content }}
-  <div class="links">
-    {{#each links as |link|}}
-      {{> Link link=link}}
-    {{/each}}
-  </div>
+  <nav class="links">
+    <ul class="links__list">
+      {{#each links as |link|}}
+        <li class="links__item">
+          {{> Link link=link}}
+        </li>
+      {{/each}}
+    </ul>
+  </nav>
 {{/MainLayout}}

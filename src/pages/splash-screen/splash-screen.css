@@ -1,8 +1,11 @@
-.links {
+.links__list {
   display: flex;
   flex-wrap: wrap;
   gap: var(--spacing-static-l);
   justify-content: center;
 
   margin-top: var(--spacing-static-l);
+  padding: 0;
+
+  list-style: none;
 }
