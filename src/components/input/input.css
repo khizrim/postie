@@ -1,6 +1,8 @@
 .input {
   display: flex;
   width: 100%;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-static-l);
 }
 
 .input__label {
@@ -24,8 +26,8 @@
 
   font: var(--body-text-base);
 
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-static-l);
+  background: transparent;
+  border: none;
 }
 
 .input__element::placeholder {
@@ -37,6 +39,9 @@
 }
 
 .input__element[data-style='clear'] {
-  padding: 3px 0;
+  padding-left: var(--spacing-static-xs);
+}
+
+.input:has(.input__element[data-style='clear']) {
   border: none;
 }
