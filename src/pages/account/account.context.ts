@@ -58,7 +58,7 @@ export const AccountContext: AccountPageProps = {
       autocomplete: 'family-name',
     },
     {
-      name: 'chat_name',
+      name: 'display_name',
       style: 'clear',
       label: 'Name in Chat',
       placeholder: 'John D',
