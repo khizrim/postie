@@ -1,8 +1,6 @@
-import logo from '../../assets/icons/logo.svg';
-import type { AuthProps } from '../../layouts/auth/auth.type.ts';
+import type { AuthProps } from '../../layouts';
 
 export const SignInContext: AuthProps = {
-  logo,
   title: 'Hey 👋, welcome! Come on in!',
   description: 'Back again? Just sign in to keep up with your friends!',
   inputs: [
