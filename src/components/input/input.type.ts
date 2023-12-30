@@ -1,4 +1,8 @@
 export type InputProps = {
-  size: string;
-  autocomplete?: string | undefined;
+  label?: string;
+  autocomplete?: string;
+  size?: string;
+  style?: 'clear' | 'normal';
+  value?: string;
+  disabled?: boolean;
 } & Pick<HTMLInputElement, 'name' | 'placeholder' | 'type'>;

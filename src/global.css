@@ -5,10 +5,13 @@
   --color-text-secondary: rgb(0 0 0 / 50%);
   --color-text-link: #2e669e;
   --color-text-link-hover: #d36507;
+  --color-text-warning: #e9033a;
+  --color-text-warning-hover: #bd0935;
   --color-warning: #e9ae56;
-  --color-border: rgb(0 0 0 / 10%);
   --color-brand-primary: #3697f1;
   --color-brand-hover: #348bdc;
+  --color-border: rgb(0 0 0 / 10%);
+  --color-dark-hover: rgb(0 0 0 / 70%);
   --color-simple-hover: rgb(0 0 0 / 5%);
 
   /* Spacing Tokens */

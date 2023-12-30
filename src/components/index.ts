@@ -1,3 +1,4 @@
+export * from './avatar';
 export * from './button';
 export * from './chat-preview';
 export * from './flash-message';

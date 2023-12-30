@@ -5,7 +5,13 @@
 
 .input__label {
   display: flex;
+  gap: var(--spacing-static-xs);
+  align-items: center;
+
   width: inherit;
+
+  font-weight: 600;
+  white-space: nowrap;
 }
 
 .input__element {
@@ -28,4 +34,9 @@
 
 .input__element[data-size='s'] {
   height: 36px;
+}
+
+.input__element[data-style='clear'] {
+  padding: 3px 0;
+  border: none;
 }
