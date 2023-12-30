@@ -5,7 +5,7 @@
       <h2 class="title">{{ user.name }}</h2>
       <p class="description">{{ user.login }}</p>
     </div>
-    <form class="account__form">
+    {{#> Form class='account__form'}}
       {{#if isEditing}}
         {{#each inputs as |input|}}
           {{> Input input=input }}
@@ -15,7 +15,7 @@
           {{> Input input=input disabled=true }}
         {{/each}}
       {{/if}}
-    </form>
+    {{/Form}}
     <div class="account__actions">
       {{#each actions as |action|}}
         {{> Link link=action }}
