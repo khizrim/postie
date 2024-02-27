@@ -1,0 +1,9 @@
+.chat-input {
+  display: flex;
+  gap: var(--spacing-static-m);
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  padding: 0 0 0 var(--spacing-static-xl);
+}

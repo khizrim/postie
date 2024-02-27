@@ -3,6 +3,7 @@
 
   display: flex;
   gap: var(--spacing-static-m);
+  align-items: center;
   justify-content: center;
 
   font: var(--body-text-base);
@@ -18,13 +19,13 @@
 }
 
 .button[data-size='l'] {
-  height: 36px;
+  height: 44px;
   padding: 10px 16px;
   border-radius: var(--radius-static-l);
 }
 
 .button[data-size='xl'] {
-  height: 44px;
+  height: 52px;
   padding: 12px 24px;
   border-radius: var(--radius-static-l);
 }

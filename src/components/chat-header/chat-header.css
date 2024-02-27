@@ -1,0 +1,12 @@
+.chat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  padding: 0 0 0 var(--spacing-static-xl);
+}
+
+.chat-header img {
+  color: #fff !important;
+}

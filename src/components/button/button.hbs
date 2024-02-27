@@ -5,8 +5,16 @@
   data-width="{{ button.width }}"
   type="{{ button.type }}"
 >
-  {{#if button.icon}}
-    <img class="button__icon" src="{{ button.icon }}" alt="" />
+  {{#if button.isIconOnly}}
+    {{#if button.icon}}
+      <img class="button__icon" src="{{ button.icon }}" alt="{{button.label}}" />
+    {{/if}}
+  {{else}}
+    {{#if button.icon}}
+      <img class="button__icon" src="{{ button.icon }}" alt="" />
+    {{/if}}
+    {{#if button.label}}
+      <span class="button__label">{{ button.label }}</span>
+    {{/if}}
   {{/if}}
-  {{ button.label }}
 </button>

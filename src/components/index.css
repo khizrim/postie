@@ -1,9 +1,12 @@
 @import url('./avatar/avatar.css');
 @import url('./button/button.css');
+@import url('./chat-input/chat-input.css');
+@import url('./chat-header/chat-header.css');
 @import url('./chat-preview/chat-preview.css');
 @import url('./form/form.css');
 @import url('./flash-message/flash-message.css');
 @import url('./input/input.css');
 @import url('./link/link.css');
+@import url('./message/message.css');
 @import url('./persona/persona.css');
-@import url('./top-panel/top-panel.css');
+@import url('./panel-wrapper/panel-wrapper.css');

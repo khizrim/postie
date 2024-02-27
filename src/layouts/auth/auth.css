@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
 
-  max-width: 340px;
+  max-width: 380px;
   min-height: 100dvh;
   padding: var(--spacing-static-3xl) 0;
 }
