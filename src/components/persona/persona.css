@@ -16,3 +16,20 @@
 .persona__image {
   border-radius: 50%;
 }
+
+.persona__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 0 var(--spacing-static-m);
+
+  font: var(--subheader);
+  color: var(--color-text-primary);
+}
+
+@media (hover: hover) {
+  .persona__info:hover {
+    color: var(--color-text-link-hover);
+  }
+}

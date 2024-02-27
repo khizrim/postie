@@ -1,7 +1,9 @@
 import Handlebars from 'handlebars';
 
+import { type ChatPreviewProps } from './components';
 import * as Components from './components';
 import * as Layouts from './layouts';
+import { type ChatID } from './pages';
 import * as Pages from './pages';
 import type { PageProps, PagesProps, PageTypes } from './pages/index.type.ts';
 
@@ -40,6 +42,14 @@ const pages: PagesProps = {
 
 Object.entries({ ...Components, ...Layouts }).forEach(([name, component]) => {
   Handlebars.registerPartial(name, component);
+});
+
+Handlebars.registerHelper('getValueByKey', function <T, K extends keyof T>(object: T, key: K): T[K] {
+  return object[key];
+});
+
+Handlebars.registerHelper('isCurrent', function (chat: ChatPreviewProps, selectedChat: ChatID) {
+  return chat.id === selectedChat;
 });
 
 const navigate = ({ page, context }: PageProps): void => {

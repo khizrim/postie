@@ -1,9 +1,10 @@
 :root {
   /* Color Tokens */
-  --color-base-background: #121112;
+  --color-base-background: #202124;
+  --color-generic-background: rgb(54 151 241 / 5%);
   --color-text-contrast: #000;
   --color-text-primary: #fff;
-  --color-text-secondary: rgb(0 0 0 / 50%);
+  --color-text-secondary: rgb(255 255 255 / 50%);
   --color-text-link: #2e669e;
   --color-text-link-hover: #d36507;
   --color-text-warning: #e9033a;
@@ -11,6 +12,7 @@
   --color-warning: #e9ae56;
   --color-brand-primary: #3697f1;
   --color-brand-hover: #348bdc;
+  --color-base-chat-background: rgb(54 151 241 / 25%);
   --color-border: rgb(255 255 255 / 10%);
   --color-dark-hover: rgb(255 255 255 / 70%);
   --color-simple-hover: rgb(255 255 255 / 5%);
@@ -28,9 +30,11 @@
 
   /* Typography Tokens */
   --font-family: inter, system-ui, avenir, helvetica, arial, sans-serif;
-  --heading-display-1: 600 normal 28px /36px var(--font-family);
-  --subheader-1: 600 normal 13px /18px var(--font-family);
-  --body-text-base: 400 normal 13px /18px var(--font-family);
+  --heading-display: 600 normal 28px /36px var(--font-family);
+  --subheader: 600 normal 16px /24px var(--font-family);
+  --body-text-chat: 400 normal 16px /24px var(--font-family);
+  --body-text-base: 400 normal 16px /24px var(--font-family);
+  --caption-text: 400 normal 13px /18px var(--font-family);
 
   font: var(--body-text-base);
   color: var(--color-text-primary);
@@ -75,12 +79,12 @@ body {
 
 .title {
   margin: 0;
-  font: var(--heading-display-1);
+  font: var(--heading-display);
 }
 
 .subheader {
   margin: 0;
-  font: var(--subheader-1);
+  font: var(--subheader);
 }
 
 .description {
@@ -90,8 +94,10 @@ body {
 @media (prefers-color-scheme: light) {
   :root {
     --color-base-background: #fff;
+    --color-generic-background: #f1f1f1;
     --color-text-contrast: #fff;
     --color-text-primary: #000;
+    --color-text-secondary: rgb(0 0 0 / 50%);
     --color-border: rgb(0 0 0 / 10%);
     --color-dark-hover: rgb(0 0 0 / 70%);
     --color-simple-hover: rgb(0 0 0 / 5%);

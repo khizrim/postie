@@ -3,8 +3,13 @@
   gap: var(--spacing-static-m);
   align-items: center;
 
-  height: 80px;
+  height: 92px;
   padding: var(--spacing-static-s) var(--spacing-static-l);
+}
+
+.chat-preview[data-is-selected='true'] {
+  pointer-events: none;
+  background-color: var(--color-base-chat-background);
 }
 
 .chat-preview__content {
@@ -34,10 +39,10 @@
 .chat-preview__last-message {
   overflow: hidden;
   display: -webkit-box;
+  -webkit-box-orient: vertical;
 
   text-overflow: ellipsis;
 
-  -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
 }
 
