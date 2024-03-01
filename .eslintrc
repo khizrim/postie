@@ -11,17 +11,39 @@
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "prettier"
   ],
-  "plugins": ["@typescript-eslint", "import"],
+  "plugins": [
+    "@typescript-eslint",
+    "import"
+  ],
   "parserOptions": {
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "ignorePatterns": ["server.ts", "vite.config.ts"],
+  "ignorePatterns": [
+    "server.ts",
+    "vite.config.ts"
+  ],
+  "settings": {
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true
+      }
+    }
+  },
   "rules": {
     "import/order": [
       "error",
       {
-        "groups": ["builtin", "external", "internal", ["sibling", "parent"], "index"],
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          [
+            "sibling",
+            "parent"
+          ],
+          "index"
+        ],
         "alphabetize": {
           "order": "asc",
           "orderImportKind": "asc"
@@ -46,7 +68,9 @@
     "import/no-unresolved": [
       2,
       {
-        "ignore": ["\\.hbs"]
+        "ignore": [
+          "\\.hbs"
+        ]
       }
     ]
   }
