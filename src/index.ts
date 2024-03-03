@@ -1,7 +1,8 @@
-import Handlebars from 'handlebars';
+import Handlebars, { type Template } from 'handlebars';
 
 import { type ChatPreviewProps } from './components';
 import * as Components from './components';
+import { registerComponent } from './core/register-components/register-components.ts';
 import * as Layouts from './layouts';
 import { type ChatID } from './pages';
 import * as Pages from './pages';
@@ -41,7 +42,7 @@ const pages: PagesProps = {
 };
 
 Object.entries({ ...Components, ...Layouts }).forEach(([name, component]) => {
-  Handlebars.registerPartial(name, component);
+  Handlebars.registerPartial(name, component as Template);
 });
 
 Handlebars.registerHelper('getValueByKey', function <T, K extends keyof T>(object: T, key: K): T[K] {
@@ -49,8 +50,23 @@ Handlebars.registerHelper('getValueByKey', function <T, K extends keyof T>(objec
 });
 
 Handlebars.registerHelper('isCurrent', function (chat: ChatPreviewProps, selectedChat: ChatID) {
+  console.log('chat', chat);
   return chat.id === selectedChat;
 });
+
+registerComponent('AvatarComponent', Components.AvatarComponent);
+registerComponent('ButtonComponent', Components.ButtonComponent);
+registerComponent('ChatHeaderComponent', Components.ChatHeaderComponent);
+registerComponent('ChatInputComponent', Components.ChatInputComponent);
+registerComponent('ChatPreviewComponent', Components.ChatPreviewComponent);
+registerComponent('ChatsHeaderComponent', Components.ChatsHeaderComponent);
+registerComponent('FlashMessageComponent', Components.FlashMessageComponent);
+registerComponent('FormComponent', Components.FormComponent);
+registerComponent('InputComponent', Components.InputComponent);
+registerComponent('LinkComponent', Components.LinkComponent);
+registerComponent('MessageComponent', Components.MessageComponent);
+registerComponent('PanelWrapperComponent', Components.PanelWrapperComponent);
+registerComponent('PersonaComponent', Components.PersonaComponent);
 
 const navigate = ({ page, context }: PageProps): void => {
   const container = document.querySelector('.app');

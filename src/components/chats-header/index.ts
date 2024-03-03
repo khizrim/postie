@@ -1,1 +1,1 @@
-export { default as ChatsHeader } from './chats-header.hbs?raw';
+export * from './chats-header.ts';
