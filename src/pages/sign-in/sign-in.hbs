@@ -1,7 +1,7 @@
 {{#> AuthLayout title=title description=description logo=logo }}
   {{#each inputs as |input|}}
-    {{> Input input=input}}
+    {{{InputComponent input=input}}}
   {{/each}}
-  {{> Button button=button }}
-  <p>First time here? {{> Link link=link }}</p>
+  {{{ButtonComponent button=button }}}
+  <p>First time here? {{{LinkComponent link=link }}}</p>
 {{/AuthLayout}}

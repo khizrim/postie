@@ -14,6 +14,6 @@
     <p class="flash-message__description description">{{ message.description }}</p>
   </div>
   {{#if message.link }}
-    {{> Link link=message.link}}
+    {{{LinkComponent link=message.link}}}
   {{/if}}
 </section>

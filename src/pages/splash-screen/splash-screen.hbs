@@ -1,10 +1,10 @@
 {{#> MainLayout}}
-  {{> FlashMessage message=content }}
+  {{{FlashMessageComponent message=content}}}
   <nav class="links">
     <ul class="links__list">
       {{#each links as |link|}}
         <li class="links__item">
-          {{> Link link=link}}
+          {{{LinkComponent link=link}}}
         </li>
       {{/each}}
     </ul>

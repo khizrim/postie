@@ -1,9 +1,8 @@
 import { nanoid } from 'nanoid';
 
-import { EventBus } from 'src/core/event-bus';
-import { ID_SIZE } from 'src/utils/constants.ts';
-
 import type { NullableElementType, MetaType, PropsType } from './block.types';
+import { ID_SIZE } from '../../utils/constants.ts';
+import { EventBus } from '../event-bus';
 
 export class Block<T extends PropsType> {
   static EVENTS = {
@@ -15,7 +14,7 @@ export class Block<T extends PropsType> {
   } as const;
 
   private readonly _id: string;
-  private readonly _meta: MetaType<T>;
+  protected _meta: MetaType<T>;
   private _element: NullableElementType = null;
 
   protected eventBus: () => EventBus;
@@ -102,8 +101,8 @@ export class Block<T extends PropsType> {
     }
   }
 
-  public render(): NullableElementType {
-    return this.element;
+  public render(): string {
+    return '';
   }
 
   public init(): void {
@@ -112,6 +111,10 @@ export class Block<T extends PropsType> {
   }
 
   public get element(): NullableElementType {
+    return this._element;
+  }
+
+  public getContent(): NullableElementType {
     return this._element;
   }
 
