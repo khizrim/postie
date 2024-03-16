@@ -1,10 +1,10 @@
-import { type PropsType } from '../../core';
+import { type Props } from '../../core';
 
 type MessageID = number;
 
 type MessageType = 'text' | 'image' | 'video' | 'audio' | 'file';
 
-export interface MessageProps extends PropsType {
+export interface MessageProps extends Props {
   date: string;
   text: string;
   author: number;

@@ -6,12 +6,12 @@
         {{{ ChatPreviewComponent chat=chat isSelected=(isCurrent chat ../selectedChat) }}}
       {{/each}}
       <div class="chats__button">
-        {{{ ButtonComponent button=newChatButton }}}
+        {{{ ButtonComponent icon=newChatButton.icon size=newChatButton.size type=newChatButton.type width=newChatButton.width label=newChatButton.label}}}
       </div>
     </div>
   </section>
   <section class="chat">
-    {{{ ChatHeaderComponent currentChat=(getValueByKey chatPreviews selectedChat) chatSettingsButton=chatSettingsButton }}}
+    {{{ ChatHeaderComponent currentChat=(getValueByKey chatPreviews selectedChat) button=chatSettingsButton }}}
     {{#if selectedChat}}
       <div class="chat__content">
         {{#each (getValueByKey messages selectedChat) as |message|}}
@@ -25,4 +25,4 @@
       {{> FlashMessage message=noChat }}
     {{/if}}
   </section>
-{{/ChatsLayout}}
+  {{/ChatsLayout}}

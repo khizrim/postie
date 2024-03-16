@@ -1,8 +1,10 @@
 import type { ButtonProps, ChatPreviewProps, InputProps, Messages, PersonaProps } from 'src/components';
 
+import { type Props } from '../../core';
+
 export type ChatID = number;
 
-export interface ChatsPageProps {
+export interface ChatsPageProps extends Props {
   topPanel: {
     search: InputProps;
     user: PersonaProps;

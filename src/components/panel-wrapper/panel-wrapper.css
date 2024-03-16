@@ -7,3 +7,11 @@
   height: 80px;
   padding: var(--spacing-static-m) var(--spacing-static-l);
 }
+
+.panel-wrapper[data-border-side='bottom'] {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.panel-wrapper[data-border-side='top'] {
+  border-top: 1px solid var(--color-border);
+}

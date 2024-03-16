@@ -1,6 +1,8 @@
-import type { FlashMessageProps, LinkProps } from '../../components';
+import type { FlashMessageProps, LinkProps } from 'src/components';
 
-export interface SplashScreenProps {
+import type { Props } from 'src/core';
+
+export interface SplashScreenProps extends Props {
   content: FlashMessageProps;
   links: LinkProps[];
 }

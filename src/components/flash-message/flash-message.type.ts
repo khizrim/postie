@@ -1,7 +1,7 @@
-import { type PropsType } from '../../core';
+import { type Props } from '../../core';
 import { type LinkComponent } from '../link';
 
-export interface FlashMessageProps extends PropsType {
+export interface FlashMessageProps extends Props {
   title: string;
   description: string;
   image: string;

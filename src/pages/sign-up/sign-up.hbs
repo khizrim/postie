@@ -2,6 +2,6 @@
   {{#each inputs as |input|}}
     {{{ InputComponent input=input}}}
   {{/each}}
-  {{{ ButtonComponent button=button}}}
+  {{{ ButtonComponent size=button.size style=button.style type=button.type label=button.label width=button.width}}}
   <p>Signed up already? {{{LinkComponent link=link }}}</p>
 {{/AuthLayout}}

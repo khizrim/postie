@@ -1,8 +1,7 @@
-import Handlebars from 'handlebars';
+import { Block } from 'src/core/block';
 
 import template from './chat-preview.hbs?raw';
 import { type ChatPreviewProps } from './chat-preview.type.ts';
-import { Block } from '../../core';
 
 export class ChatPreviewComponent extends Block<ChatPreviewProps> {
   constructor(props: ChatPreviewProps) {
@@ -10,6 +9,6 @@ export class ChatPreviewComponent extends Block<ChatPreviewProps> {
   }
 
   render(): string {
-    return Handlebars.compile(template)(this._meta.props);
+    return template;
   }
 }

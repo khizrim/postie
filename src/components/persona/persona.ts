@@ -1,8 +1,7 @@
-import Handlebars from 'handlebars';
+import { Block } from 'src/core/block';
 
 import template from './persona.hbs?raw';
 import { type PersonaProps } from './persona.type.ts';
-import { Block } from '../../core';
 
 export class PersonaComponent extends Block<PersonaProps> {
   constructor(props: PersonaProps) {
@@ -10,6 +9,6 @@ export class PersonaComponent extends Block<PersonaProps> {
   }
 
   render(): string {
-    return Handlebars.compile(template)(this._meta.props);
+    return template;
   }
 }
