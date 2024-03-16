@@ -1,2 +1,2 @@
-export * from './block.types';
+export * from './block.type.ts';
 export * from './block';

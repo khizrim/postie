@@ -1,8 +1,7 @@
-import Handlebars from 'handlebars';
+import { Block } from 'src/core/block';
 
 import template from './input.hbs?raw';
 import { type InputProps } from './input.type.ts';
-import { Block } from '../../core';
 
 export class InputComponent extends Block<InputProps> {
   constructor(props: InputProps) {
@@ -10,6 +9,6 @@ export class InputComponent extends Block<InputProps> {
   }
 
   render(): string {
-    return Handlebars.compile(template)(this._meta.props);
+    return template;
   }
 }

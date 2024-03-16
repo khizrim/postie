@@ -1,20 +1,22 @@
-<button
-  class="button"
-  data-size="{{#if button.size}}{{ button.size }}{{else}}l{{/if}}"
-  data-style="{{#if button.style}}{{ button.style }}{{else}}flat{{/if}}"
-  data-width="{{ button.width }}"
-  type="{{ button.type }}"
->
-  {{#if button.isIconOnly}}
-    {{#if button.icon}}
-      <img class="button__icon" src="{{ button.icon }}" alt="{{button.label}}" />
+<button class="button"
+        data-size="{{#if size}}{{ size }}{{else}}l{{/if}}"
+        data-style="{{#if style}}{{ style }}{{else}}flat{{/if}}"
+        data-width="{{ width }}"
+        type="{{ type }}">
+  {{#if isIconOnly}}
+    {{#if icon}}
+      <img class="button__icon"
+           src="{{ icon }}"
+           alt="{{ label }}" />
     {{/if}}
   {{else}}
-    {{#if button.icon}}
-      <img class="button__icon" src="{{ button.icon }}" alt="" />
+    {{#if icon}}
+      <img class="button__icon"
+           src="{{ icon }}"
+           alt="" />
     {{/if}}
-    {{#if button.label}}
-      <span class="button__label">{{ button.label }}</span>
+    {{#if label}}
+      <span class="button__label">{{ label }}</span>
     {{/if}}
   {{/if}}
 </button>

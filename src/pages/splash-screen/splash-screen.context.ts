@@ -1,5 +1,7 @@
+import paperclip from 'src/assets/icons/paperclip.svg';
+import splashScreen from 'src/assets/images/splash-screen.png';
+
 import { type SplashScreenProps } from './splash-screen.type.ts';
-import splashScreen from '../../assets/images/splash-screen.png';
 
 export const SplashScreenContext: SplashScreenProps = {
   content: {
@@ -34,4 +36,14 @@ export const SplashScreenContext: SplashScreenProps = {
       href: '/server-error',
     },
   ],
+  button: {
+    icon: paperclip,
+    label: 'Attach file',
+    type: 'button',
+    width: 'content',
+    isIconOnly: true,
+    onClick: () => {
+      console.log('Button clicked');
+    },
+  },
 };

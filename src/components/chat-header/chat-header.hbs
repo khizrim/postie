@@ -1,8 +1,10 @@
 {{#> PanelWrapper border='bottom'}}
   <div class="chat-header">
-    <a href="/account" class="chat-header__user-account link" aria-label="{{ currentChat.user.name }}">
-      {{{PersonaComponent user=currentChat.user}}}
+    <a href="/account"
+       class="chat-header__user-account link"
+       aria-label="{{ currentChat.user.name }}">
+      {{{ PersonaComponent user=currentChat.user }}}
     </a>
-    {{{ButtonComponent button=chatSettingsButton}}}
+    {{{ ButtonComponent icon=button.icon type=button.type width=button.width onClick=button.onClick }}}
   </div>
-{{/PanelWrapper}}
+  {{/PanelWrapper}}

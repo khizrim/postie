@@ -1,28 +1,31 @@
 {{#> MainLayout}}
   <div class="account">
-    {{{AvatarComponent avatar=avatar}}}
+    {{{ AvatarComponent avatar=avatar }}}
+
     <div class="account__heading">
       <h2 class="title">{{ user.name }}</h2>
       <p class="description">{{ user.login }}</p>
     </div>
+
     {{#> Form class='account__form'}}
-      {{#if isEditing}}
-        {{#each inputs as |input|}}
-          {{{InputComponent input=input }}}
-        {{/each}}
-      {{else}}
-        {{#each inputs as |input|}}
-          {{{InputComponent input=input disabled=true }}}
-        {{/each}}
-      {{/if}}
+      {{#each inputs as |input|}}
+        {{#if isEditing}}
+          {{{ InputComponent input=input }}}
+        {{else}}
+          {{{ InputComponent input=input disabled=true }}}
+        {{/if}}
+      {{/each}}
     {{/Form}}
+
     <div class="account__actions">
       {{#each actions as |action|}}
         {{{ LinkComponent link=action }}}
       {{/each}}
     </div>
+
     <div class="account__back-button">
-      {{{ ButtonComponent button=backButton }}}
+      {{{ ButtonComponent icon=backButton.icon size=backButton.size type=backButton.type width=backButton.width
+                          label=backButton.label }}}
     </div>
   </div>
 {{/MainLayout}}

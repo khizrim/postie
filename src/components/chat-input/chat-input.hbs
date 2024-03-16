@@ -1,7 +1,7 @@
 {{#> PanelWrapper border='top'}}
   <div class="chat-input">
-    {{{ ButtonComponent button=attachButton }}}
+    {{{ ButtonComponent icon=attachButton.icon label=attachButton.label type=attachButton.type width=attachButton.width isIconOnly=attachButton.isIconOnly onClick=attachButton.onClick }}}
     {{{ InputComponent input=chatInput }}}
-    {{{ ButtonComponent button=sendButton }}}
+    {{{ ButtonComponent icon=sendButton.icon label=sendButton.label type=sendButton.type width=sendButton.width isIconOnly=sendButton.isIconOnly }}}
   </div>
-{{/PanelWrapper}}
+  {{/PanelWrapper}}

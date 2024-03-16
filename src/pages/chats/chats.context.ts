@@ -104,6 +104,9 @@ export const ChatsContext: ChatsPageProps = {
     icon: ellipsis,
     type: 'button',
     width: 'content',
+    onClick: () => {
+      console.log('Chat settings button clicked');
+    },
   },
   users: {
     1: {
@@ -140,5 +143,8 @@ export const ChatsContext: ChatsPageProps = {
     type: 'button',
     width: 'content',
     isIconOnly: true,
+    onClick: () => {
+      console.log('Attach button clicked');
+    },
   },
 };

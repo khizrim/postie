@@ -1,8 +1,7 @@
-import Handlebars from 'handlebars';
+import { Block } from 'src/core/block';
 
 import template from './link.hbs?raw';
 import type { LinkProps } from './link.type';
-import { Block } from '../../core';
 
 export class LinkComponent extends Block<LinkProps> {
   constructor(props: LinkProps) {
@@ -10,6 +9,6 @@ export class LinkComponent extends Block<LinkProps> {
   }
 
   render(): string {
-    return Handlebars.compile(template)(this._meta.props);
+    return template;
   }
 }

@@ -1,7 +1,7 @@
-{{#> AuthLayout title=title description=description logo=logo }}
+{{#> AuthLayout title=title description=description logo=logo onSubmit=onSubmit }}
   {{#each inputs as |input|}}
     {{{InputComponent input=input}}}
   {{/each}}
-  {{{ButtonComponent button=button }}}
+  {{{ButtonComponent size=button.size style=button.style type=button.type label=button.label width=button.width}}}
   <p>First time here? {{{LinkComponent link=link }}}</p>
-{{/AuthLayout}}
+  {{/AuthLayout}}

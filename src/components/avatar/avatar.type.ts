@@ -1,6 +1,6 @@
-import { type PropsType } from '../../core';
+import { type Props } from '../../core';
 
-export interface AvatarProps extends PropsType {
+export interface AvatarProps extends Props {
   image: string;
   isCurrentUser?: boolean;
 }

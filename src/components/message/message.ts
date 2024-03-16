@@ -1,8 +1,7 @@
-import Handlebars from 'handlebars';
+import { Block } from 'src/core/block';
 
 import template from './message.hbs?raw';
 import type { MessageProps } from './message.type';
-import { Block } from '../../core';
 
 export class MessageComponent extends Block<MessageProps> {
   constructor(props: MessageProps) {
@@ -10,6 +9,6 @@ export class MessageComponent extends Block<MessageProps> {
   }
 
   render(): string {
-    return Handlebars.compile(template)(this._meta.props);
+    return template;
   }
 }

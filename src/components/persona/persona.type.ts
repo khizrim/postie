@@ -1,6 +1,6 @@
-import { type PropsType } from '../../core';
+import { type Props } from '../../core';
 
-export interface PersonaProps extends PropsType {
+export interface PersonaProps extends Props {
   id: number;
   image: string;
   name?: string;

@@ -1,12 +1,11 @@
 import { ROOT_QUERY_SELECTOR } from '../../utils/constants';
-import type { Block, PropsType } from '../block';
+import type { Block, Props } from '../block';
 
-export const renderDOM = (block: Block<PropsType>): void => {
+export const renderDOM = (block: Block<Props>): void => {
   const root = document.querySelector(ROOT_QUERY_SELECTOR);
   const blockElement = block.getContent();
 
-  if (root !== null && blockElement !== null) {
-    root.innerHTML = '';
-    root.appendChild(blockElement);
+  if (root && blockElement) {
+    root.replaceChildren(blockElement);
   }
 };

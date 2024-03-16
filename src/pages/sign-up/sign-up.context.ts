@@ -65,4 +65,11 @@ export const SignUpContext: AuthProps = {
     text: 'Sign in',
     href: '/sign-in',
   },
+  onSubmit: (event: Event) => {
+    event.preventDefault();
+    const form = event.target as HTMLFormElement;
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+    console.log(data);
+  },
 };

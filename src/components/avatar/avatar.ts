@@ -1,8 +1,7 @@
-import Handlebars from 'handlebars';
+import { Block } from 'src/core/block';
 
 import template from './avatar.hbs?raw';
 import { type AvatarProps } from './avatar.type.ts';
-import { Block } from '../../core';
 
 export class AvatarComponent extends Block<AvatarProps> {
   constructor(props: AvatarProps) {
@@ -10,6 +9,6 @@ export class AvatarComponent extends Block<AvatarProps> {
   }
 
   render(): string {
-    return Handlebars.compile(template)(this._meta.props);
+    return template;
   }
 }

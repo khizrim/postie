@@ -1,8 +1,7 @@
-import Handlebars from 'handlebars';
+import { Block } from 'src/core/block';
 
 import template from './flash-message.hbs?raw';
 import { type FlashMessageProps } from './flash-message.type.ts';
-import { Block } from '../../core';
 
 export class FlashMessageComponent extends Block<FlashMessageProps> {
   constructor(props: FlashMessageProps) {
@@ -10,6 +9,6 @@ export class FlashMessageComponent extends Block<FlashMessageProps> {
   }
 
   render(): string {
-    return Handlebars.compile(template)(this._meta.props);
+    return template;
   }
 }

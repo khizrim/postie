@@ -8,5 +8,6 @@ export type ButtonProps = {
     text: string;
     href: string;
   };
+  onClick?: () => void;
   isIconOnly?: boolean;
 } & Pick<HTMLButtonElement, 'type'>;

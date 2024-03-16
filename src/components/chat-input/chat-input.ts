@@ -1,7 +1,6 @@
-import Handlebars from 'handlebars';
+import { Block } from 'src/core/block';
 
 import template from './chat-input.hbs?raw';
-import { Block } from '../../core';
 
 export class ChatInputComponent extends Block<never> {
   constructor(props: never) {
@@ -9,6 +8,6 @@ export class ChatInputComponent extends Block<never> {
   }
 
   render(): string {
-    return Handlebars.compile(template)(this._meta.props);
+    return template;
   }
 }
