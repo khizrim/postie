@@ -1,3 +1,3 @@
-export * from './input.type.ts';
+export * from './input.type';
 
-export * from './input.ts';
+export * from './input';

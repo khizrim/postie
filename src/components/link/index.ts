@@ -1,3 +1,3 @@
-export * from './link.type.ts';
+export * from './link.type';
 
-export * from './link.ts';
+export * from './link';

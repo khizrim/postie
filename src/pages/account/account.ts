@@ -1,7 +1,7 @@
 import { Block } from 'src/core/block';
+import type { AccountPageProps } from 'src/pages/account';
 
 import template from './account.hbs?raw';
-import { type AccountPageProps } from './account.types.ts';
 
 export class Account extends Block<AccountPageProps> {
   constructor(props: AccountPageProps) {

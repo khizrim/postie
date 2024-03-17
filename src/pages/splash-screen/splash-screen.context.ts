@@ -1,7 +1,6 @@
 import paperclip from 'src/assets/icons/paperclip.svg';
 import splashScreen from 'src/assets/images/splash-screen.png';
-
-import { type SplashScreenProps } from './splash-screen.type.ts';
+import type { SplashScreenProps } from 'src/pages/splash-screen';
 
 export const SplashScreenContext: SplashScreenProps = {
   content: {

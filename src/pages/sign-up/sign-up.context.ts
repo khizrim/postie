@@ -1,4 +1,4 @@
-import type { AuthProps } from '../../layouts';
+import type { AuthProps } from 'src/layouts/auth';
 
 export const SignUpContext: AuthProps = {
   title: 'Hey 🙌, let’s get to know each other!',

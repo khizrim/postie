@@ -1,4 +1,4 @@
-import { type Props } from '../../core';
+import type { Props } from 'src/core/block';
 
 type MessageID = number;
 

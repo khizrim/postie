@@ -1,5 +1,6 @@
-import type { ButtonProps, InputProps, LinkProps } from '../../components';
-import { type Props } from '../../core';
+import type { ButtonProps, InputProps, LinkProps } from 'src/components';
+
+import type { Props } from 'src/core/block';
 
 export interface AuthProps extends Props {
   title: string;

@@ -1,3 +1,3 @@
-export * from './persona.type.ts';
+export * from './persona.type';
 
-export * from './persona.ts';
+export * from './persona';

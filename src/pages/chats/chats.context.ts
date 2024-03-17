@@ -1,11 +1,11 @@
-import type { ChatsPageProps } from './chats.types.ts';
-import ellipsis from '../../assets/icons/ellipsis-vertical.svg';
-import newChat from '../../assets/icons/new-chat.svg';
-import paperPlane from '../../assets/icons/paper-plane.svg';
-import paperclip from '../../assets/icons/paperclip.svg';
-import noChat from '../../assets/images/no-chat.png';
-import userAvatar from '../../assets/images/user-avatar.png';
-import { formatDate } from '../../helpers/format-date.ts';
+import ellipsis from 'src/assets/icons/ellipsis-vertical.svg';
+import newChat from 'src/assets/icons/new-chat.svg';
+import paperPlane from 'src/assets/icons/paper-plane.svg';
+import paperclip from 'src/assets/icons/paperclip.svg';
+import noChat from 'src/assets/images/no-chat.png';
+import userAvatar from 'src/assets/images/user-avatar.png';
+import { formatDate } from 'src/helpers/format-date';
+import type { ChatsPageProps } from 'src/pages/chats';
 
 export const ChatsContext: ChatsPageProps = {
   topPanel: {

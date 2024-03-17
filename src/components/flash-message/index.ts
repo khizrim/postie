@@ -1,3 +1,3 @@
-export * from './flash-message.type.ts';
+export * from './flash-message.type';
 
-export * from './flash-message.ts';
+export * from './flash-message';

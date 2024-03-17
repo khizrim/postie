@@ -1,4 +1,4 @@
-import type { Listener, Listeners } from './event-bus.types';
+import type { Listener, Listeners } from 'src/core/event-bus';
 
 export class EventBus {
   protected listeners: Listeners;

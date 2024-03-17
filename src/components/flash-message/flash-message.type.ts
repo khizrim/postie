@@ -1,5 +1,5 @@
-import { type Props } from '../../core';
-import { type LinkComponent } from '../link';
+import type { LinkComponent } from 'src/components/link';
+import type { Props } from 'src/core/block';
 
 export interface FlashMessageProps extends Props {
   title: string;

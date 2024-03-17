@@ -1,6 +1,12 @@
-import type { ButtonProps, ChatPreviewProps, InputProps, Messages, PersonaProps } from 'src/components';
+import type {
+  ButtonProps,
+  ChatPreviewProps,
+  InputProps,
+  Messages,
+  PersonaProps,
+} from 'src/components';
 
-import { type Props } from '../../core';
+import type { Props } from 'src/core/block';
 
 export type ChatID = number;
 
@@ -9,7 +15,7 @@ export interface ChatsPageProps extends Props {
     search: InputProps;
     user: PersonaProps;
   };
-  selectedChat: number | null;
+  selectedChat: ChatID | null;
   chatPreviews: Record<ChatID, ChatPreviewProps>;
   messages: Record<ChatID, Messages>;
   noChat?: {

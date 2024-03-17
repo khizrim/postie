@@ -1,3 +1,3 @@
-export * from './message.type.ts';
+export * from './message.type';
 
-export * from './message.ts';
+export * from './message';

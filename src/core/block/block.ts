@@ -1,15 +1,15 @@
 import Handlebars from 'handlebars';
 import { nanoid } from 'nanoid';
 
-import {
-  type BlockChildren,
-  type ComponentContext,
-  type ComponentMeta,
-  type NullableElement,
-  type Props,
-} from './block.type.ts';
-import { ID_SIZE } from '../../utils/constants.ts';
-import { EventBus } from '../event-bus';
+import type {
+  BlockChildren,
+  ComponentContext,
+  ComponentMeta,
+  NullableElement,
+  Props,
+} from 'src/core/block';
+import { EventBus } from 'src/core/event-bus';
+import { ID_SIZE } from 'src/utils/constants';
 
 export class Block<T extends Props> {
   static EVENTS = {
@@ -147,7 +147,10 @@ export class Block<T extends Props> {
   }
 
   private _compileTemplate(template: string, context: T): DocumentFragment {
-    const contextAndStubs: ComponentContext = { ...context, __refs: this._meta.refs };
+    const contextAndStubs: ComponentContext = {
+      ...context,
+      __refs: this._meta.refs,
+    };
 
     this.children.forEach((child) => {
       contextAndStubs[child.id] = `<div data-id="${child.id}"></div>`;

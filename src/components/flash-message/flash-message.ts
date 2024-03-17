@@ -1,7 +1,7 @@
+import type { FlashMessageProps } from 'src/components/flash-message';
 import { Block } from 'src/core/block';
 
 import template from './flash-message.hbs?raw';
-import { type FlashMessageProps } from './flash-message.type.ts';
 
 export class FlashMessageComponent extends Block<FlashMessageProps> {
   constructor(props: FlashMessageProps) {

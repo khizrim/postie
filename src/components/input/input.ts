@@ -1,7 +1,7 @@
 import { Block } from 'src/core/block';
 
 import template from './input.hbs?raw';
-import { type InputProps } from './input.type.ts';
+import type { InputProps } from './input.type';
 
 export class InputComponent extends Block<InputProps> {
   constructor(props: InputProps) {

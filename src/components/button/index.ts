@@ -1,3 +1,3 @@
-export * from './button.type.ts';
+export * from './button.type';
 
-export * from './button.ts';
+export * from './button';

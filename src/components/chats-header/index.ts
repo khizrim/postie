@@ -1,1 +1,1 @@
-export * from './chats-header.ts';
+export * from './chats-header';

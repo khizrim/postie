@@ -1,7 +1,7 @@
 import { Block } from 'src/core/block';
+import type { ChatsPageProps } from 'src/pages/chats';
 
 import template from './chats.hbs?raw';
-import { type ChatsPageProps } from './chats.types.ts';
 
 export class Chats extends Block<ChatsPageProps> {
   constructor(props: ChatsPageProps) {

@@ -1,6 +1,6 @@
-import type { AccountPageProps } from './account.types.ts';
-import back from '../../assets/icons/back.svg';
-import userAvatar from '../../assets/images/user-avatar.png';
+import back from 'src/assets/icons/back.svg';
+import userAvatar from 'src/assets/images/user-avatar.png';
+import type { AccountPageProps } from 'src/pages/account';
 
 const currentUser = {
   email: 'khizrim@khizrim.ru',

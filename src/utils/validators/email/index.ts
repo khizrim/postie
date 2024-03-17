@@ -1,1 +1,1 @@
-export * as email from './email.ts';
+export * as email from './email';
