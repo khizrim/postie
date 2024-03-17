@@ -1,3 +1,2 @@
-export * from './avatar.type.ts';
-
-export * from './avatar.ts';
+export * from './avatar.type';
+export * from './avatar';

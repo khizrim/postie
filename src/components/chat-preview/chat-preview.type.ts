@@ -1,5 +1,5 @@
-import { type Props } from '../../core';
-import { type PersonaProps } from '../persona';
+import type { PersonaProps } from 'src/components/persona';
+import type { Props } from 'src/core/block';
 
 export interface ChatPreviewProps extends Props {
   id: number;

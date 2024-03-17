@@ -1,13 +1,13 @@
-import Handlebars, { type Template } from 'handlebars';
+import type { Template } from 'handlebars';
+import Handlebars from 'handlebars';
 
+import { registerComponent, renderDOM } from 'src/core';
+import type { ChatID, PagesProps, PageTypes } from 'src/pages';
+
+import type { ChatPreviewProps } from './components';
 import * as Components from './components';
-import { type ChatPreviewProps } from './components';
-import { renderDOM } from './core';
-import { registerComponent } from './core/register-components/register-components.ts';
 import * as Layouts from './layouts';
 import * as Pages from './pages';
-import { type ChatID } from './pages';
-import { type PagesProps, type PageTypes } from './pages/index.type.ts';
 
 import './index.css';
 
@@ -42,11 +42,23 @@ const pages: PagesProps = {
   },
 };
 
-Object.entries({ ...Components, ...Layouts }).forEach(([name, component]) => {
+Handlebars.registerPartial('Form', Components.Form);
+Handlebars.registerPartial('PanelWrapper', Components.PanelWrapper);
+
+Object.entries({ ...Layouts }).forEach(([name, component]) => {
   Handlebars.registerPartial(name, component as Template);
 });
 
-Handlebars.registerHelper('getValueByKey', function <T, K extends keyof T>(object: T, key: K): T[K] {
+Object.entries({ ...Components }).forEach(([name, component]) => {
+  if (name !== 'form' && name !== 'panel-wrapper' && typeof component === 'function') {
+    registerComponent(name, component);
+  }
+});
+
+Handlebars.registerHelper('getValueByKey', function <
+  T,
+  K extends keyof T,
+>(object: T, key: K): T[K] {
   return object[key];
 });
 
@@ -54,34 +66,10 @@ Handlebars.registerHelper('isCurrent', function (chat: ChatPreviewProps, selecte
   return chat.id === selectedChat;
 });
 
-export const registerCompileHelper = (): void => {
-  Handlebars.registerHelper('compile', function (template: string, context: unknown) {
-    const compiledTemplate = Handlebars.compile(template);
-    return new Handlebars.SafeString(compiledTemplate(context));
-  });
-};
-
-registerCompileHelper();
-
-registerComponent('AvatarComponent', Components.AvatarComponent);
-registerComponent('ButtonComponent', Components.ButtonComponent);
-registerComponent('ChatHeaderComponent', Components.ChatHeaderComponent);
-registerComponent('ChatInputComponent', Components.ChatInputComponent);
-registerComponent('ChatPreviewComponent', Components.ChatPreviewComponent);
-registerComponent('ChatsHeaderComponent', Components.ChatsHeaderComponent);
-registerComponent('FlashMessageComponent', Components.FlashMessageComponent);
-registerComponent('FormComponent', Components.FormComponent);
-registerComponent('InputComponent', Components.InputComponent);
-registerComponent('LinkComponent', Components.LinkComponent);
-registerComponent('MessageComponent', Components.MessageComponent);
-registerComponent('PanelWrapperComponent', Components.PanelWrapperComponent);
-registerComponent('PersonaComponent', Components.PersonaComponent);
-
 const navigate = (pageName: PageTypes): void => {
   const { pageConstructor: Page, context } = pages[pageName];
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-expect-error
-  const renderedPage = new Page(context);
+
+  const renderedPage = new Page(context as never);
 
   renderDOM(renderedPage);
 

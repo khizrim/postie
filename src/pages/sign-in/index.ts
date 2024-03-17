@@ -1,3 +1,3 @@
-export * from './sign-in.context.ts';
+export * from './sign-in.context';
 
-export { SignIn } from './sign-in.ts';
+export { SignIn } from './sign-in';

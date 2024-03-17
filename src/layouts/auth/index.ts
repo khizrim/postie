@@ -1,3 +1,3 @@
-export * from './auth.type.ts';
+export * from './auth.type';
 
 export { default as AuthLayout } from './auth.hbs?raw';

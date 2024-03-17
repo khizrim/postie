@@ -1,7 +1,7 @@
 import { Block } from 'src/core/block';
 
 import template from './chat-preview.hbs?raw';
-import { type ChatPreviewProps } from './chat-preview.type.ts';
+import type { ChatPreviewProps } from './chat-preview.type';
 
 export class ChatPreviewComponent extends Block<ChatPreviewProps> {
   constructor(props: ChatPreviewProps) {

@@ -1,1 +1,1 @@
-export * as password from './password.ts';
+export * as password from './password';

@@ -1,1 +1,1 @@
-export * as login from './login.ts';
+export * as login from './login';

@@ -1,4 +1,4 @@
-export * from './account.context.ts';
-export * from './account.types.ts';
+export * from './account.context';
+export * from './account.types';
 
-export { Account } from './account.ts';
+export { Account } from './account';

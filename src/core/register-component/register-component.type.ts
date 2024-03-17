@@ -1,4 +1,4 @@
-import { type BlockInstance, type ComponentData, type Props } from '../block';
+import type { BlockInstance, ComponentData, Props } from 'src/core/block';
 
 export type ComponentConstructor<T extends Props> = new (props: T) => BlockInstance;
 type StringFunction = (p: unknown) => string;

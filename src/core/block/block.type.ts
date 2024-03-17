@@ -1,4 +1,4 @@
-import type { Block } from './block.ts';
+import type { Block } from './block';
 
 export type NullableElement = HTMLElement | null;
 export type EventHandler = (event: Event) => void;

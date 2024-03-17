@@ -1,3 +1,3 @@
-export * from './chat-preview.type.ts';
+export * from './chat-preview.type';
 
-export * from './chat-preview.ts';
+export * from './chat-preview';

@@ -1,5 +1,5 @@
-import { ROOT_QUERY_SELECTOR } from '../../utils/constants';
-import type { Block, Props } from '../block';
+import type { Block, Props } from 'src/core/block';
+import { ROOT_QUERY_SELECTOR } from 'src/utils/constants';
 
 export const renderDOM = (block: Block<Props>): void => {
   const root = document.querySelector(ROOT_QUERY_SELECTOR);

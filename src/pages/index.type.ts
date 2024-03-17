@@ -1,11 +1,19 @@
-import { type AccountPageProps } from './account';
-import { type ChatsPageProps } from './chats';
-import { type ErrorPageProps } from './error-page';
-import { type SplashScreenProps } from './splash-screen';
-import { type Block, type Props } from '../core';
-import type { AuthProps } from '../layouts';
+import type { ComponentConstructor } from 'src/core/register-component';
+import type { AuthProps } from 'src/layouts/auth';
 
-export type PageTypes = 'chats' | 'account' | 'not-found' | 'server-error' | 'splash-screen' | 'sign-in' | 'sign-up';
+import type { AccountPageProps } from './account';
+import type { ChatsPageProps } from './chats';
+import type { ErrorPageProps } from './error-page';
+import type { SplashScreenProps } from './splash-screen';
+
+export type PageTypes =
+  | 'chats'
+  | 'account'
+  | 'not-found'
+  | 'server-error'
+  | 'splash-screen'
+  | 'sign-in'
+  | 'sign-up';
 
 export interface PagePropsMap {
   chats: ChatsPageProps;
@@ -17,11 +25,9 @@ export interface PagePropsMap {
   'sign-up': AuthProps;
 }
 
-export type PageConstructor<T extends Props> = new (args: T) => Block<T>;
-
 export type PagesProps = {
   [K in PageTypes]: {
-    pageConstructor: PageConstructor<PagePropsMap[K]>;
+    pageConstructor: ComponentConstructor<PagePropsMap[K]>;
     context: PagePropsMap[K];
   };
 };

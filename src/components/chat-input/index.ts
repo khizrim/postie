@@ -1,1 +1,1 @@
-export * from './chat-input.ts';
+export * from './chat-input';
