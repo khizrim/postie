@@ -8,6 +8,16 @@ export class SignUp extends Block<AuthProps> {
     super('div', props);
   }
 
+  init(): void {
+    const { onSubmit } = this._meta.props;
+
+    if (onSubmit) {
+      this._meta.events = {
+        submit: onSubmit?.bind(this),
+      };
+    }
+  }
+
   render(): string {
     return template;
   }

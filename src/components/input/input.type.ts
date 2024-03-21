@@ -5,4 +5,5 @@ export type InputProps = {
   style?: 'clear' | 'normal';
   value?: string;
   disabled?: boolean;
-} & Pick<HTMLInputElement, 'name' | 'placeholder' | 'type'>;
+  onChange?: (event: Event) => void;
+} & Pick<HTMLInputElement, 'name' | 'placeholder' | 'type' | 'required'>;
