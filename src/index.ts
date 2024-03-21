@@ -91,5 +91,5 @@ const navigate = (pageName: PageTypes): void => {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-  navigate('splash-screen');
+  navigate('sign-in');
 });

@@ -1,6 +1,6 @@
-{{#> AuthLayout title=title description=description logo=logo }}
+{{#> AuthLayout title=title description=description logo=logo onSubmit=onSubmit }}
   {{#each inputs as |input|}}
-    {{{ InputComponent input=input}}}
+    {{{ InputComponent name=input.name size=input.size placeholder=input.placeholder type=input.type autocomplete=input.autocomplete onChange=input.onChange required=input.required }}}
   {{/each}}
   {{{ ButtonComponent size=button.size style=button.style type=button.type label=button.label width=button.width}}}
   <p>Signed up already? {{{LinkComponent link=link }}}</p>

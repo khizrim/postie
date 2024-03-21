@@ -10,6 +10,7 @@ export const SignUpContext: AuthProps = {
       placeholder: 'Email',
       type: 'email',
       autocomplete: 'email',
+      required: true,
     },
     {
       name: 'login',
@@ -17,6 +18,7 @@ export const SignUpContext: AuthProps = {
       placeholder: 'Login',
       type: 'text',
       autocomplete: 'username',
+      required: true,
     },
     {
       name: 'first_name',
@@ -24,6 +26,7 @@ export const SignUpContext: AuthProps = {
       placeholder: 'First Name',
       type: 'text',
       autocomplete: 'given-name',
+      required: true,
     },
     {
       name: 'second_name',
@@ -31,6 +34,7 @@ export const SignUpContext: AuthProps = {
       placeholder: 'Second Name',
       type: 'text',
       autocomplete: 'family-name',
+      required: false,
     },
     {
       name: 'phone',
@@ -38,6 +42,7 @@ export const SignUpContext: AuthProps = {
       placeholder: 'Phone Number',
       type: 'tel',
       autocomplete: 'tel',
+      required: true,
     },
     {
       name: 'password',
@@ -45,6 +50,7 @@ export const SignUpContext: AuthProps = {
       placeholder: 'Password',
       type: 'password',
       autocomplete: 'new-password',
+      required: true,
     },
     {
       name: 'password',
@@ -52,6 +58,7 @@ export const SignUpContext: AuthProps = {
       placeholder: 'Confirm Password',
       type: 'password',
       autocomplete: 'new-password',
+      required: true,
     },
   ],
   button: {

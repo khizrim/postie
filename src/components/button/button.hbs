@@ -2,7 +2,8 @@
         data-size="{{#if size}}{{ size }}{{else}}l{{/if}}"
         data-style="{{#if style}}{{ style }}{{else}}flat{{/if}}"
         data-width="{{ width }}"
-        type="{{ type }}">
+        type="{{ type }}"
+        {{#if disabled }}disabled{{/if}}>
   {{#if isIconOnly}}
     {{#if icon}}
       <img class="button__icon"

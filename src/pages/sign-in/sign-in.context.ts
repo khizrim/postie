@@ -10,6 +10,7 @@ export const SignInContext: AuthProps = {
       placeholder: 'Login or Email',
       type: 'email',
       autocomplete: 'username',
+      required: true,
     },
     {
       name: 'password',
@@ -17,6 +18,7 @@ export const SignInContext: AuthProps = {
       placeholder: 'Password',
       type: 'password',
       autocomplete: 'current-password',
+      required: true,
     },
   ],
   button: {
