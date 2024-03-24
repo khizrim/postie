@@ -7,4 +7,5 @@ export interface ChatPreviewProps extends Props {
   lastMessage: string;
   time?: string;
   unread?: number;
+  onClick?: () => void;
 }

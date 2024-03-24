@@ -3,7 +3,7 @@
     {{{ ChatsHeaderComponent topPanel=topPanel newChatButton=newChatButton}}}
     <div class="chats__list">
       {{#each chatPreviews as |chat|}}
-        {{{ ChatPreviewComponent chat=chat isSelected=(isCurrent chat ../selectedChat) }}}
+        {{{ ChatPreviewComponent id=chat.id user=chat.user lastMessage=chat.lastMessage time=chat.time unread=chat.unread onClick=chat.onClick isSelected=(isCurrent chat ../selectedChat) }}}
       {{/each}}
       <div class="chats__button">
         {{{ ButtonComponent icon=newChatButton.icon size=newChatButton.size type=newChatButton.type width=newChatButton.width label=newChatButton.label}}}
@@ -11,8 +11,8 @@
     </div>
   </section>
   <section class="chat">
-    {{{ ChatHeaderComponent currentChat=(getValueByKey chatPreviews selectedChat) button=chatSettingsButton }}}
     {{#if selectedChat}}
+      {{{ ChatHeaderComponent currentChat=(getValueByKey chatPreviews selectedChat) button=chatSettingsButton }}}
       <div class="chat__content">
         {{#each (getValueByKey messages selectedChat) as |message|}}
           {{{ MessageComponent message=message}}}
@@ -22,7 +22,7 @@
         {{{ ChatInputComponent chatInput=chatInput attachButton=attachButton sendButton=sendButton}}}
       </div>
     {{else}}
-      {{> FlashMessage message=noChat }}
+      {{{ FlashMessageComponent message=noChat }}}
     {{/if}}
   </section>
   {{/ChatsLayout}}

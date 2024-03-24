@@ -16,6 +16,7 @@ export class Block<T extends Props> {
     INIT: 'init',
     FLOW_CDM: 'flow:component-did-mount',
     FLOW_CDU: 'flow:component-did-update',
+    FLOW_CWU: 'flow:component-will-unmount',
     FLOW_RENDER: 'flow:render',
   } as const;
 
@@ -84,10 +85,13 @@ export class Block<T extends Props> {
     }
   }
 
+  public componentWillUnmount(): void {}
+
   private _registerEvents(eventBus: EventBus): void {
     eventBus.on(Block.EVENTS.INIT, this._init.bind(this));
     eventBus.on(Block.EVENTS.FLOW_CDM, this._componentDidMount.bind(this));
     eventBus.on(Block.EVENTS.FLOW_CDU, this._componentDidUpdate.bind(this));
+    eventBus.on(Block.EVENTS.FLOW_CWU, this._componentWillUnmount.bind(this));
     eventBus.on(Block.EVENTS.FLOW_RENDER, this._render.bind(this));
   }
 
@@ -110,11 +114,27 @@ export class Block<T extends Props> {
     }
   }
 
+  private _componentWillUnmount(): void {
+    this.componentWillUnmount();
+    this._removeEvents();
+    this.children.forEach((child) => {
+      child.componentWillUnmount();
+    });
+  }
+
   private _addEvents(): void {
     const { events = {} } = this._meta;
 
     Object.keys(events).forEach((eventName) => {
       this._element?.addEventListener(eventName, events[eventName]);
+    });
+  }
+
+  private _removeEvents(): void {
+    const { events = {} } = this._meta;
+
+    Object.keys(events).forEach((eventName) => {
+      this._element?.removeEventListener(eventName, events[eventName]);
     });
   }
 

@@ -5,15 +5,20 @@
 
   <input class="input__element"
          data-style="{{#if style}}{{ style }}{{else}}normal{{/if}}"
+         data-is-invalid="{{#if errorMessage}}true{{else}}false{{/if}}"
          data-is-disabled="{{ disabled }}"
          data-size="{{#if size}}{{ size }}{{else}}s{{/if}}"
          name="{{ name }}"
          placeholder="{{ placeholder }}"
-         oninvalid="this.setCustomValidity({{ errorMessage }})"
-         oninput="this.setCustomValidity('')"
+         aria-invalid="{{#if errorMessage}}true{{else}}false{{/if}}"
          type="{{ type }}"
          value="{{#if value}}{{ value }}{{else}}{{/if}}"
          autocomplete="{{#if autocomplete}}{{ autocomplete }}{{else}}off{{/if}}"
-         {{#if required }}required{{/if}}
-         {{#if disabled }}disabled{{/if}} />
+    {{#if required }}required{{/if}}
+    {{#if disabled }}disabled{{/if}} />
+
+  {{#if errorMessage}}
+    <span class="input__error">{{ errorMessage }}</span>
+  {{/if}}
+
 </label>

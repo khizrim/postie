@@ -1,3 +1,5 @@
+export * from './index.type';
+
 export * from './email';
 export * from './login';
 export * from './message';
