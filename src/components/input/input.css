@@ -1,4 +1,6 @@
 .input {
+  position: relative;
+
   display: flex;
   gap: var(--spacing-static-xs);
   align-items: center;
@@ -36,6 +38,28 @@
 
 .input__element[data-style='clear'] {
   padding-left: var(--spacing-static-xs);
+}
+
+.input:has(.input__element[data-is-invalid='true']) {
+  border-color: var(--color-text-warning);
+}
+
+.input__error {
+  position: absolute;
+  bottom: 0;
+  left: var(--spacing-static-xs);
+  transform: translateY(50%);
+
+  display: flex;
+  gap: var(--spacing-static-xs);
+  align-items: center;
+
+  padding: 0 var(--spacing-static-s);
+
+  font: var(--caption-text);
+  color: var(--color-text-warning);
+
+  background: var(--color-base-background);
 }
 
 .input:has(.input__element[data-style='clear']) {

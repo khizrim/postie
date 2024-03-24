@@ -1,13 +1,22 @@
-export const emailValidator = (email: string): string => {
+import type { ValidationResult } from 'src/utils/validators';
+
+export const emailValidator = (email: string): ValidationResult => {
   const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
+  const result: ValidationResult = {
+    isValid: true,
+    errorMessage: '',
+  };
+
   if (email.length === 0) {
-    return 'Please enter your email address';
+    result.isValid = false;
+    result.errorMessage = 'Email is required';
   }
 
   if (!emailRegex.test(email)) {
-    return 'Email is not valid';
+    result.isValid = false;
+    result.errorMessage = 'Email is not valid';
   }
 
-  return '';
+  return result;
 };

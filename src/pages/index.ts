@@ -6,3 +6,4 @@ export * from './sign-up';
 export * from './splash-screen';
 
 export * from './index.type';
+export { pages } from 'src/pages/index.constants';

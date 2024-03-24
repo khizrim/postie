@@ -10,9 +10,30 @@
     {{#> Form class='account__form'}}
       {{#each inputs as |input|}}
         {{#if isEditing}}
-          {{{ InputComponent input=input }}}
+          {{{ InputComponent name=input.name
+                             style=input.style
+                             label=input.label
+                             size=input.size
+                             placeholder=input.placeholder
+                             value=input.value
+                             type=input.type
+                             autocomplete=input.autocomplete
+                             errorMessage=input.errorMessage
+                             onChange=input.onChange
+                             required=input.required }}}
         {{else}}
-          {{{ InputComponent input=input disabled=true }}}
+          {{{ InputComponent name=input.name
+                             style=input.style
+                             label=input.label
+                             size=input.size
+                             placeholder=input.placeholder
+                             value=input.value
+                             type=input.type
+                             autocomplete=input.autocomplete
+                             errorMessage=input.errorMessage
+                             onChange=input.onChange
+                             required=input.required
+                             disabled=true }}}
         {{/if}}
       {{/each}}
     {{/Form}}

@@ -1,3 +1,4 @@
+import { navigate } from 'src/core/navigate';
 import type { AuthProps } from 'src/layouts/auth';
 
 export const SignInContext: AuthProps = {
@@ -7,8 +8,8 @@ export const SignInContext: AuthProps = {
     {
       name: 'login',
       size: 's',
-      placeholder: 'Login or Email',
-      type: 'email',
+      placeholder: 'Login',
+      type: 'text',
       autocomplete: 'username',
       required: true,
     },
@@ -38,5 +39,9 @@ export const SignInContext: AuthProps = {
     const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
     console.log(data);
+
+    setTimeout(() => {
+      navigate('chats');
+    }, 300);
   },
 };

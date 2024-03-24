@@ -1,8 +1,8 @@
 {{#> PanelWrapper border='bottom'}}
-  {{{ InputComponent input=topPanel.search }}}
+  {{{ InputComponent name=topPanel.search.name size=topPanel.search.size placeholder=topPanel.search.placeholder type=topPanel.search.type required=topPanel.search.required }}}
   <a href="/account"
      class="chats-header__user-account link"
      aria-label="{{ topPanel.user.name }}">
     {{{ PersonaComponent user=topPanel.user isImageOnly=true }}}
   </a>
-  {{/PanelWrapper}}
+{{/PanelWrapper}}

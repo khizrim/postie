@@ -1,3 +1,4 @@
+import { navigate } from 'src/core/navigate';
 import type { AuthProps } from 'src/layouts/auth';
 
 export const SignUpContext: AuthProps = {
@@ -78,5 +79,9 @@ export const SignUpContext: AuthProps = {
     const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
     console.log(data);
+
+    setTimeout(() => {
+      navigate('chats');
+    }, 300);
   },
 };
