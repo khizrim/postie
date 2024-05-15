@@ -3,7 +3,7 @@
     {{{ ChatsHeaderComponent topPanel=topPanel newChatButton=newChatButton}}}
     <div class="chats__list">
       {{#each chatPreviews as |chat|}}
-        {{{ ChatPreviewComponent id=chat.id user=chat.user lastMessage=chat.lastMessage time=chat.time unread=chat.unread onClick=chat.onClick isSelected=(isCurrent chat ../selectedChat) }}}
+        {{{ ChatPreviewComponent id=chat.id user=chat.user lastMessage=chat.lastMessage time=chat.time unread=chat.unread onClick=chat.onClick isSelected=(isCurrentChat chat ../selectedChat) }}}
       {{/each}}
       <div class="chats__button">
         {{{ ButtonComponent icon=newChatButton.icon size=newChatButton.size type=newChatButton.type width=newChatButton.width label=newChatButton.label}}}
@@ -25,4 +25,4 @@
       {{{ FlashMessageComponent message=noChat }}}
     {{/if}}
   </section>
-  {{/ChatsLayout}}
+{{/ChatsLayout}}
