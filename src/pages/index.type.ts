@@ -25,9 +25,11 @@ export interface PagePropsMap {
   'sign-up': AuthProps;
 }
 
+export interface Page<K extends keyof PagePropsMap> {
+  pageConstructor: ComponentConstructor<PagePropsMap[K]>;
+  context: PagePropsMap[K];
+}
+
 export type PagesProps = {
-  [K in PageTypes]: {
-    pageConstructor: ComponentConstructor<PagePropsMap[K]>;
-    context: PagePropsMap[K];
-  };
+  [K in PageTypes]: Page<K> & Record<string, unknown>;
 };
