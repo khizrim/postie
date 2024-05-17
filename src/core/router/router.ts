@@ -1,5 +1,4 @@
-import type { ComponentConstructor, Props} from 'src/core';
-import { Route } from 'src/core';
+import { type ComponentConstructor, Route } from 'src/core';
 import type { PagePropsMap } from 'src/pages';
 
 export class Router {
@@ -29,18 +28,16 @@ export class Router {
 
   public use(
     pathname: string,
-    page: {
-      pageConstructor: ComponentConstructor<Props>;
-      context: PagePropsMap;
-    },
+    pageConstructor: ComponentConstructor<PagePropsMap[keyof PagePropsMap]>,
+    pageContext: PagePropsMap[keyof PagePropsMap],
   ): this {
-    const route = new Route(pathname, page.pageConstructor, {
-      ...page.context,
+    const route = new Route(pathname, pageConstructor, {
+      ...pageContext,
       rootQuery: this._rootQuery,
     });
 
     this._routes.push(route);
-
+    
     return this;
   }
 

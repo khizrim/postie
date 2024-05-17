@@ -1,6 +1,7 @@
 import back from 'src/assets/icons/back.svg';
 import userAvatar from 'src/assets/images/user-avatar.png';
 import type { AccountPageProps } from 'src/pages/account';
+import { router } from 'src/core';
 
 const currentUser = {
   email: 'khizrim@khizrim.ru',
@@ -97,6 +98,9 @@ export const AccountContext: AccountPageProps = {
     type: 'button',
     width: 'content',
     label: 'Back to Chats',
+    onClick: () => {
+      router.go('/chats');
+    },
   },
   isEditing: false,
 };

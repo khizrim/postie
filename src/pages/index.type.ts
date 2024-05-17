@@ -31,5 +31,5 @@ export interface Page<K extends keyof PagePropsMap> {
 }
 
 export type PagesProps = {
-  [K in PageTypes]: Page<K> & Record<string, unknown>;
+  [K in PageTypes]: Page<K>;
 };
