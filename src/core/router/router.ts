@@ -37,7 +37,7 @@ export class Router {
     });
 
     this._routes.push(route);
-    
+
     return this;
   }
 

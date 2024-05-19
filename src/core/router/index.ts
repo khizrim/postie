@@ -7,7 +7,7 @@ import type {
   SplashScreenProps,
 } from 'src/pages';
 import { pages } from 'src/pages';
-import { ROOT_QUERY_SELECTOR } from 'src/utils/constants.ts';
+import { ROOT_QUERY_SELECTOR } from 'src/utils/constants';
 
 import { Router } from './router';
 
@@ -18,7 +18,7 @@ type PageConstructor = ComponentConstructor<
 >;
 
 router
-  .use('/sign-in', pages['sign-in'].pageConstructor as PageConstructor, pages['sign-in'].context)
+  .use('/', pages['sign-in'].pageConstructor as PageConstructor, pages['sign-in'].context)
   .use('/sign-up', pages['sign-up'].pageConstructor as PageConstructor, pages['sign-up'].context)
   .use('/account', pages.account.pageConstructor as PageConstructor, pages.account.context)
   .use('/chats', pages.chats.pageConstructor as PageConstructor, pages.chats.context)

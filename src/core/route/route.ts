@@ -1,8 +1,8 @@
 import type { BlockInstance, ComponentConstructor, Props } from 'src/core';
 import { renderDOM } from 'src/core';
 import { registerCustomHelpers } from 'src/core/register-custom-helpers';
-import { getValueByKey } from 'src/helpers/get-value-by-key.ts';
-import { isCurrentChat } from 'src/helpers/is-current-chat.ts';
+import { getValueByKey } from 'src/helpers/get-value-by-key';
+import { isCurrentChat } from 'src/helpers/is-current-chat';
 import type { PagePropsMap } from 'src/pages';
 
 export class Route {

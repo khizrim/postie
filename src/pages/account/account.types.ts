@@ -10,6 +10,7 @@ export interface AccountPageProps extends Props {
   };
   inputs: InputProps[];
   actions: LinkProps[];
+  signOutButton: ButtonProps;
   backButton: ButtonProps;
   isEditing?: boolean;
 }

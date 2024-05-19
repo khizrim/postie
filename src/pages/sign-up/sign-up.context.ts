@@ -1,4 +1,6 @@
-import { navigate } from 'src/core/navigate';
+import type { UserSignUp } from 'src/api/auth/auth.type';
+import { authController } from 'src/controllers/auth.ts';
+import { router } from 'src/core';
 import type { AuthProps } from 'src/layouts/auth';
 
 export const SignUpContext: AuthProps = {
@@ -75,13 +77,17 @@ export const SignUpContext: AuthProps = {
   },
   onSubmit: (event: Event) => {
     event.preventDefault();
-    const form = event.target as HTMLFormElement;
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData.entries());
-    console.log(data);
 
-    setTimeout(() => {
-      navigate('chats');
-    }, 300);
+    const form = event.target as HTMLFormElement;
+    const data = Object.fromEntries(new FormData(form).entries()) as unknown as UserSignUp;
+
+    authController
+      .register(data)
+      .then(() => {
+        router.go('/chat');
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   },
 };
