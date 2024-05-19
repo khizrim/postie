@@ -1,7 +1,8 @@
+import { authApi } from 'src/api/auth';
 import back from 'src/assets/icons/back.svg';
 import userAvatar from 'src/assets/images/user-avatar.png';
-import type { AccountPageProps } from 'src/pages/account';
 import { router } from 'src/core';
+import type { AccountPageProps } from 'src/pages/account';
 
 const currentUser = {
   email: 'khizrim@khizrim.ru',
@@ -86,12 +87,18 @@ export const AccountContext: AccountPageProps = {
       text: 'Change Password',
       href: '#',
     },
-    {
-      text: 'Sign Out',
-      href: '#',
-      isWarning: true,
-    },
   ],
+  signOutButton: {
+    size: 'l',
+    style: 'action',
+    type: 'button',
+    width: 'content',
+    label: 'Sign out',
+    onClick: () => {
+      void authApi.logout();
+      router.go('/');
+    },
+  },
   backButton: {
     icon: back,
     size: 'xl',

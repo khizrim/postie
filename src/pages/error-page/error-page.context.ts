@@ -10,7 +10,7 @@ export const NotFoundPageContext: ErrorPageProps = {
     image: notFound,
     link: {
       text: 'Go back to chats',
-      href: '/splash-screen',
+      href: '/chats',
     },
   },
 };
@@ -22,7 +22,7 @@ export const ServerErrorPageContext: ErrorPageProps = {
     image: serverError,
     link: {
       text: 'Go back to chats',
-      href: '/splash-screen',
+      href: '/chats',
     },
   },
 };
