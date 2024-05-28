@@ -1,9 +1,9 @@
 import Handlebars from 'handlebars';
 
-import type { Props } from 'src/core/block';
+import type { HTMLElementProps } from 'src/core/block';
 import type { ComponentConstructor, HelperOptionsType } from 'src/core/register-component';
 
-export const registerComponent = <T extends Props>(
+export const registerComponent = <T extends HTMLElementProps>(
   name: string,
   Component: ComponentConstructor<T>,
 ): void => {
@@ -19,8 +19,8 @@ export const registerComponent = <T extends Props>(
 
       const { ref } = hash;
 
-      if (ref && component instanceof HTMLElement) {
-        (data.root._refs = data.root.__refs ?? {})[ref] = component;
+      if (ref) {
+        (data.root.__refs = data.root.__refs ?? {})[ref] = component;
       }
 
       (data.root.__children ??= []).push({

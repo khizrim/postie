@@ -1,54 +1,53 @@
 {{#> MainLayout}}
   <div class="account">
-    {{{ AvatarComponent avatar=avatar }}}
+    {{{ AvatarComponent isCurrentUser=true userAvatar=user.avatar}}}
 
     <div class="account__heading">
-      <h2 class="title">{{ user.name }}</h2>
+      <h2 class="title">{{ user.display_name }}</h2>
       <p class="description">{{ user.login }}</p>
     </div>
 
     {{#> Form class='account__form'}}
       {{#each inputs as |input|}}
-        {{#if isEditing}}
-          {{{ InputComponent name=input.name
-                             style=input.style
-                             label=input.label
-                             size=input.size
-                             placeholder=input.placeholder
-                             value=input.value
-                             type=input.type
-                             autocomplete=input.autocomplete
-                             errorMessage=input.errorMessage
-                             onChange=input.onChange
-                             required=input.required }}}
-        {{else}}
-          {{{ InputComponent name=input.name
-                             style=input.style
-                             label=input.label
-                             size=input.size
-                             placeholder=input.placeholder
-                             value=input.value
-                             type=input.type
-                             autocomplete=input.autocomplete
-                             errorMessage=input.errorMessage
-                             onChange=input.onChange
-                             required=input.required
-                             disabled=true }}}
-        {{/if}}
+        {{{ InputComponent
+          name=input.name
+          ref=input.ref
+          style=input.style
+          label=input.label
+          size=input.size
+          placeholder=input.placeholder
+          value=input.value
+          type=input.type
+          autocomplete=input.autocomplete
+          errorMessage=input.errorMessage
+          onChange=input.onChange
+          required=input.required
+          disabled=isLocked
+        }}}
       {{/each}}
     {{/Form}}
 
     <div class="account__actions">
       {{#each actions as |action|}}
-        {{{ LinkComponent link=action }}}
+        {{{ LinkComponent
+          ref=action.ref
+          text=action.text
+          href=action.href
+          rel=action.rel
+          target=action.target
+          onClick=action.onClick
+          isWarning=action.isWarning }}}
       {{/each}}
     </div>
 
     <div class="account__back-button">
-      {{{ ButtonComponent icon=signOutButton.icon size=signOutButton.size type=signOutButton.type width=signOutButton.width
-                          label=signOutButton.label onClick=signOutButton.onClick }}}
-      {{{ ButtonComponent icon=backButton.icon size=backButton.size type=backButton.type width=backButton.width
-                          label=backButton.label onClick=backButton.onClick }}}
+      {{{ ButtonComponent
+        icon=backButton.icon
+        size=backButton.size
+        type=backButton.type
+        width=backButton.width
+        label=backButton.label
+        onClick=backButton.onClick }}}
     </div>
   </div>
 {{/MainLayout}}

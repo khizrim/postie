@@ -5,8 +5,9 @@ export type EventHandler = (event: Event) => void;
 export type EventMap = Record<string, EventHandler>;
 
 export type Props = Record<string, unknown> & { ref?: string };
-export type Refs = Record<string, NullableElement>;
-export type BlockInstance = Block<Props>;
+export type HTMLElementProps = Props & HTMLElement;
+export type BlockInstance = Block<Props, Refs>;
+export type Refs = Record<string, BlockInstance>;
 
 export type BlockChildren = BlockInstance[];
 
@@ -24,10 +25,10 @@ export interface ComponentData {
   root: ComponentContext;
 }
 
-export interface ComponentMeta<T> {
+export interface ComponentMeta<T, R> {
   tagName: string;
   props: T;
   events?: EventMap;
-  refs?: Refs;
+  refs?: R;
   children?: BlockChildren;
 }
