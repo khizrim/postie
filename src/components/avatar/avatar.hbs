@@ -1,9 +1,10 @@
 <div class='avatar'>
-  <img class='avatar__image' src='{{avatar.image}}' alt='User Avatar' />
-  {{#if avatar.isCurrentUser}}
+  <img class='avatar__image' src='{{userAvatar}}' alt='User Avatar' />
+  {{#if isCurrentUser}}
     <span class='avatar__overlay'>
-      <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16'
-           fill='currentColor'>
+      <svg
+        xmlns='http://www.w3.org/2000/svg' width='16' height='16'
+        fill='currentColor'>
         <path
           fill='currentColor'
           fill-rule='evenodd'

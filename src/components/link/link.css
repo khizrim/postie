@@ -9,6 +9,7 @@
 
 @media (hover: hover) {
   .link:hover {
+    cursor: pointer;
     color: var(--color-text-link-hover);
   }
 

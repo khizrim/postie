@@ -1,14 +1,25 @@
-declare module '*.hbs?raw' {
-  const content: string;
-  export default content;
-}
+import type { Store } from 'src/core/store';
+import type { AppState } from 'src/index.ts';
 
-declare module '*.png' {
-  const content: string;
-  export default content;
-}
+declare global {
+  interface Window {
+    store: Store<AppState>;
+  }
 
-declare module '*.svg' {
-  const content: string;
-  export default content;
+  type Nullable<T> = T | null;
+
+  declare module '*.hbs?raw' {
+    const content: string;
+    export default content;
+  }
+
+  declare module '*.png' {
+    const content: string;
+    export default content;
+  }
+
+  declare module '*.svg' {
+    const content: string;
+    export default content;
+  }
 }

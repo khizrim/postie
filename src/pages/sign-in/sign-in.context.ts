@@ -43,7 +43,10 @@ export const SignInContext: AuthProps = {
 
     authController
       .login(data)
-      .then(() => {
+      .then(async () => {
+        await authController.getUser().then((user) => {
+          window.store.set({ user });
+        });
         router.go('/chats');
       })
       .catch((error) => {

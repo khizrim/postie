@@ -1,3 +1,4 @@
+import type { Refs } from 'src/core/block';
 import { Block } from 'src/core/block';
 import { phoneInputMask } from 'src/helpers/phone-input-mask';
 import * as Validators from 'src/utils/validators';
@@ -5,7 +6,7 @@ import * as Validators from 'src/utils/validators';
 import template from './input.hbs?raw';
 import type { InputProps } from './input.type';
 
-export class InputComponent extends Block<InputProps> {
+export class InputComponent extends Block<InputProps, Refs> {
   constructor(props: InputProps) {
     super('input', props);
   }

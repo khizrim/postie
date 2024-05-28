@@ -9,6 +9,7 @@ export const SignUpContext: AuthProps = {
   inputs: [
     {
       name: 'email',
+      ref: 'email',
       size: 's',
       placeholder: 'Email',
       type: 'email',
@@ -17,6 +18,7 @@ export const SignUpContext: AuthProps = {
     },
     {
       name: 'login',
+      ref: 'login',
       size: 's',
       placeholder: 'Login',
       type: 'text',
@@ -25,6 +27,7 @@ export const SignUpContext: AuthProps = {
     },
     {
       name: 'first_name',
+      ref: 'first_name',
       size: 's',
       placeholder: 'First Name',
       type: 'text',
@@ -33,6 +36,7 @@ export const SignUpContext: AuthProps = {
     },
     {
       name: 'second_name',
+      ref: 'second_name',
       size: 's',
       placeholder: 'Second Name',
       type: 'text',
@@ -41,6 +45,7 @@ export const SignUpContext: AuthProps = {
     },
     {
       name: 'phone',
+      ref: 'phone',
       size: 's',
       placeholder: 'Phone Number',
       type: 'tel',
@@ -49,6 +54,7 @@ export const SignUpContext: AuthProps = {
     },
     {
       name: 'password',
+      ref: 'password',
       size: 's',
       placeholder: 'Password',
       type: 'password',
@@ -57,6 +63,7 @@ export const SignUpContext: AuthProps = {
     },
     {
       name: 'password',
+      ref: 'password_confirmation',
       size: 's',
       placeholder: 'Confirm Password',
       type: 'password',

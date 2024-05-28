@@ -19,6 +19,10 @@ class AuthController {
 
     return getResponseOrThrow<UserID>(res);
   }
+
+  async logout(): Promise<void> {
+    await authApi.logout();
+  }
 }
 
 export const authController = new AuthController();

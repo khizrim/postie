@@ -1,11 +1,11 @@
-import { authController } from 'src/controllers/auth.ts';
 import { router } from 'src/core';
+import { getUser } from 'src/services/auth';
 
 export const initApplication = async (): Promise<void> => {
   const location = window.location.pathname;
 
   try {
-    await authController.getUser();
+    await getUser();
 
     if (location === '/' || location === '/sign-up') {
       router.go('/chats');

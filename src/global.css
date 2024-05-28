@@ -37,14 +37,13 @@
   --caption-text: 400 normal 13px /18px var(--font-family);
 
   font: var(--body-text-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   color: var(--color-text-primary);
   text-rendering: optimizelegibility;
 
   color-scheme: light dark;
   background-color: var(--color-base-background);
-
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 
   font-synthesis: none;
 }

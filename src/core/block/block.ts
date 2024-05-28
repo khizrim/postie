@@ -3,15 +3,17 @@ import { nanoid } from 'nanoid';
 
 import type {
   BlockChildren,
+  BlockInstance,
   ComponentContext,
   ComponentMeta,
   NullableElement,
   Props,
+  Refs,
 } from 'src/core/block';
 import { EventBus } from 'src/core/event-bus';
 import { ID_SIZE } from 'src/utils/constants';
 
-export class Block<T extends Props> {
+export class Block<T extends Props, R extends Refs> {
   static EVENTS = {
     INIT: 'init',
     FLOW_CDM: 'flow:component-did-mount',
@@ -21,8 +23,9 @@ export class Block<T extends Props> {
   } as const;
 
   readonly id: string;
-  protected _meta: ComponentMeta<T>;
+  protected _meta: ComponentMeta<T, R>;
   protected _eventBus: () => EventBus;
+  protected readonly refs: R | undefined = undefined;
   private readonly children: BlockChildren = [];
 
   constructor(tagName: string = 'div', props: T) {
@@ -117,7 +120,7 @@ export class Block<T extends Props> {
   private _componentWillUnmount(): void {
     this.componentWillUnmount();
     this._removeEvents();
-    this.children.forEach((child) => {
+    this.children.forEach((child: BlockInstance) => {
       child.componentWillUnmount();
     });
   }
@@ -169,11 +172,11 @@ export class Block<T extends Props> {
   private _compileTemplate(template: string, context: T): DocumentFragment {
     const contextAndStubs: ComponentContext = {
       ...context,
-      __refs: this._meta.refs,
+      __refs: this.refs,
     };
 
-    this.children.forEach((child) => {
-      contextAndStubs[child.id] = `<div data-id="${child.id}"></div>`;
+    Object.entries(this.children).forEach(([key, child]) => {
+      contextAndStubs[key] = `<div data-id="${child.id}"></div>`;
     });
 
     const html = Handlebars.compile(template)(contextAndStubs);
@@ -186,7 +189,7 @@ export class Block<T extends Props> {
       embed(temp.content);
     });
 
-    this.children.forEach((child) => {
+    this.children.forEach((child: BlockInstance) => {
       const stub = temp.content.querySelector(`[data-id="${child.id}"]`);
 
       const childContent = child.getContent();

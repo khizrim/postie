@@ -1,5 +1,9 @@
-<a class="link"
-   data-is-warning="{{#if isWarning}}{{ isWarning }}{{else}}false{{/if}}"
-   href="{{ link.href }}">
-  {{ link.text }}
+<a
+  class="link"
+  data-is-warning="{{#if isWarning}}{{ isWarning }}{{else}}false{{/if}}"
+  {{#if ref}}ref="{{ ref }}" {{/if}}
+  {{#if href}}href="{{ href }}" {{/if}}
+  {{#if target}}target="{{ target }}" {{/if}}
+  {{#if rel}}rel="{{ rel }}"{{/if}}>
+  {{ text }}
 </a>
