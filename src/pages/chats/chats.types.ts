@@ -1,23 +1,17 @@
-import type {
-  ButtonProps,
-  ChatPreviewProps,
-  InputProps,
-  Messages,
-  PersonaProps,
-} from 'src/components';
+import type { ButtonProps, InputProps, PersonaProps } from 'src/components';
 
 import type { Props } from 'src/core/block';
 
 export type ChatID = number;
 
+export interface ChatMessagesToken {
+  token: string;
+}
+
 export interface ChatsPageProps extends Props {
-  topPanel: {
-    search: InputProps;
-    user: PersonaProps;
-  };
-  selectedChat: ChatID | null;
-  chatPreviews: Record<ChatID, ChatPreviewProps>;
-  messages: Record<ChatID, Messages>;
+  search: InputProps;
+  user: Nullable<PersonaProps>;
+  selectedChat: Nullable<ChatID>;
   noChat?: {
     title: string;
     description: string;
@@ -26,7 +20,8 @@ export interface ChatsPageProps extends Props {
   };
   newChatButton: ButtonProps;
   chatSettingsButton: ButtonProps;
-  users: Record<number, PersonaProps>;
+  addUserButton: ButtonProps;
+  deleteChatButton: ButtonProps;
   chatInput: InputProps;
   sendButton: ButtonProps;
   attachButton: ButtonProps;

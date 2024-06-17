@@ -40,4 +40,4 @@ class ChatApi {
   }
 }
 
-export const chatApi = new ChatApi('/chat');
+export const chatApi = new ChatApi('/chats');

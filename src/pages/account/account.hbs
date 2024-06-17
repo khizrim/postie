@@ -1,13 +1,30 @@
 {{#> MainLayout}}
   <div class="account">
-    {{{ AvatarComponent isCurrentUser=true userAvatar=user.avatar}}}
+    {{{ AvatarComponent ref="avatar" isCurrentUser=true userAvatar=user.avatar onAvatarUpload=onAvatarUpload }}}
+
+    {{#if user.isEmailVerified}}
+      <div class="account__email-verified">
+        <span class="icon icon--check"></span>
+        <p class="description">{{ t 'account.emailVerified' }}</p>
+      </div>
+    {{else}}
+      <div class="account__email-not-verified">
+        <span class="icon icon--warning"></span>
+        <p class="description">{{ 'account.emailNotVerified' }}</p>
+        {{{ LinkComponent
+          ref=verifyEmail.ref
+          text=verifyEmail.text
+          onClick=onVerifyEmail
+          isWarning=verifyEmail.isWarning }}}
+      </div>
+    {{/if}}
 
     <div class="account__heading">
       <h2 class="title">{{ user.display_name }}</h2>
       <p class="description">{{ user.login }}</p>
     </div>
 
-    {{#> Form class='account__form'}}
+    {{#> Form ref='form' class='account__form'}}
       {{#each inputs as |input|}}
         {{{ InputComponent
           name=input.name
@@ -16,28 +33,38 @@
           label=input.label
           size=input.size
           placeholder=input.placeholder
-          value=input.value
+          value=(getValueByKey ../user input.ref)
           type=input.type
           autocomplete=input.autocomplete
           errorMessage=input.errorMessage
           onChange=input.onChange
           required=input.required
-          disabled=isLocked
+          disabled=../isEditingBlocked
         }}}
       {{/each}}
     {{/Form}}
-
     <div class="account__actions">
-      {{#each actions as |action|}}
+      {{#unless isEditingBlocked }}
         {{{ LinkComponent
-          ref=action.ref
-          text=action.text
-          href=action.href
-          rel=action.rel
-          target=action.target
-          onClick=action.onClick
-          isWarning=action.isWarning }}}
-      {{/each}}
+          ref=save.ref
+          text=save.text
+          onClick=onSubmit
+          isWarning=save.isWarning }}}
+      {{else}}
+        {{{ LinkComponent
+          ref=edit.ref
+          text=edit.text
+          onClick=onEdit
+          isWarning=edit.isWarning }}}
+      {{/unless}}
+      {{{ LinkComponent
+        ref=changePassword.ref
+        text=changePassword.text
+        href='/change-password' }}}
+      {{{ LinkComponent
+        ref=signOut.ref
+        text=signOut.text
+        onClick=signOut.onClick }}}
     </div>
 
     <div class="account__back-button">

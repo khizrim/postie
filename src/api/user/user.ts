@@ -1,4 +1,4 @@
-import type { UpdatePassword, UserAvatar, UserLogin, UserUpdate } from 'src/api/user/user.type';
+import type { UpdateAvatar, UpdatePassword, UserLogin, UserUpdate } from 'src/api/user/user.type';
 import { API_URL } from 'src/utils/constants';
 import { HttpTransport } from 'src/utils/http-transport';
 
@@ -15,7 +15,7 @@ class UserApi {
     return await userTransport.put(`${this.path}/profile`, data);
   }
 
-  async updateAvatar(data: UserAvatar): Promise<XMLHttpRequest> {
+  async updateAvatar(data: UpdateAvatar): Promise<XMLHttpRequest> {
     return await userTransport.put(`${this.path}/profile/avatar`, data);
   }
 

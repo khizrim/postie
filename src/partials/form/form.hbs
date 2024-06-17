@@ -1,3 +1,4 @@
-<form class="{{#if class}}{{class}}{{else}}form{{/if}}">
+<form {{#if ref}}ref={{ref}}{{/if}}
+  class="{{#if class}}{{class}}{{else}}form{{/if}}">
   {{> @partial-block }}
 </form>

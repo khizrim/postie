@@ -1,22 +1,19 @@
 import back from 'src/assets/icons/back.svg';
-import userAvatar from 'src/assets/images/user-avatar.png';
+import { authController } from 'src/controllers/auth.ts';
 import { router } from 'src/core';
 import type { AccountPageProps } from 'src/pages/account';
-import { logout } from 'src/services';
-
-const currentUser = {
-  id: 1,
-  email: 'khizrim@khizrim.ru',
-  login: 'khizrim',
-  first_name: 'Khizri',
-  second_name: 'Makhmudov',
-  display_name: 'Khizri M',
-  phone: '+7 928 505 55 36',
-  avatar: userAvatar,
-};
 
 export const AccountContext: AccountPageProps = {
-  user: currentUser,
+  user: {
+    id: 0,
+    email: '',
+    login: '',
+    first_name: '',
+    second_name: '',
+    display_name: '',
+    phone: '',
+    avatar: '',
+  },
   inputs: [
     {
       name: 'email',
@@ -24,7 +21,6 @@ export const AccountContext: AccountPageProps = {
       style: 'clear',
       label: 'Email',
       placeholder: 'johndoe@domain.com',
-      value: currentUser.email,
       type: 'email',
       autocomplete: 'email',
     },
@@ -34,7 +30,6 @@ export const AccountContext: AccountPageProps = {
       style: 'clear',
       label: 'Login',
       placeholder: 'johndoe',
-      value: currentUser.login,
       type: 'username',
       autocomplete: 'username',
     },
@@ -44,7 +39,6 @@ export const AccountContext: AccountPageProps = {
       style: 'clear',
       label: 'First Name',
       placeholder: 'John',
-      value: currentUser.first_name,
       type: 'text',
       autocomplete: 'given-name',
     },
@@ -54,7 +48,6 @@ export const AccountContext: AccountPageProps = {
       style: 'clear',
       label: 'Second Name',
       placeholder: 'Doe',
-      value: currentUser.second_name,
       type: 'text',
       autocomplete: 'family-name',
     },
@@ -64,7 +57,6 @@ export const AccountContext: AccountPageProps = {
       style: 'clear',
       label: 'Name in Chat',
       placeholder: 'John D',
-      value: currentUser.display_name,
       type: 'text',
       autocomplete: 'nickname',
     },
@@ -74,32 +66,38 @@ export const AccountContext: AccountPageProps = {
       style: 'clear',
       label: 'Tel',
       placeholder: '+7 999 999 99 99',
-      value: currentUser.phone,
       type: 'tel',
       autocomplete: 'tel',
     },
   ],
-  actions: [
-    {
-      ref: 'edit',
-      text: 'Edit',
-      isWarning: true,
-    },
-    {
-      text: 'Change Password',
-      href: '/change-password',
-    },
-    {
-      text: 'Sign out',
-      onClick: (event) => {
-        event.preventDefault();
-
-        logout().catch((error) => {
+  edit: {
+    ref: 'edit',
+    text: 'Edit',
+    onClick: undefined,
+  },
+  save: {
+    ref: 'save',
+    text: 'Save',
+    isWarning: true,
+    onClick: undefined,
+  },
+  changePassword: {
+    text: 'Change Password',
+    href: '/change-password',
+  },
+  signOut: {
+    text: 'Sign out',
+    onClick: () => {
+      authController
+        .logout()
+        .then(() => {
+          router.go('/sign-in');
+        })
+        .catch((error) => {
           console.error(error);
         });
-      },
     },
-  ],
+  },
   backButton: {
     icon: back,
     size: 'xl',
@@ -110,5 +108,5 @@ export const AccountContext: AccountPageProps = {
       router.go('/chats');
     },
   },
-  isLocked: true,
+  isEditingBlocked: true,
 };

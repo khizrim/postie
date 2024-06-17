@@ -5,7 +5,7 @@ import template from './chat-header.hbs?raw';
 
 export class ChatHeaderComponent extends Block<Props, Refs> {
   constructor(props: never) {
-    super('div', props);
+    super(props, 'div');
   }
 
   render(): string {

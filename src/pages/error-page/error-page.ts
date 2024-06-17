@@ -6,7 +6,7 @@ import type { ErrorPageProps } from './error-page.type';
 
 export class ErrorPage extends Block<ErrorPageProps, Refs> {
   constructor(props: ErrorPageProps) {
-    super('div', props);
+    super(props, 'div');
   }
 
   render(): string {

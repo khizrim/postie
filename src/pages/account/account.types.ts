@@ -6,15 +6,17 @@ import type {
   LinkProps,
 } from 'src/components';
 
-import type { User } from 'src/api/auth/auth.type.ts';
+import type { User } from 'src/api/user/user.type.ts';
 import type { Props, Refs } from 'src/core/block';
 
 export interface AccountPageProps extends Props {
-  user: Nullable<User>;
+  user: User;
   inputs: InputProps[];
-  actions: LinkProps[];
+  edit: LinkProps;
+  changePassword: LinkProps;
+  signOut: LinkProps;
   backButton: ButtonProps;
-  isLocked?: boolean;
+  isEditingBlocked?: boolean;
 }
 
 export interface AccountPageRefs extends Refs {

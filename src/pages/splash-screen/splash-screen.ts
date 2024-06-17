@@ -6,7 +6,7 @@ import type { SplashScreenProps } from './splash-screen.type';
 
 export class SplashScreen extends Block<SplashScreenProps, Refs> {
   constructor(props: SplashScreenProps) {
-    super('div', props);
+    super(props, 'div');
   }
 
   render(): string {

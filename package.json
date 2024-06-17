@@ -2,6 +2,7 @@
   "name": "postie",
   "private": true,
   "version": "0.0.1",
+  "main": "server.ts",
   "type": "module",
   "scripts": {
     "start": "npm run build && node --loader ts-node/esm ./server.ts",

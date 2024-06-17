@@ -1,4 +1,4 @@
-<label class="input">
+<label class="input {{#if className}}{{ className }}{{/if}}">
   {{#if label}}
     <span>{{ label }}:</span>
   {{/if}}
@@ -18,7 +18,6 @@
     autocomplete="{{#if autocomplete}}{{ autocomplete }}{{else}}off{{/if}}"
     {{#if required }}required{{/if}}
     {{#if disabled }}disabled{{/if}} />
-
   {{#if errorMessage}}
     <span class="input__error">{{ errorMessage }}</span>
   {{/if}}

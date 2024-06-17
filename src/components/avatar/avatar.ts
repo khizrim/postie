@@ -6,7 +6,7 @@ import type { AvatarProps } from './avatar.type';
 
 export class AvatarComponent extends Block<AvatarProps, Refs> {
   constructor(props: AvatarProps) {
-    super('div', props);
+    super(props, 'div');
   }
 
   render(): string {

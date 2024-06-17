@@ -1,15 +1,14 @@
-<div class='persona'>
-  <div class='persona__image-container' data-is-large='{{isLarge}}' data-image-only='{{isImageOnly}}'>
-    {{#if user.image}}
-      <img class='persona__image' src='{{user.image}}' alt='{{user.name}}' />
+ <div class='persona'>
+  <div
+    class='persona__image-container' data-is-large='{{isLarge}}'
+    data-image-only='{{isImageOnly}}'>
+    {{#if avatar}}
+      <img class='persona__image' src='{{avatar}}' alt='{{display_name}}' />
     {{/if}}
   </div>
   {{#unless isImageOnly}}
     <div class='persona__info'>
-      <p>{{user.name}}</p>
-      {{#if user.description}}
-        <p>{{user.description}}</p>
-      {{/if}}
+      <p>{{display_name}}</p>
     </div>
   {{/unless}}
 </div>

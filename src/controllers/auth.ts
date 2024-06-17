@@ -1,6 +1,5 @@
 import { authApi } from 'src/api/auth';
-import type { User, UserSignIn, UserSignUp } from 'src/api/auth/auth.type';
-import type { UserID } from 'src/api/user/user.type';
+import type { User, UserID, UserSignIn, UserSignUp } from 'src/api/user/user.type';
 import { getResponseOrThrow } from 'src/utils/get-response-or-throw';
 
 class AuthController {

@@ -6,7 +6,7 @@ import template from './sign-in.hbs?raw';
 
 export class SignIn extends Block<AuthProps, Refs> {
   constructor(props: AuthProps) {
-    super('div', props);
+    super(props, 'div');
   }
 
   init(): void {

@@ -4,3 +4,4 @@ export * from './render-dom';
 export * from './register-component';
 export * from './route';
 export * from './router';
+export * from './store';

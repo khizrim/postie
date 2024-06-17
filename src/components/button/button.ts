@@ -6,7 +6,7 @@ import type { ButtonProps } from './button.type';
 
 export class ButtonComponent extends Block<ButtonProps, Refs> {
   constructor(props: ButtonProps) {
-    super('button', props);
+    super(props, 'button');
   }
 
   init(): void {

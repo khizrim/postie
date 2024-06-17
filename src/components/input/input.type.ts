@@ -7,6 +7,7 @@ export type InputProps = {
   errorMessage?: string;
   value?: string;
   disabled?: boolean;
+  onInput?: (event: Event) => void;
   onChange?: (event: Event) => void;
   required?: boolean;
 } & Pick<HTMLInputElement, 'name' | 'placeholder' | 'type'>;

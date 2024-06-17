@@ -8,7 +8,7 @@ import type { InputProps } from './input.type';
 
 export class InputComponent extends Block<InputProps, Refs> {
   constructor(props: InputProps) {
-    super('input', props);
+    super(props, 'input');
   }
 
   init(): void {
@@ -22,6 +22,14 @@ export class InputComponent extends Block<InputProps, Refs> {
     if (this._meta.props.type === 'tel') {
       phoneInputMask(e);
     }
+  }
+
+  getValue(): string {
+    return this._meta.props.value ?? '';
+  }
+
+  clear(): void {
+    this.setProps({ ...this._meta.props, value: '' });
   }
 
   validate(e: Event): boolean {
