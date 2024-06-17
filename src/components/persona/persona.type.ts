@@ -1,8 +1,5 @@
-import type { Props } from 'src/core/block';
+import type { User } from 'src/api/user/user.type.ts';
 
-export interface PersonaProps extends Props {
-  id: number;
-  image: string;
-  name?: string;
-  description?: string;
-}
+export type PersonaProps = Pick<User, 'id' | 'display_name' | 'avatar'> & {
+  onClick?: () => void;
+};

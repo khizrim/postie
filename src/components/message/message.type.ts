@@ -1,16 +1,18 @@
+import type { UserID } from 'src/api/user/user.type.ts';
 import type { Props } from 'src/core/block';
+import type { ChatID } from 'src/pages';
 
 type MessageID = number;
 
-type MessageType = 'text' | 'image' | 'video' | 'audio' | 'file';
-
-export interface MessageProps extends Props {
-  date: string;
-  text: string;
-  author: number;
-  isRead: boolean;
-  type: MessageType;
-  isOwn?: boolean;
+export interface Message extends Props {
+  id: MessageID;
+  user_id: UserID;
+  chat_id: ChatID;
+  content: string;
+  file: string | null;
+  is_read: boolean;
+  time: string;
+  type: 'message' | 'file';
 }
 
-export type Messages = Record<MessageID, MessageProps>;
+export type Messages = Message[];

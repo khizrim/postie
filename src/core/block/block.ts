@@ -12,6 +12,7 @@ import type {
 } from 'src/core/block';
 import { EventBus } from 'src/core/event-bus';
 import { ID_SIZE } from 'src/utils/constants';
+import { isEqual } from 'src/utils/is-equal';
 
 export class Block<T extends Props, R extends Refs> {
   static EVENTS = {
@@ -25,15 +26,15 @@ export class Block<T extends Props, R extends Refs> {
   readonly id: string;
   protected _meta: ComponentMeta<T, R>;
   protected _eventBus: () => EventBus;
-  protected readonly refs: R | undefined = undefined;
+  protected readonly refs: R = {} as unknown as R;
   private readonly children: BlockChildren = [];
 
-  constructor(tagName: string = 'div', props: T) {
+  constructor(props: T, tagName: string = 'div') {
     this.id = nanoid(ID_SIZE);
 
     this._meta = {
-      tagName,
       props,
+      tagName,
     };
 
     const eventBus = new EventBus();
@@ -54,8 +55,8 @@ export class Block<T extends Props, R extends Refs> {
 
   public componentDidMount(): void {}
 
-  public componentDidUpdate(): boolean {
-    return true;
+  public componentDidUpdate(oldProps: T, newProps: T): boolean {
+    return !isEqual(oldProps, newProps);
   }
 
   public init(): void {}
@@ -68,7 +69,7 @@ export class Block<T extends Props, R extends Refs> {
     return this._element;
   }
 
-  public setProps(nextProps: T): void {
+  public setProps(nextProps: Partial<T>): void {
     if (!nextProps) {
       return;
     }
@@ -93,6 +94,8 @@ export class Block<T extends Props, R extends Refs> {
   private _registerEvents(eventBus: EventBus): void {
     eventBus.on(Block.EVENTS.INIT, this._init.bind(this));
     eventBus.on(Block.EVENTS.FLOW_CDM, this._componentDidMount.bind(this));
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-expect-error
     eventBus.on(Block.EVENTS.FLOW_CDU, this._componentDidUpdate.bind(this));
     eventBus.on(Block.EVENTS.FLOW_CWU, this._componentWillUnmount.bind(this));
     eventBus.on(Block.EVENTS.FLOW_RENDER, this._render.bind(this));
@@ -111,8 +114,9 @@ export class Block<T extends Props, R extends Refs> {
     this._eventBus().emit(Block.EVENTS.FLOW_RENDER);
   }
 
-  private _componentDidUpdate(): void {
-    if (this.componentDidUpdate()) {
+  private _componentDidUpdate(oldProps: T, newProps: T): void {
+    if (this.componentDidUpdate(oldProps, newProps)) {
+      console.log(`Component ${this.id} was updated`);
       this._eventBus().emit(Block.EVENTS.FLOW_RENDER);
     }
   }

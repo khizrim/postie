@@ -1,22 +1,23 @@
 {{#> ChatsLayout}}
   <section class="chats">
-    {{{ ChatsHeaderComponent topPanel=topPanel newChatButton=newChatButton}}}
+    {{{ ChatsHeaderComponent search=search user=user newChatButton=newChatButton}}}
     <div class="chats__list">
-      {{#each chatPreviews as |chat|}}
-        {{{ ChatPreviewComponent id=chat.id user=chat.user lastMessage=chat.lastMessage time=chat.time unread=chat.unread onClick=chat.onClick isSelected=(isCurrentChat chat ../selectedChat) }}}
+      {{#each chats as |chat|}}
+        {{{ ChatPreviewComponent id=chat.id title=chat.title lastMessage=chat.last_message time=chat.last_message unread=chat.unread_count onClick=chat.onClick isSelected=(isCurrentChat chat ../selectedChat) }}}
       {{/each}}
       <div class="chats__button">
-        {{{ ButtonComponent icon=newChatButton.icon size=newChatButton.size type=newChatButton.type width=newChatButton.width label=newChatButton.label}}}
+        {{{ ButtonComponent icon=newChatButton.icon size=newChatButton.size type=newChatButton.type width=newChatButton.width label=newChatButton.label onClick=newChatButton.onClick }}}
       </div>
     </div>
   </section>
   <section class="chat">
     {{#if selectedChat}}
-      {{{ ChatHeaderComponent currentChat=(getValueByKey chatPreviews selectedChat) button=chatSettingsButton }}}
+      {{{ ChatHeaderComponent currentChat=(getChatData selectedChat chats) button=chatSettingsButton addUser=addUserButton deleteChatButton=deleteChatButton }}}
       <div class="chat__content">
-        {{#each (getValueByKey messages selectedChat) as |message|}}
-          {{{ MessageComponent message=message}}}
+        {{#each messages as |message|}}
+          {{{ MessageComponent id=message.id content=message.content time=message.time user_id=message.user_id chat_id=message.chat_id is_read=message.is_read }}}
         {{/each}}
+        <span class="chat__anchor"></span>
       </div>
       <div class="chat__input">
         {{{ ChatInputComponent chatInput=chatInput attachButton=attachButton sendButton=sendButton}}}

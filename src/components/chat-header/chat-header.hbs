@@ -2,9 +2,11 @@
   <div class="chat-header">
     <a href="/account"
        class="chat-header__user-account link"
-       aria-label="{{ currentChat.user.name }}">
-      {{{ PersonaComponent user=currentChat.user }}}
+       aria-label="{{ currentChat.title }}">
+      {{{ PersonaComponent avatar=currentChat.avatar display_name=currentChat.title }}}
     </a>
+    {{{ ButtonComponent label='Add User' type=button.type width=button.width onClick=addUser.onClick }}}
+    {{{ ButtonComponent label='Delete Chat' type=button.type width=button.width onClick=deleteChatButton.onClick }}}
     {{{ ButtonComponent icon=button.icon type=button.type width=button.width onClick=button.onClick }}}
   </div>
   {{/PanelWrapper}}

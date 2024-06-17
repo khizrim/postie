@@ -6,7 +6,7 @@ import type { LinkProps } from './link.type';
 
 export class LinkComponent extends Block<LinkProps, Refs> {
   constructor(props: LinkProps) {
-    super('a', props);
+    super(props, 'a');
   }
 
   init(): void {

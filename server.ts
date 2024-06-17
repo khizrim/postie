@@ -13,11 +13,7 @@ const entryPoint = path.resolve(__dirname, 'dist', 'index.html');
 const PORT = process.env.PORT || 3000;
 
 app.use(express.static(distDir));
-app.use('/', (_, res) => {
-  res.sendFile(entryPoint);
-});
 app.use('*', (_, res) => {
-  res.statusCode = 404;
   res.sendFile(entryPoint);
 });
 

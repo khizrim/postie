@@ -6,7 +6,7 @@ import template from './flash-message.hbs?raw';
 
 export class FlashMessageComponent extends Block<FlashMessageProps, Refs> {
   constructor(props: FlashMessageProps) {
-    super('div', props);
+    super(props, 'div');
   }
 
   render(): string {

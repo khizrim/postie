@@ -1,4 +1,4 @@
-import type { UserSignUp } from 'src/api/auth/auth.type';
+import type { UserSignUp } from 'src/api/user/user.type.ts';
 import { authController } from 'src/controllers/auth';
 import { router } from 'src/core';
 import { getUser } from 'src/services';

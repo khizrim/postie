@@ -1,12 +1,12 @@
-<article class='chat-preview' data-is-selected={{isSelected}}>
-  {{{PersonaComponent user=user isImageOnly=true isLarge=true}}}
+<article class='chat-preview' data-chat-id={{id}} data-is-selected={{isSelected}}>
+  {{{PersonaComponent avatar=user.avatar name=user.display_name isImageOnly=true isLarge=true}}}
   <div class='chat-preview__content'>
     <div class='chat-preview__heading'>
-      <h2 class='chat-preview__name subheader'>{{user.name}}</h2>
-      <span class='chat-preview__timestamp'>{{time}}</span>
+      <h2 class='chat-preview__name subheader'>{{title}}</h2>
+      <span class='chat-preview__timestamp'>{{lastMessage.time}}</span>
     </div>
     <div class='chat-preview__info'>
-      <p class='chat-preview__last-message description'>{{lastMessage}}</p>
+      <p class='chat-preview__last-message description'>{{lastMessage.content}}</p>
       {{#if unread}}
         <span class='chat-preview__unread'>
           {{unread}}

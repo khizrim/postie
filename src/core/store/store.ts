@@ -5,7 +5,7 @@ export enum StoreEvents {
 }
 
 export class Store<State> extends EventBus {
-  private state: Partial<State> = {};
+  private state: State = {} as unknown as State;
 
   constructor(defaultState: State) {
     super();
@@ -14,7 +14,7 @@ export class Store<State> extends EventBus {
     this.on(StoreEvents.Updated, () => defaultState);
   }
 
-  public getState(): Partial<State> {
+  public getState(): State {
     return this.state;
   }
 

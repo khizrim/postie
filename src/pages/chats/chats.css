@@ -27,11 +27,14 @@
   justify-content: center;
 
   width: 100%;
+  max-height: 100dvh;
 
   border-right: 1px solid var(--color-border);
 }
 
 .chat__content {
+  overflow-anchor: none;
+
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
@@ -40,7 +43,12 @@
   align-items: flex-start;
 
   width: 100%;
-  padding: var(--spacing-static-l) var(--spacing-static-2xl) 0;
+  padding: var(--spacing-static-l) var(--spacing-static-2xl);
+}
+
+.chat__anchor {
+  overflow-anchor: auto;
+  height: 1px;
 }
 
 @media (width > 760px) {
