@@ -30,7 +30,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.store = new Store(initialAppState);
 
-  initApplication().catch((error) => {
-    console.error('Error initializing app:', error);
-  });
+  initApplication().catch(console.error);
 });
