@@ -1,4 +1,4 @@
-import type { Options } from './http-transport.type';
+import type { HTTPMethod, HTTPRequest } from './http-transport.type';
 import { METHOD } from './http-transport.type';
 
 export class HttpTransport {
@@ -8,43 +8,38 @@ export class HttpTransport {
     this.baseURL = baseURL;
   }
 
-  async get(path: string, data?: unknown): Promise<XMLHttpRequest> {
-    return await this.request(`${this.baseURL}${path}`, {
+  get: HTTPMethod = async (path, data) =>
+    await this.request(`${this.baseURL}${path}`, {
       method: METHOD.GET,
       data,
     });
-  }
 
-  async post(path: string, data?: unknown): Promise<XMLHttpRequest> {
-    return await this.request(`${this.baseURL}${path}`, {
+  post: HTTPMethod = async (path, data) =>
+    await this.request(`${this.baseURL}${path}`, {
       method: METHOD.POST,
       data,
     });
-  }
 
-  async put(path: string, data?: unknown): Promise<XMLHttpRequest> {
-    return await this.request(`${this.baseURL}${path}`, {
+  put: HTTPMethod = async (path, data) =>
+    await this.request(`${this.baseURL}${path}`, {
       method: METHOD.PUT,
       data,
     });
-  }
 
-  async patch(path: string, data?: unknown): Promise<XMLHttpRequest> {
-    return await this.request(`${this.baseURL}${path}`, {
+  patch: HTTPMethod = async (path, data) =>
+    await this.request(`${this.baseURL}${path}`, {
       method: METHOD.PATCH,
       data,
     });
-  }
 
-  async delete(path: string, data?: unknown): Promise<XMLHttpRequest> {
-    return await this.request(`${this.baseURL}${path}`, {
+  delete: HTTPMethod = async (path, data) =>
+    await this.request(`${this.baseURL}${path}`, {
       method: METHOD.DELETE,
       data,
     });
-  }
 
-  async request(url: string, options: Options = { method: METHOD.GET }): Promise<XMLHttpRequest> {
-    return await new Promise((resolve, reject) => {
+  request: HTTPRequest = async (url, options = { method: METHOD.GET }) =>
+    await new Promise((resolve, reject) => {
       const { method, data } = options;
 
       if (!method) {
@@ -59,6 +54,9 @@ export class HttpTransport {
 
       xhr.onload = () => {
         if (xhr.status >= 200 && xhr.status < 300) {
+          // TODO: Fix by adding a proper type for xhr
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-expect-error
           resolve(xhr);
         } else {
           reject(xhr);
@@ -75,5 +73,4 @@ export class HttpTransport {
         xhr.send(data instanceof FormData ? data : JSON.stringify(data));
       }
     });
-  }
 }

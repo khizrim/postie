@@ -6,10 +6,15 @@ export enum METHOD {
   DELETE = 'DELETE',
 }
 
-export interface Options {
+export interface Options<D> {
   method: METHOD;
   headers?: Record<string, string>;
-  data?: unknown;
+  data?: D;
 }
 
-export type OptionsWithoutMethod = Omit<Options, 'method'>;
+export type HTTPMethod = <D = XMLHttpRequest>(path: string, data?: D) => Promise<XMLHttpRequest>;
+
+export type HTTPRequest = <R = XMLHttpRequest, D = Record<string, unknown>>(
+  url: string,
+  options: Options<D>,
+) => Promise<R>;
