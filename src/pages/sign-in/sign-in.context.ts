@@ -1,5 +1,5 @@
-import type { UserSignIn } from 'src/api/user/user.type.ts';
-import { authController } from 'src/controllers/auth.ts';
+import type { UserSignIn } from 'src/api/user/user.type';
+import { authController } from 'src/controllers/auth';
 import { router } from 'src/core';
 import type { AuthProps } from 'src/layouts/auth';
 
@@ -47,7 +47,7 @@ export const SignInContext: AuthProps = {
         await authController.getUser().then((user) => {
           window.store.set({ user });
         });
-        router.go('/chats');
+        router.go('/messenger');
       })
       .catch(console.error);
   },

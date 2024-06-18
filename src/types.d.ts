@@ -1,5 +1,5 @@
 import type { Store } from 'src/core/store';
-import type { AppState } from 'src/index.ts';
+import type { AppState } from 'src/index';
 
 declare global {
   interface Window {

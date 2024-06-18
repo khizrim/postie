@@ -11,7 +11,7 @@ export class PersonaComponent extends Block<PersonaProps, Refs> {
       {
         ...props,
         onClick: () => {
-          router.go('/account');
+          router.go('/settings');
         },
       },
       'div',

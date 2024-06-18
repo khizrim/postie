@@ -1,5 +1,12 @@
+.chats-header {
+  display: flex;
+  gap: var(--spacing-static-l);
+  align-content: center;
+  width: 100%;
+}
+
 @media (hover: hover) {
-  .chats-header__user-account:hover {
+  .chats-header .persona:hover {
     cursor: pointer;
     border-radius: 50%;
     box-shadow: 0 0 0 2px var(--color-brand-hover);

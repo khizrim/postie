@@ -1,18 +1,18 @@
-import type { UserUpdate } from 'src/api/user/user.type.ts';
-import defaultAvatar from 'src/assets/images/default-avatar.png';
-import { userController } from 'src/controllers/user.ts';
+import type { UserUpdate } from 'src/api/user/user.type';
+import defaultUserAvatar from 'src/assets/images/default-user-avatar.png';
+import { userController } from 'src/controllers/user';
 import { Block } from 'src/core/block';
-import type { AccountPageProps, AccountPageRefs } from 'src/pages/account';
+import type { AccountPageProps, AccountPageRefs } from 'src/pages/settings';
 
-import template from './account.hbs?raw';
+import template from './settings.hbs?raw';
 
-export class Account extends Block<AccountPageProps, AccountPageRefs> {
+export class Settings extends Block<AccountPageProps, AccountPageRefs> {
   constructor(props: AccountPageProps) {
     super({
       ...props,
       user: {
         ...props.user,
-        avatar: props.user?.avatar ? props.user.avatar : defaultAvatar,
+        avatar: props.user?.avatar ? props.user.avatar : defaultUserAvatar,
       },
       onEdit: (e: Event) => {
         e.preventDefault();
@@ -38,7 +38,7 @@ export class Account extends Block<AccountPageProps, AccountPageRefs> {
         ...this._meta.props,
         user: {
           ...user,
-          avatar: user.avatar ? user.avatar : defaultAvatar,
+          avatar: user.avatar ? user.avatar : defaultUserAvatar,
         },
       });
     }

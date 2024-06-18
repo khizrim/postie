@@ -1,5 +1,5 @@
 {{#> MainLayout}}
-  <div class="account">
+  <div class="settings">
     {{{ AvatarComponent ref="avatar" isCurrentUser=true userAvatar=user.avatar onAvatarUpload=onAvatarUpload }}}
 
     {{#if user.isEmailVerified}}
@@ -19,12 +19,12 @@
       </div>
     {{/if}}
 
-    <div class="account__heading">
+    <div class="settings__heading">
       <h2 class="title">{{ user.display_name }}</h2>
       <p class="description">{{ user.login }}</p>
     </div>
 
-    {{#> Form ref='form' class='account__form'}}
+    {{#> Form ref='form' class='settings__form'}}
       {{#each inputs as |input|}}
         {{{ InputComponent
           name=input.name
@@ -43,7 +43,7 @@
         }}}
       {{/each}}
     {{/Form}}
-    <div class="account__actions">
+    <div class="settings__actions">
       {{#unless isEditingBlocked }}
         {{{ LinkComponent
           ref=save.ref

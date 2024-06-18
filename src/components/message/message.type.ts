@@ -1,4 +1,4 @@
-import type { UserID } from 'src/api/user/user.type.ts';
+import type { UserID } from 'src/api/user/user.type';
 import type { Props } from 'src/core/block';
 import type { ChatID } from 'src/pages';
 

@@ -6,6 +6,8 @@ class AuthController {
   async getUser(): Promise<User> {
     const res = await authApi.getUser();
 
+    console.log(res);
+
     return getResponseOrThrow<User>(res);
   }
 

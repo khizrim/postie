@@ -1,9 +1,9 @@
 import type { ComponentConstructor } from 'src/core/register-component';
 import type { AuthProps } from 'src/layouts/auth';
 
-import type { AccountPageProps } from './account';
-import type { ChatsPageProps } from './chats';
 import type { ErrorPageProps } from './error-page';
+import type { MessengerProps } from './messenger';
+import type { AccountPageProps } from './settings';
 import type { SplashScreenProps } from './splash-screen';
 
 export type PageTypes =
@@ -16,7 +16,7 @@ export type PageTypes =
   | 'sign-up';
 
 export interface PagePropsMap {
-  chats: ChatsPageProps;
+  chats: MessengerProps;
   account: AccountPageProps;
   'not-found': ErrorPageProps;
   'server-error': ErrorPageProps;

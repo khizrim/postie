@@ -9,8 +9,8 @@ export const NotFoundPageContext: ErrorPageProps = {
       "There's no page that you're looking for. Please check the link to see if it's correct",
     image: notFound,
     link: {
-      text: 'Go back to chats',
-      href: '/chats',
+      text: 'Go back to messenger',
+      href: '/messenger',
     },
   },
 };
@@ -21,8 +21,8 @@ export const ServerErrorPageContext: ErrorPageProps = {
     description: 'We’re already working hard to find and fix the problem',
     image: serverError,
     link: {
-      text: 'Go back to chats',
-      href: '/chats',
+      text: 'Go back to messenger',
+      href: '/messenger',
     },
   },
 };

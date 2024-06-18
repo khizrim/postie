@@ -1,7 +1,7 @@
 import type { Message, Messages } from 'src/components';
 
-import type { ChatID } from 'src/api/chat/chat.type.ts';
-import type { User } from 'src/api/user/user.type.ts';
+import type { ChatID } from 'src/api/chat/chat.type';
+import type { User } from 'src/api/user/user.type';
 import { EventBus } from 'src/core';
 
 export class WebSocketHandler extends EventBus {

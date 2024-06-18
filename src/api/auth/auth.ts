@@ -1,4 +1,4 @@
-import type { UserSignIn, UserSignUp } from 'src/api/user/user.type.ts';
+import type { UserSignIn, UserSignUp } from 'src/api/user/user.type';
 import { API_URL } from 'src/utils/constants';
 import { HttpTransport } from 'src/utils/http-transport';
 

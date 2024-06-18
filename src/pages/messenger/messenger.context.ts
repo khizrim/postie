@@ -5,10 +5,10 @@ import newChat from 'src/assets/icons/new-chat.svg';
 import paperPlane from 'src/assets/icons/paper-plane.svg';
 import paperclip from 'src/assets/icons/paperclip.svg';
 import noChat from 'src/assets/images/no-chat.png';
-import { chatController } from 'src/controllers/chat.ts';
-import type { ChatsPageProps } from 'src/pages/chats';
+import { chatController } from 'src/controllers/chat';
+import type { MessengerProps } from 'src/pages/messenger';
 
-export const ChatsContext: ChatsPageProps = {
+export const MessengerContext: MessengerProps = {
   search: {
     name: 'search',
     size: 's',

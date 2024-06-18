@@ -1,8 +1,8 @@
 import type { ChatPreviewProps } from 'src/components/chat-preview';
-import { WebSocketController } from 'src/controllers/socket.ts';
+import { WebSocketController } from 'src/controllers/socket';
 import type { Refs } from 'src/core/block';
 import { Block } from 'src/core/block';
-import { formatDate } from 'src/helpers/format-date.ts';
+import { formatDate } from 'src/helpers/format-date';
 import type { ChatID } from 'src/pages';
 
 import template from './chat-preview.hbs?raw';
@@ -16,6 +16,7 @@ export class ChatPreviewComponent extends Block<ChatPreviewProps, Refs> {
           ...props.lastMessage,
           time: props.lastMessage?.time ? formatDate(new Date(props.lastMessage?.time)) : '',
         },
+        chatImage: props.chatImage,
         onClick: () => {
           this.setCurrentChat(props.id);
         },

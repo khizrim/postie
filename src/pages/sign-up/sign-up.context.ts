@@ -1,5 +1,5 @@
-import type { UserSignUp } from 'src/api/user/user.type.ts';
-import { authController } from 'src/controllers/auth.ts';
+import type { UserSignUp } from 'src/api/user/user.type';
+import { authController } from 'src/controllers/auth';
 import { router } from 'src/core';
 import type { AuthProps } from 'src/layouts/auth';
 
@@ -91,7 +91,7 @@ export const SignUpContext: AuthProps = {
     authController
       .register(data)
       .then(() => {
-        router.go('/chat');
+        router.go('/messenger');
       })
       .catch(console.error);
   },

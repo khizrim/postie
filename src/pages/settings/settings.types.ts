@@ -6,7 +6,7 @@ import type {
   LinkProps,
 } from 'src/components';
 
-import type { User } from 'src/api/user/user.type.ts';
+import type { User } from 'src/api/user/user.type';
 import type { Props, Refs } from 'src/core/block';
 
 export interface AccountPageProps extends Props {
