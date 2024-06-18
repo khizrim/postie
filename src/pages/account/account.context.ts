@@ -93,9 +93,7 @@ export const AccountContext: AccountPageProps = {
         .then(() => {
           router.go('/sign-in');
         })
-        .catch((error) => {
-          console.error(error);
-        });
+        .catch(console.error);
     },
   },
   backButton: {

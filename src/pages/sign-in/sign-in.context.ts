@@ -49,8 +49,6 @@ export const SignInContext: AuthProps = {
         });
         router.go('/chats');
       })
-      .catch((error) => {
-        console.error(error);
-      });
+      .catch(console.error);
   },
 };

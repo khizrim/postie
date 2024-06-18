@@ -73,9 +73,7 @@ export class Account extends Block<AccountPageProps, AccountPageRefs> {
           isEditingBlocked: true,
         });
       })
-      .catch((err) => {
-        console.error(err);
-      });
+      .catch(console.error);
   }
 
   render(): string {

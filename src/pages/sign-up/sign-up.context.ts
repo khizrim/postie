@@ -93,8 +93,6 @@ export const SignUpContext: AuthProps = {
       .then(() => {
         router.go('/chat');
       })
-      .catch((error) => {
-        console.error(error);
-      });
+      .catch(console.error);
   },
 };
