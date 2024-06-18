@@ -19,19 +19,19 @@ export const initApplication = async (): Promise<void> => {
       return;
     }
 
+    const routeExists = router.getRoute(location);
+
+    if (!routeExists) {
+      router.go('/not-found');
+      return;
+    }
+
     router.go(location);
   } catch (error) {
     const errorStatus = (error as XMLHttpRequest).status;
 
     if (errorStatus === 401 && location !== '/sign-up') {
       router.go('/');
-      return;
-    }
-
-    const routeExists = router.getRoute(location);
-
-    if (!routeExists) {
-      router.go('/not-found');
       return;
     }
 

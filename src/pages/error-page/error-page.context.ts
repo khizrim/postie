@@ -1,5 +1,6 @@
 import notFound from 'src/assets/images/not-found.png';
 import serverError from 'src/assets/images/server-error.png';
+import { router } from 'src/core';
 import type { ErrorPageProps } from 'src/pages/error-page';
 
 export const NotFoundPageContext: ErrorPageProps = {
@@ -9,8 +10,10 @@ export const NotFoundPageContext: ErrorPageProps = {
       "There's no page that you're looking for. Please check the link to see if it's correct",
     image: notFound,
     link: {
-      text: 'Go back to messenger',
-      href: '/messenger',
+      text: 'Go back to chats',
+      onClick: () => {
+        router.go('/messenger');
+      },
     },
   },
 };
@@ -21,8 +24,10 @@ export const ServerErrorPageContext: ErrorPageProps = {
     description: 'We’re already working hard to find and fix the problem',
     image: serverError,
     link: {
-      text: 'Go back to messenger',
-      href: '/messenger',
+      text: 'Go back to chats',
+      onClick: () => {
+        router.go('/messenger');
+      },
     },
   },
 };

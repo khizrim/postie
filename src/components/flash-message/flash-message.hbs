@@ -15,6 +15,6 @@
     </p>
   </div>
   {{#if message.link}}
-    {{{LinkComponent link=message.link}}}
+    {{{ LinkComponent text=message.link.text onClick=message.link.onClick }}}
   {{/if}}
 </section>
