@@ -10,6 +10,7 @@
 
 .chats__list {
   flex-grow: 1;
+  width: 100%;
 }
 
 .chats__button {

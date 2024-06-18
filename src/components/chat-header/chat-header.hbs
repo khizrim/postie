@@ -5,8 +5,10 @@
        aria-label="{{ currentChat.title }}">
       {{{ PersonaComponent avatar=currentChat.avatar display_name=currentChat.title }}}
     </a>
-    {{{ ButtonComponent label='Add User' type=button.type width=button.width onClick=addUser.onClick }}}
-    {{{ ButtonComponent label='Delete Chat' type=button.type width=button.width onClick=deleteChatButton.onClick }}}
-    {{{ ButtonComponent icon=button.icon type=button.type width=button.width onClick=button.onClick }}}
+    <div class="chat-header__controls">
+      {{{ ButtonComponent label='Add User' type=button.type width=button.width onClick=addUser.onClick }}}
+      {{{ ButtonComponent label='Delete User' type=button.type width=button.width onClick=deleteUser.onClick }}}
+      {{{ ButtonComponent label='Delete Chat' type=button.type width=button.width onClick=deleteChat.onClick }}}
+    </div>
   </div>
   {{/PanelWrapper}}

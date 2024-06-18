@@ -66,6 +66,27 @@ export const ChatsContext: ChatsPageProps = {
       }
     },
   },
+  deleteUserButton: {
+    label: 'Delete user',
+    type: 'button',
+    width: 'content',
+    onClick: () => {
+      const chatId = window.store.getState().selectedChat;
+
+      const userId = prompt('Enter user ID');
+
+      if (userId && chatId) {
+        chatController
+          .deleteUsers({
+            users: [Number(userId)],
+            chatId,
+          })
+          .catch((error) => {
+            console.error('Failed to delete user:', error);
+          });
+      }
+    },
+  },
   deleteChatButton: {
     label: 'Delete chat',
     type: 'button',
