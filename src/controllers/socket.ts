@@ -1,7 +1,7 @@
-import type { ChatID } from 'src/api/chat/chat.type.ts';
+import type { ChatID } from 'src/api/chat/chat.type';
 import { WebSocketHandler } from 'src/api/socket';
-import type { User } from 'src/api/user/user.type.ts';
-import { chatController } from 'src/controllers/chat.ts';
+import type { User } from 'src/api/user/user.type';
+import { chatController } from 'src/controllers/chat';
 
 export class WebSocketController {
   private webSocket?: WebSocketHandler;

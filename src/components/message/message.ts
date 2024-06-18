@@ -1,6 +1,6 @@
 import type { Refs } from 'src/core/block';
 import { Block } from 'src/core/block';
-import { formatDate } from 'src/helpers/format-date.ts';
+import { formatDate } from 'src/helpers/format-date';
 
 import template from './message.hbs?raw';
 import type { Message } from './message.type';

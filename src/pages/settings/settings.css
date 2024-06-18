@@ -1,4 +1,4 @@
-.account {
+.settings {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-static-xl);
@@ -7,20 +7,20 @@
   min-width: 380px;
 }
 
-.account__heading {
+.settings__heading {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-static-s);
 }
 
-.account__form {
+.settings__form {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-static-s);
   width: 100%;
 }
 
-.account__actions {
+.settings__actions {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-static-l);

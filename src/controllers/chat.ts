@@ -1,6 +1,6 @@
 import { chatApi } from 'src/api/chat';
-import type { Chat, ChatUsers, CreateChat } from 'src/api/chat/chat.type.ts';
-import type { ChatID, ChatMessagesToken } from 'src/pages';
+import type { Chat, ChatUsers, CreateChat } from 'src/api/chat/chat.type';
+import type { ChatID, MessagesToken } from 'src/pages';
 import { getResponseOrThrow } from 'src/utils/get-response-or-throw';
 
 class ChatController {
@@ -33,10 +33,10 @@ class ChatController {
     }
   }
 
-  async createToken(chatId: ChatID): Promise<ChatMessagesToken> {
+  async createToken(chatId: ChatID): Promise<MessagesToken> {
     const res = await chatApi.createToken(chatId);
 
-    return getResponseOrThrow<ChatMessagesToken>(res);
+    return getResponseOrThrow<MessagesToken>(res);
   }
 
   async addUsers(data: ChatUsers): Promise<void> {

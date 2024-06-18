@@ -1,1 +1,1 @@
-export * from './socket.ts';
+export * from './socket';

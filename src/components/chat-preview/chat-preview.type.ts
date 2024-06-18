@@ -7,6 +7,7 @@ export interface ChatPreviewProps extends Props {
   id: number;
   user: PersonaProps;
   lastMessage: Message;
+  chatImage?: string;
   time?: string;
   unread?: number;
   onClick?: () => void;

@@ -1,14 +1,14 @@
-import defaultAvatar from 'src/assets/images/default-avatar.png';
-import { chatController } from 'src/controllers/chat.ts';
+import defaultUserAvatar from 'src/assets/images/default-user-avatar.png';
+import { chatController } from 'src/controllers/chat';
 import { StoreEvents } from 'src/core';
 import type { Refs } from 'src/core/block';
 import { Block } from 'src/core/block';
-import type { ChatsPageProps } from 'src/pages/chats';
+import type { MessengerProps } from 'src/pages/messenger';
 
-import template from './chats.hbs?raw';
+import template from './messenger.hbs?raw';
 
-export class Chats extends Block<ChatsPageProps, Refs> {
-  constructor(props: ChatsPageProps) {
+export class Messenger extends Block<MessengerProps, Refs> {
+  constructor(props: MessengerProps) {
     super({
       ...props,
       chats: props.chats || [],
@@ -43,7 +43,7 @@ export class Chats extends Block<ChatsPageProps, Refs> {
         ...this._meta.props,
         user: {
           ...user,
-          avatar: user?.avatar ?? defaultAvatar,
+          avatar: user?.avatar ?? defaultUserAvatar,
         },
       });
     }

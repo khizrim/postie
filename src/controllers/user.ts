@@ -1,5 +1,5 @@
 import { userApi } from 'src/api/user';
-import type { UpdatePassword, User, UserLogin, UserUpdate } from 'src/api/user/user.type.ts';
+import type { UpdatePassword, User, UserLogin, UserUpdate } from 'src/api/user/user.type';
 import { getResponseOrThrow } from 'src/utils/get-response-or-throw';
 
 class UserController {

@@ -1,9 +1,9 @@
 import back from 'src/assets/icons/back.svg';
-import { authController } from 'src/controllers/auth.ts';
+import { authController } from 'src/controllers/auth';
 import { router } from 'src/core';
-import type { AccountPageProps } from 'src/pages/account';
+import type { AccountPageProps } from 'src/pages/settings';
 
-export const AccountContext: AccountPageProps = {
+export const SettingsContext: AccountPageProps = {
   user: {
     id: 0,
     email: '',
@@ -91,7 +91,7 @@ export const AccountContext: AccountPageProps = {
       authController
         .logout()
         .then(() => {
-          router.go('/sign-in');
+          router.go('/');
         })
         .catch(console.error);
     },
@@ -101,9 +101,9 @@ export const AccountContext: AccountPageProps = {
     size: 'xl',
     type: 'button',
     width: 'content',
-    label: 'Back to Chats',
+    label: 'Back to Messenger',
     onClick: () => {
-      router.go('/chats');
+      router.go('/messenger');
     },
   },
   isEditingBlocked: true,

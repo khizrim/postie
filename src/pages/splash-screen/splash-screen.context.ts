@@ -20,11 +20,11 @@ export const SplashScreenContext: SplashScreenProps = {
     },
     {
       text: 'Chats',
-      href: '/chats',
+      href: '/messenger',
     },
     {
       text: 'Account',
-      href: '/account',
+      href: '/settingssettings',
     },
     {
       text: '404',

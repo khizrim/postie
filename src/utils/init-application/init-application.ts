@@ -1,14 +1,21 @@
+import { authController } from 'src/controllers/auth';
 import { router } from 'src/core';
-import { getUser } from 'src/services/auth';
 
 export const initApplication = async (): Promise<void> => {
   const location = window.location.pathname;
 
   try {
-    await getUser();
+    const user = await authController.getUser();
+
+    if (!user) {
+      router.go('/');
+      return;
+    }
+
+    window.store.set({ user });
 
     if (location === '/' || location === '/sign-up') {
-      router.go('/chats');
+      router.go('/messenger');
       return;
     }
 

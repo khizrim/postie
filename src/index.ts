@@ -1,8 +1,8 @@
 import type { Messages } from 'src/components';
 
-import type { Chat } from 'src/api/chat/chat.type.ts';
-import type { User } from 'src/api/user/user.type.ts';
-import type { WebSocketController } from 'src/controllers/socket.ts';
+import type { Chat } from 'src/api/chat/chat.type';
+import type { User } from 'src/api/user/user.type';
+import type { WebSocketController } from 'src/controllers/socket';
 import { Store } from 'src/core/store';
 import type { ChatID } from 'src/pages';
 import { initApplication } from 'src/utils/init-application';

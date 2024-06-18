@@ -1,9 +1,9 @@
 {{#> PanelWrapper border='bottom'}}
   <div class="chat-header">
-    <a href="/account"
+    <a href="/settings"
        class="chat-header__user-account link"
        aria-label="{{ currentChat.title }}">
-      {{{ PersonaComponent avatar=currentChat.avatar display_name=currentChat.title }}}
+      {{{ PersonaComponent avatar=(getDefaultChatAvatar currentChat.avatar) display_name=currentChat.title }}}
     </a>
     <div class="chat-header__controls">
       {{{ ButtonComponent label='Add User' type=button.type width=button.width onClick=addUser.onClick }}}

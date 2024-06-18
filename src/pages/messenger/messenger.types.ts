@@ -4,11 +4,11 @@ import type { Props } from 'src/core/block';
 
 export type ChatID = number;
 
-export interface ChatMessagesToken {
+export interface MessagesToken {
   token: string;
 }
 
-export interface ChatsPageProps extends Props {
+export interface MessengerProps extends Props {
   search: InputProps;
   user: Nullable<PersonaProps>;
   selectedChat: Nullable<ChatID>;

@@ -3,12 +3,12 @@ import type { PagesProps } from 'src/pages/index.type';
 
 export const pages: PagesProps = {
   account: {
-    pageConstructor: Pages.Account,
-    context: Pages.AccountContext,
+    pageConstructor: Pages.Settings,
+    context: Pages.SettingsContext,
   },
   chats: {
-    pageConstructor: Pages.Chats,
-    context: Pages.ChatsContext,
+    pageConstructor: Pages.Messenger,
+    context: Pages.MessengerContext,
   },
   'not-found': {
     pageConstructor: Pages.ErrorPage,
