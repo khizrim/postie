@@ -12,7 +12,7 @@
   </section>
   <section class="chat">
     {{#if selectedChat}}
-      {{{ ChatHeaderComponent currentChat=(getChatData selectedChat chats) button=chatSettingsButton addUser=addUserButton deleteChatButton=deleteChatButton }}}
+      {{{ ChatHeaderComponent currentChat=(getChatData selectedChat chats) button=chatSettingsButton addUser=addUserButton deleteUser=deleteUserButton deleteChat=deleteChatButton }}}
       <div class="chat__content">
         {{#each messages as |message|}}
           {{{ MessageComponent id=message.id content=message.content time=message.time user_id=message.user_id chat_id=message.chat_id is_read=message.is_read }}}

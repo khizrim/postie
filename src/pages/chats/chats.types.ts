@@ -21,6 +21,7 @@ export interface ChatsPageProps extends Props {
   newChatButton: ButtonProps;
   chatSettingsButton: ButtonProps;
   addUserButton: ButtonProps;
+  deleteUserButton: ButtonProps;
   deleteChatButton: ButtonProps;
   chatInput: InputProps;
   sendButton: ButtonProps;

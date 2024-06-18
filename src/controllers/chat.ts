@@ -43,6 +43,16 @@ class ChatController {
     const res = await chatApi.addUsers(data);
     console.log('Users added:', getResponseOrThrow(res));
   }
+
+  async getUsers(chatId: ChatID): Promise<void> {
+    const res = await chatApi.getUsers(chatId);
+    console.log('Users:', getResponseOrThrow(res));
+  }
+
+  async deleteUsers(data: ChatUsers): Promise<void> {
+    const res = await chatApi.deleteUsers(data);
+    console.log('Users deleted:', getResponseOrThrow(res));
+  }
 }
 
 export const chatController = new ChatController();
