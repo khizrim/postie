@@ -6,7 +6,7 @@ export const messageValidator = (message: string): ValidationResult => {
     errorMessage: '',
   };
 
-  if (message.trim().length > 0) {
+  if (message.trim().length === 0) {
     result.isValid = false;
     result.errorMessage = 'Message is required';
   }
