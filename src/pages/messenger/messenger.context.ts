@@ -112,7 +112,7 @@ export const MessengerContext: MessengerProps = {
   sendButton: {
     icon: paperPlane,
     label: 'Send',
-    type: 'button',
+    type: 'submit',
     width: 'content',
     isIconOnly: true,
   },

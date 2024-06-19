@@ -4,10 +4,11 @@ import type { Refs } from 'src/core/block';
 import { Block } from 'src/core/block';
 import { formatDate } from 'src/helpers/format-date';
 import type { ChatID } from 'src/pages';
+import { connect } from 'src/utils/connect';
 
 import template from './chat-preview.hbs?raw';
 
-export class ChatPreviewComponent extends Block<ChatPreviewProps, Refs> {
+class ChatPreviewComponent extends Block<ChatPreviewProps, Refs> {
   constructor(props: ChatPreviewProps) {
     super(
       {
@@ -27,7 +28,7 @@ export class ChatPreviewComponent extends Block<ChatPreviewProps, Refs> {
 
   setCurrentChat(chatId: ChatID): void {
     const newSocket = new WebSocketController(chatId);
-    window.store.set({ selectedChat: chatId, socket: newSocket });
+    window.store.set({ selectedChat: chatId, socket: newSocket, messages: [] });
   }
 
   init(): void {
@@ -44,3 +45,5 @@ export class ChatPreviewComponent extends Block<ChatPreviewProps, Refs> {
     return template;
   }
 }
+
+export default connect((state) => state)(ChatPreviewComponent);

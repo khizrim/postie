@@ -1,13 +1,15 @@
-import type { ButtonProps, InputComponent, InputProps } from 'src/components';
+import type { ButtonProps, InputProps } from 'src/components';
 
 import type { Props, Refs } from 'src/core/block';
 import { Block } from 'src/core/block';
+import { messageValidator } from 'src/utils/validators/message/message.ts';
 
 import template from './chat-input.hbs?raw';
 
 export interface ChatInputProps extends Props {
   input: InputProps;
   sendButton: ButtonProps;
+  onSubmit?: (event: Event) => void;
 }
 
 export class ChatInputComponent extends Block<ChatInputProps, Refs> {
@@ -19,27 +21,21 @@ export class ChatInputComponent extends Block<ChatInputProps, Refs> {
           name: 'chat-input',
           ref: 'chat-input',
           type: 'text',
-          value: '',
           placeholder: 'Type your message',
-          onInput: (e: Event) => {
-            console.log('Input:', e);
-          },
         },
-        sendButton: {
-          type: 'button',
-          label: 'Send',
-          onClick: () => {
-            const input = this.refs['chat-input'] as InputComponent;
-            const value = input.getValue();
+        onSubmit: (event: Event) => {
+          event.preventDefault();
+          const form = event.target as HTMLFormElement;
+          const message = new FormData(form).get('chat-input') as string;
 
-            const { socket } = window.store.getState();
+          const { isValid } = messageValidator(message);
+          const { socket } = window.store.getState();
 
-            if (socket) {
-              socket.send(value);
-            }
+          if (isValid && socket) {
+            socket.send(message);
+          }
 
-            input.clear();
-          },
+          form.reset();
         },
       },
       'div',
@@ -47,13 +43,11 @@ export class ChatInputComponent extends Block<ChatInputProps, Refs> {
   }
 
   init(): void {
-    const { onInput } = this._meta.props.input;
-
-    if (onInput) {
-      this._meta.events = {
-        input: onInput?.bind(this),
-      };
-    }
+    this._meta.events = {
+      ...this._meta.events,
+      ...(this._meta.props.onSubmit && { submit: this._meta.props.onSubmit }),
+      ...(this._meta.props.input.onInput && { input: this._meta.props.input.onInput }),
+    };
   }
 
   render(): string {
