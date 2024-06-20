@@ -22,7 +22,7 @@ You can check the current deployed version here:
 [https://postie.khizrim.ru](https://postie.khizrim.ru)
 
 Or here:
-[https://postie-messenger.netlify.app](https://postie-messenger.netlify.app)
+[https://deploy-preview-3--postie-messenger.netlify.app](https://deploy-preview-3--postie-messenger.netlify.app)
 
 It's deployed using [Netlify](https://www.netlify.com) from the [`deploy`](https://github.com/khizrim/postie/tree/deploy) branch.
 
