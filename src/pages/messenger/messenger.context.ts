@@ -99,8 +99,7 @@ export const MessengerContext: MessengerProps = {
           .deleteChat(chatId)
           .then(() => {
             console.log('Chat deleted');
-            const { chats } = window.store.getState();
-            window.store.set({ selectedChat: chats[0]?.id ?? null });
+            window.store.set({ selectedChat: null });
           })
           .catch((error) => {
             console.error('Failed to delete chat:', error);
