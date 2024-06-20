@@ -1,6 +1,6 @@
 {{#> MainLayout}}
   <div class="settings">
-    {{{ AvatarComponent ref="avatar" isCurrentUser=true userAvatar=user.avatar onAvatarUpload=onAvatarUpload }}}
+    {{{ AvatarComponent ref="avatar" isCurrentUser=true userAvatar=(getDefaultAvatar user.avatar 'user') onAvatarUpload=onAvatarUpload }}}
 
     {{#if user.isEmailVerified}}
       <div class="account__email-verified">
