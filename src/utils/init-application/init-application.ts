@@ -14,15 +14,15 @@ export const initApplication = async (): Promise<void> => {
 
     window.store.set({ user });
 
-    if (location === '/' || location === '/sign-up') {
-      router.go('/messenger');
-      return;
-    }
-
     const routeExists = router.getRoute(location);
 
     if (!routeExists) {
       router.go('/not-found');
+      return;
+    }
+    
+    if (location === '/' || location === '/sign-up') {
+      router.go('/messenger');
       return;
     }
 
