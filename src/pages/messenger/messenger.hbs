@@ -3,7 +3,7 @@
     {{{ ChatsHeaderComponent search=search user=user newChatButton=newChatButton}}}
     <div class="messenger__list">
       {{#each chats as |chat|}}
-        {{{ ChatPreviewComponent id=chat.id avatar=(getDefaultChatAvatar chat.avatar) title=chat.title lastMessage=chat.last_message time=chat.last_message unread=chat.unread_count onClick=chat.onClick isSelected=(isCurrentChat chat ../selectedChat) }}}
+        {{{ ChatPreviewComponent id=chat.id avatar=(getDefaultAvatar chat.avatar 'chat') title=chat.title lastMessage=chat.last_message time=chat.last_message unread=chat.unread_count onClick=chat.onClick isSelected=(isCurrentChat chat ../selectedChat) }}}
       {{/each}}
       <div class="messenger__button">
         {{{ ButtonComponent icon=newChatButton.icon size=newChatButton.size type=newChatButton.type width=newChatButton.width label=newChatButton.label onClick=newChatButton.onClick }}}

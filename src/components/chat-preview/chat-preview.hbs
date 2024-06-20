@@ -1,5 +1,5 @@
 <article class='chat-preview' data-chat-id={{id}} data-is-selected={{isSelected}}>
-  {{{PersonaComponent avatar=(getDefaultChatAvatar avatar) isImageOnly=true isLarge=true}}}
+  {{{PersonaComponent avatar=(getDefaultAvatar avatar 'chat') isImageOnly=true isLarge=true}}}
   <div class='chat-preview__content'>
     <div class='chat-preview__heading'>
       <h2 class='chat-preview__name subheader'>{{title}}</h2>

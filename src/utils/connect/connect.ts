@@ -6,6 +6,8 @@ import { isEqual } from 'src/utils/is-equal';
 export const connect = (mapStateToProps: MapStateToProps) => {
   return <P extends Props, R extends Refs>(Component: typeof Block<P, R>) => {
     return class extends Component {
+      private readonly storeCallback: () => void;
+
       constructor(props: P, tagName: string = 'div') {
         const store = window.store;
 
@@ -13,16 +15,21 @@ export const connect = (mapStateToProps: MapStateToProps) => {
 
         super({ ...props, ...state }, tagName);
 
-        console.log('Connected component:', this._meta.props);
-
-        store.on(StoreEvents.Updated, () => {
+        this.storeCallback = () => {
           const newState = mapStateToProps(store.getState());
 
           if (!isEqual(state, newState)) {
             this.setProps(newState as P);
-            state = newState;
           }
-        });
+
+          state = newState;
+        };
+
+        store.on(StoreEvents.Updated, this.storeCallback);
+      }
+
+      componentWillUnmount(): void {
+        window.store.off(StoreEvents.Updated, this.storeCallback);
       }
     };
   };
