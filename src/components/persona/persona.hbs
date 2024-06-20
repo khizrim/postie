@@ -3,7 +3,7 @@
     class='persona__image-container' data-is-large='{{isLarge}}'
     data-image-only='{{isImageOnly}}'>
     {{#if avatar}}
-      <img class='persona__image' src='{{avatar}}' alt='{{display_name}}' />
+      <img class='persona__image' src='{{getFullImageUrl avatar}}' alt='{{display_name}}' />
     {{/if}}
   </div>
   {{#unless isImageOnly}}

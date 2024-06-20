@@ -1,9 +1,11 @@
 <div class='avatar'>
-  <img class='avatar__image' src='{{userAvatar}}' alt='User Avatar' />
+  <img
+    class='avatar__image' src='{{getFullImageUrl userAvatar}}'
+    alt='User Avatar' />
   {{#if isCurrentUser}}
     {{{ InputComponent
+      className='avatar__overlay'
       name='avatar'
-      label='Edit'
       value=value
       ref=ref
       type='file'

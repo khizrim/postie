@@ -49,7 +49,11 @@ export class HttpTransport {
       const xhr = new XMLHttpRequest();
 
       xhr.open(method, url, true);
-      xhr.setRequestHeader('Content-Type', 'application/json');
+
+      if (data && !(data instanceof FormData)) {
+        xhr.setRequestHeader('Content-Type', 'application/json');
+      }
+
       xhr.withCredentials = true;
 
       xhr.onload = () => {
