@@ -25,14 +25,11 @@ export class Messenger extends Block<MessengerProps, Refs> {
   }
 
   handleStoreUpdate(): void {
-    const { selectedChat, messages } = window.store.getState();
+    const state = window.store.getState();
 
-    if (selectedChat) {
-      this.setProps({
-        selectedChat,
-        messages,
-      });
-    }
+    this.setProps({
+      ...state,
+    });
   }
 
   init(): void {

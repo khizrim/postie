@@ -1,5 +1,3 @@
-import * as console from 'node:console';
-
 import ellipsis from 'src/assets/icons/ellipsis-vertical.svg';
 import newChat from 'src/assets/icons/new-chat.svg';
 import paperPlane from 'src/assets/icons/paper-plane.svg';
@@ -97,9 +95,15 @@ export const MessengerContext: MessengerProps = {
       const deleteConfirmed = confirm('Are you sure you want to delete this chat?');
 
       if (chatId && deleteConfirmed) {
-        chatController.deleteChat(chatId).catch((error) => {
-          console.error('Failed to delete chat:', error);
-        });
+        chatController
+          .deleteChat(chatId)
+          .then(() => {
+            console.log('Chat deleted');
+            window.store.set({ selectedChat: null });
+          })
+          .catch((error) => {
+            console.error('Failed to delete chat:', error);
+          });
       }
     },
   },

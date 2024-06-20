@@ -28,8 +28,7 @@ class ChatController {
     const res = await chatApi.deleteChat({ chatId });
 
     if (getResponseOrThrow(res)) {
-      const chats = await this.getChats();
-      window.store.set({ chats });
+      await this.getChats();
     }
   }
 

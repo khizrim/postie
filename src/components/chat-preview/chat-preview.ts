@@ -4,11 +4,10 @@ import type { Refs } from 'src/core/block';
 import { Block } from 'src/core/block';
 import { formatDate } from 'src/helpers/format-date';
 import type { ChatID } from 'src/pages';
-import { connect } from 'src/utils/connect';
 
 import template from './chat-preview.hbs?raw';
 
-class ChatPreviewComponent extends Block<ChatPreviewProps, Refs> {
+export class ChatPreviewComponent extends Block<ChatPreviewProps, Refs> {
   constructor(props: ChatPreviewProps) {
     super(
       {
@@ -45,5 +44,3 @@ class ChatPreviewComponent extends Block<ChatPreviewProps, Refs> {
     return template;
   }
 }
-
-export default connect((state) => state)(ChatPreviewComponent);

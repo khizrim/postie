@@ -1,6 +1,6 @@
 {{#> PanelWrapper border='bottom'}}
   <div class="chats-header">
     {{{ InputComponent name=search.name size=search.size placeholder=search.placeholder type=search.type required=search.required }}}
-    {{{ PersonaComponent avatar=user.avatar name=user.display_name isImageOnly=true }}}
+    {{{ PersonaComponent avatar=(getDefaultAvatar user.avatar 'user') name=user.display_name isImageOnly=true }}}
   </div>
 {{/PanelWrapper}}
