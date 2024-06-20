@@ -3,6 +3,7 @@ import { renderDOM } from 'src/core';
 import { registerCustomHelpers } from 'src/core/register-custom-helpers';
 import { getChatData } from 'src/helpers/get-chat-data';
 import { getDefaultAvatar } from 'src/helpers/get-default-avatar.ts';
+import { getFullImageUrl } from 'src/helpers/get-full-image-url.ts';
 import { getValueByKey } from 'src/helpers/get-value-by-key';
 import { isCurrentChat } from 'src/helpers/is-current-chat';
 import type { PagePropsMap } from 'src/pages';
@@ -47,6 +48,7 @@ export class Route {
       getValueByKey,
       getChatData,
       getDefaultAvatar,
+      getFullImageUrl,
     });
 
     if (typeof this._blockConstructor === 'function') {

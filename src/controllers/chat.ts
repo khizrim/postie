@@ -20,7 +20,7 @@ class ChatController {
 
     if (chat) {
       const chats = await this.getChats();
-      window.store.set({ chats });
+      window.store.set({ chats, selectedChat: chat.id });
     }
   }
 

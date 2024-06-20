@@ -4,8 +4,8 @@
 
 .persona__image-container {
   display: flex;
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
 }
 
 .persona__image-container[data-is-large='true'] {

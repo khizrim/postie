@@ -17,12 +17,16 @@ export class Settings extends Block<AccountPageProps, AccountPageRefs> {
       onEdit: (e: Event) => {
         e.preventDefault();
         this.setProps({
-          ...this._meta.props,
           isEditingBlocked: false,
         });
       },
-      onAvatarUpload: () => {
-        console.log('Avatar upload');
+      onAvatarUpload: (e: Event) => {
+        e.preventDefault();
+        const file = (e.target as HTMLInputElement)?.files?.[0];
+
+        if (file) {
+          this.updateAvatar(file);
+        }
       },
       onSubmit: (e: Event) => {
         this.formSubmit(e);
@@ -35,11 +39,7 @@ export class Settings extends Block<AccountPageProps, AccountPageRefs> {
 
     if (user) {
       this.setProps({
-        ...this._meta.props,
-        user: {
-          ...user,
-          avatar: user.avatar ? user.avatar : defaultUserAvatar,
-        },
+        user,
       });
     }
   }
@@ -55,8 +55,15 @@ export class Settings extends Block<AccountPageProps, AccountPageRefs> {
     };
   }
 
-  updateAvatar(avatar: string): void {
-    console.log('Avatar:', avatar);
+  updateAvatar(avatar: File): void {
+    userController
+      .updateAvatar(avatar)
+      .then((res) => {
+        this.setProps({
+          user: res,
+        });
+      })
+      .catch(console.error);
   }
 
   formSubmit(e: Event): void {
