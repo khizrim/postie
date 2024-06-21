@@ -1,4 +1,3 @@
-import defaultUserAvatar from 'src/assets/images/default-user-avatar.png';
 import { chatController } from 'src/controllers/chat';
 import { StoreEvents } from 'src/core';
 import type { Refs } from 'src/core/block';
@@ -9,41 +8,21 @@ import template from './messenger.hbs?raw';
 
 export class Messenger extends Block<MessengerProps, Refs> {
   constructor(props: MessengerProps) {
-    super({
-      ...props,
-      chats: props.chats || [],
-    });
+    super(props);
 
-    window?.store?.on(StoreEvents.Updated, this.handleStoreUpdate.bind(this));
-
-    chatController
-      .getChats()
-      .then((chats) => {
-        this.setProps({ ...this._meta.props, chats });
-      })
-      .catch(console.error);
+    window.store?.on(StoreEvents.Updated, this.updateProps.bind(this));
   }
 
-  handleStoreUpdate(): void {
-    const state = window.store.getState();
+  getChatList(): void {
+    chatController.getChats().catch(console.error);
+  }
 
-    this.setProps({
-      ...state,
-    });
+  updateProps(): void {
+    this.setProps(window.store.getState());
   }
 
   init(): void {
-    const user = window?.store?.getState().user;
-
-    if (user) {
-      this.setProps({
-        ...this._meta.props,
-        user: {
-          ...user,
-          avatar: user?.avatar ?? defaultUserAvatar,
-        },
-      });
-    }
+    this.getChatList();
   }
 
   render(): string {

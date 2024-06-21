@@ -21,7 +21,9 @@ export interface AppState extends Record<string, unknown> {
 const initialAppState: AppState = {
   user: null,
   chats: [],
+  users: [],
   selectedChat: null,
+  socket: undefined,
   messages: [],
 };
 
