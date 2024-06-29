@@ -1,18 +1,4 @@
-const WEEKDAY_NAMES = ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'];
-const MONTH_NAMES = [
-  'янв',
-  'фев',
-  'мар',
-  'апр',
-  'май',
-  'июн',
-  'июл',
-  'авг',
-  'сен',
-  'окт',
-  'ноя',
-  'дек',
-];
+import { MONTH_NAMES, WEEKDAY_NAMES } from 'src/helpers/format-date/format-date.constants.ts';
 
 export const formatDate = (inputDate: Date): string => {
   const now = new Date();
@@ -35,8 +21,8 @@ export const formatDate = (inputDate: Date): string => {
   }
 
   if (inputDate.getFullYear() === now.getFullYear()) {
-    const day = inputDate.getDate().toString();
-    const month = MONTH_NAMES[inputDate.getMonth() - 1];
+    const day = inputDate.getDate().toString().padStart(2, '0');
+    const month = MONTH_NAMES[inputDate.getMonth()];
     return `${day} ${month}`;
   }
 

@@ -11,8 +11,8 @@ import type {
   Refs,
 } from 'src/core/block';
 import { EventBus } from 'src/core/event-bus';
+import { isEqual } from 'src/helpers/is-equal';
 import { ID_SIZE } from 'src/utils/constants';
-import { isEqual } from 'src/utils/is-equal';
 
 export class Block<T extends Props, R extends Refs> {
   static EVENTS = {

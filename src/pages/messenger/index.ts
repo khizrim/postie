@@ -1,4 +1,4 @@
-export * from './messenger.context.ts';
-export * from './messenger.types.ts';
+export * from './messenger.context';
+export * from './messenger.types';
 
-export { Messenger } from './messenger.ts';
+export { Messenger } from './messenger';
