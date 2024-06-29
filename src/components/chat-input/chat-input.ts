@@ -2,7 +2,7 @@ import type { ButtonProps, InputProps } from 'src/components';
 
 import type { Props, Refs } from 'src/core/block';
 import { Block } from 'src/core/block';
-import { messageValidator } from 'src/utils/validators/message/message.ts';
+import { messageValidator } from 'src/utils/validators/message/message';
 
 import template from './chat-input.hbs?raw';
 
