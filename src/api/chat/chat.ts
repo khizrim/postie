@@ -1,6 +1,6 @@
 import type { ChatUsers, CreateChat, DeleteChat } from 'src/api/chat/chat.type';
+import { HttpTransport } from 'src/core/http-transport';
 import { API_URL } from 'src/utils/constants';
-import { HttpTransport } from 'src/utils/http-transport';
 
 const chatTransport = new HttpTransport(API_URL);
 

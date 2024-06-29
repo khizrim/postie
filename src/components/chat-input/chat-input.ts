@@ -43,10 +43,10 @@ export class ChatInputComponent extends Block<ChatInputProps, Refs> {
   }
 
   init(): void {
-    this._meta.events = {
-      ...this._meta.events,
-      ...(this._meta.props.onSubmit && { submit: this._meta.props.onSubmit }),
-      ...(this._meta.props.input.onInput && { input: this._meta.props.input.onInput }),
+    this.meta.events = {
+      ...this.meta.events,
+      ...(this.meta.props.onSubmit && { submit: this.meta.props.onSubmit }),
+      ...(this.meta.props.input.onInput && { input: this.meta.props.input.onInput }),
     };
   }
 

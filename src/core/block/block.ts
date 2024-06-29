@@ -24,25 +24,25 @@ export class Block<T extends Props, R extends Refs> {
   } as const;
 
   readonly id: string;
-  protected _meta: ComponentMeta<T, R>;
-  protected _eventBus: () => EventBus;
+  public meta: ComponentMeta<T, R>;
+  eventBus: () => EventBus;
   protected readonly refs: R = {} as unknown as R;
   private readonly children: BlockChildren = [];
 
   constructor(props: T, tagName: string = 'div') {
     this.id = nanoid(ID_SIZE);
 
-    this._meta = {
+    this.meta = {
       props,
       tagName,
     };
 
     const eventBus = new EventBus();
 
-    this._meta.props = this._makePropsProxy(props);
+    this.meta.props = this._makePropsProxy(props);
 
     this._registerEvents(eventBus);
-    this._eventBus = () => eventBus;
+    this.eventBus = () => eventBus;
 
     eventBus.emit(Block.EVENTS.INIT);
   }
@@ -74,7 +74,7 @@ export class Block<T extends Props, R extends Refs> {
       return;
     }
 
-    Object.assign(this._meta.props, nextProps);
+    Object.assign(this.meta.props, nextProps);
   }
 
   public show(): void {
@@ -106,18 +106,17 @@ export class Block<T extends Props, R extends Refs> {
   }
 
   private _createResources(): void {
-    this._element = this._createDocumentElement(this._meta.tagName);
+    this._element = this._createDocumentElement(this.meta.tagName);
   }
 
   private _componentDidMount(): void {
     this.componentDidMount();
-    this._eventBus().emit(Block.EVENTS.FLOW_RENDER);
+    this.eventBus().emit(Block.EVENTS.FLOW_RENDER);
   }
 
   private _componentDidUpdate(oldProps: T, newProps: T): void {
     if (this.componentDidUpdate(oldProps, newProps)) {
-      console.log(`Component ${this.id} was updated`);
-      this._eventBus().emit(Block.EVENTS.FLOW_RENDER);
+      this.eventBus().emit(Block.EVENTS.FLOW_RENDER);
     }
   }
 
@@ -130,7 +129,7 @@ export class Block<T extends Props, R extends Refs> {
   }
 
   private _addEvents(): void {
-    const { events = {} } = this._meta;
+    const { events = {} } = this.meta;
 
     Object.keys(events).forEach((eventName) => {
       this._element?.addEventListener(eventName, events[eventName]);
@@ -138,7 +137,7 @@ export class Block<T extends Props, R extends Refs> {
   }
 
   private _removeEvents(): void {
-    const { events = {} } = this._meta;
+    const { events = {} } = this.meta;
 
     Object.keys(events).forEach((eventName) => {
       this._element?.removeEventListener(eventName, events[eventName]);
@@ -156,7 +155,7 @@ export class Block<T extends Props, R extends Refs> {
         const oldTarget = { ...target };
 
         target[prop as keyof T] = value;
-        this._eventBus().emit(Block.EVENTS.FLOW_CDU, oldTarget, target);
+        this.eventBus().emit(Block.EVENTS.FLOW_CDU, oldTarget, target);
 
         return true;
       },
@@ -170,7 +169,7 @@ export class Block<T extends Props, R extends Refs> {
     this.init();
 
     this._createResources();
-    this._eventBus().emit(Block.EVENTS.FLOW_CDM);
+    this.eventBus().emit(Block.EVENTS.FLOW_CDM);
   }
 
   private _compileTemplate(template: string, context: T): DocumentFragment {
@@ -208,7 +207,7 @@ export class Block<T extends Props, R extends Refs> {
 
   private _render(): void {
     if (this._element) {
-      const fragment = this._compileTemplate(this.render(), this._meta.props);
+      const fragment = this._compileTemplate(this.render(), this.meta.props);
 
       const newElement = fragment.firstElementChild as HTMLElement;
 

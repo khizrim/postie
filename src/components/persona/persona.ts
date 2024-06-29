@@ -1,6 +1,6 @@
-import { router } from 'src/core';
 import type { Refs } from 'src/core/block';
 import { Block } from 'src/core/block';
+import { router } from 'src/utils/init-router';
 
 import template from './persona.hbs?raw';
 import type { PersonaProps } from './persona.type';
@@ -19,10 +19,10 @@ export class PersonaComponent extends Block<PersonaProps, Refs> {
   }
 
   init(): void {
-    const { onClick } = this._meta.props;
+    const { onClick } = this.meta.props;
 
     if (onClick) {
-      this._meta.events = {
+      this.meta.events = {
         click: onClick?.bind(this),
       };
     }

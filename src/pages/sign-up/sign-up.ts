@@ -10,10 +10,10 @@ export class SignUp extends Block<AuthProps, Refs> {
   }
 
   init(): void {
-    const { onSubmit } = this._meta.props;
+    const { onSubmit } = this.meta.props;
 
     if (onSubmit) {
-      this._meta.events = {
+      this.meta.events = {
         submit: onSubmit?.bind(this),
       };
     }
