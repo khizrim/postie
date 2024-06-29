@@ -1,11 +1,5 @@
 import type { BlockInstance, ComponentConstructor, Props } from 'src/core';
 import { renderDOM } from 'src/core';
-import { registerCustomHelpers } from 'src/core/register-custom-helpers';
-import { getChatData } from 'src/helpers/get-chat-data';
-import { getDefaultAvatar } from 'src/helpers/get-default-avatar';
-import { getFullImageUrl } from 'src/helpers/get-full-image-url';
-import { getValueByKey } from 'src/helpers/get-value-by-key';
-import { isCurrentChat } from 'src/helpers/is-current-chat';
 import type { PagePropsMap } from 'src/pages';
 
 export class Route {
@@ -43,14 +37,6 @@ export class Route {
   }
 
   render(): void {
-    registerCustomHelpers({
-      isCurrentChat,
-      getValueByKey,
-      getChatData,
-      getDefaultAvatar,
-      getFullImageUrl,
-    });
-
     if (typeof this._blockConstructor === 'function') {
       this._block = new this._blockConstructor(this._props as PagePropsMap[keyof PagePropsMap]);
 

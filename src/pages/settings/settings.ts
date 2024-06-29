@@ -75,7 +75,7 @@ export class Settings extends Block<AccountPageProps, AccountPageRefs> {
       .update(user)
       .then((res) => {
         this.setProps({
-          ...this._meta.props,
+          ...this.meta.props,
           user: res,
           isEditingBlocked: true,
         });

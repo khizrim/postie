@@ -1,7 +1,7 @@
 import back from 'src/assets/icons/back.svg';
 import { authController } from 'src/controllers/auth';
-import { router } from 'src/core';
 import type { AccountPageProps } from 'src/pages/settings';
+import { router } from 'src/utils/init-router';
 
 export const SettingsContext: AccountPageProps = {
   user: {

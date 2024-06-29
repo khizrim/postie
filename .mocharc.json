@@ -1,4 +1,5 @@
 {
-  "require": "tsx",
-  "spec": "src/**/*.test.ts"
+  "require": ["tsx", "mock-dom-env.mjs"],
+  "spec": "src/**/*.test.ts",
+  "no-warnings": true
 }

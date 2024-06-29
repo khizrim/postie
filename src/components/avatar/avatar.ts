@@ -11,10 +11,10 @@ export class AvatarComponent extends Block<AvatarProps, Refs> {
   }
 
   init(): void {
-    const { onAvatarUpload } = this._meta.props;
+    const { onAvatarUpload } = this.meta.props;
 
     if (onAvatarUpload) {
-      this._meta.events = {
+      this.meta.events = {
         change: onAvatarUpload,
       };
     }

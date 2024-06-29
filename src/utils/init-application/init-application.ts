@@ -1,8 +1,22 @@
 import { authController } from 'src/controllers/auth';
-import { router } from 'src/core';
+import { registerCustomHelpers } from 'src/core/register-custom-helpers';
+import { getChatData } from 'src/helpers/get-chat-data';
+import { getDefaultAvatar } from 'src/helpers/get-default-avatar';
+import { getFullImageUrl } from 'src/helpers/get-full-image-url';
+import { getValueByKey } from 'src/helpers/get-value-by-key';
+import { isCurrentChat } from 'src/helpers/is-current-chat';
+import { router } from 'src/utils/init-router';
 
 export const initApplication = async (): Promise<void> => {
   const location = window.location.pathname;
+
+  registerCustomHelpers({
+    isCurrentChat,
+    getValueByKey,
+    getChatData,
+    getDefaultAvatar,
+    getFullImageUrl,
+  });
 
   try {
     const user = await authController.getUser();
