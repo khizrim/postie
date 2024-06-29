@@ -12,35 +12,35 @@ export class InputComponent extends Block<InputProps, Refs> {
   }
 
   init(): void {
-    this._meta.events = {
+    this.meta.events = {
       change: this.validate.bind(this),
       input: this.maskPhone.bind(this),
     };
   }
 
   maskPhone(e: Event): void {
-    if (this._meta.props.type === 'tel') {
+    if (this.meta.props.type === 'tel') {
       phoneInputMask(e);
     }
   }
 
   getValue(): string {
-    return this._meta.props.value ?? '';
+    return this.meta.props.value ?? '';
   }
 
   clear(): void {
-    this.setProps({ ...this._meta.props, value: '' });
+    this.setProps({ ...this.meta.props, value: '' });
   }
 
   validate(e: Event): boolean {
     const target = e.target as HTMLInputElement;
-    this.setProps({ ...this._meta.props, value: target.value });
+    this.setProps({ ...this.meta.props, value: target.value });
 
-    const { value, required } = this._meta.props;
+    const { value, required } = this.meta.props;
 
     if (required && !value) {
       this.setProps({
-        ...this._meta.props,
+        ...this.meta.props,
         errorMessage: 'This field is required',
       });
 
@@ -49,19 +49,19 @@ export class InputComponent extends Block<InputProps, Refs> {
 
     if (!value) {
       this.setProps({
-        ...this._meta.props,
+        ...this.meta.props,
         errorMessage: undefined,
       });
 
       return true;
     }
 
-    switch (this._meta.props.name) {
+    switch (this.meta.props.name) {
       case 'email': {
         const emailResult = Validators.email.emailValidator(value);
 
         this.setProps({
-          ...this._meta.props,
+          ...this.meta.props,
           errorMessage: emailResult.errorMessage,
         });
 
@@ -71,7 +71,7 @@ export class InputComponent extends Block<InputProps, Refs> {
         const loginResult = Validators.login.loginValidator(value);
 
         this.setProps({
-          ...this._meta.props,
+          ...this.meta.props,
           errorMessage: loginResult.errorMessage,
         });
 
@@ -82,7 +82,7 @@ export class InputComponent extends Block<InputProps, Refs> {
         const nameResult = Validators.name.nameValidator(value);
 
         this.setProps({
-          ...this._meta.props,
+          ...this.meta.props,
           errorMessage: nameResult.errorMessage,
         });
 
@@ -92,7 +92,7 @@ export class InputComponent extends Block<InputProps, Refs> {
         const messageResult = Validators.message.messageValidator(value);
 
         this.setProps({
-          ...this._meta.props,
+          ...this.meta.props,
           errorMessage: messageResult.errorMessage,
         });
 
@@ -102,7 +102,7 @@ export class InputComponent extends Block<InputProps, Refs> {
         const passwordResult = Validators.password.passwordValidator(value);
 
         this.setProps({
-          ...this._meta.props,
+          ...this.meta.props,
           errorMessage: passwordResult.errorMessage,
         });
 
@@ -110,7 +110,7 @@ export class InputComponent extends Block<InputProps, Refs> {
       }
       default: {
         this.setProps({
-          ...this._meta.props,
+          ...this.meta.props,
           errorMessage: undefined,
         });
 

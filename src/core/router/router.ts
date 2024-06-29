@@ -29,7 +29,7 @@ export class Router {
   public use(
     pathname: string,
     pageConstructor: ComponentConstructor<PagePropsMap[keyof PagePropsMap]>,
-    pageContext: PagePropsMap[keyof PagePropsMap],
+    pageContext: Partial<PagePropsMap[keyof PagePropsMap]> = {},
   ): this {
     const route = new Route(pathname, pageConstructor, {
       ...pageContext,

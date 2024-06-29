@@ -14,7 +14,7 @@ export interface Options<D> {
 
 export type HTTPMethod = <D = XMLHttpRequest>(path: string, data?: D) => Promise<XMLHttpRequest>;
 
-export type HTTPRequest = <R = XMLHttpRequest, D = Record<string, unknown>>(
+export type HTTPRequest = <D = Record<string, unknown>>(
   url: string,
   options: Options<D>,
-) => Promise<R>;
+) => Promise<XMLHttpRequest>;

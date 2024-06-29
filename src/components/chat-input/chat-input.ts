@@ -2,7 +2,7 @@ import type { ButtonProps, InputProps } from 'src/components';
 
 import type { Props, Refs } from 'src/core/block';
 import { Block } from 'src/core/block';
-import { messageValidator } from 'src/utils/validators/message/message.ts';
+import { messageValidator } from 'src/utils/validators/message/message';
 
 import template from './chat-input.hbs?raw';
 
@@ -43,10 +43,10 @@ export class ChatInputComponent extends Block<ChatInputProps, Refs> {
   }
 
   init(): void {
-    this._meta.events = {
-      ...this._meta.events,
-      ...(this._meta.props.onSubmit && { submit: this._meta.props.onSubmit }),
-      ...(this._meta.props.input.onInput && { input: this._meta.props.input.onInput }),
+    this.meta.events = {
+      ...this.meta.events,
+      ...(this.meta.props.onSubmit && { submit: this.meta.props.onSubmit }),
+      ...(this.meta.props.input.onInput && { input: this.meta.props.input.onInput }),
     };
   }
 

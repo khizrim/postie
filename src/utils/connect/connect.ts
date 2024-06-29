@@ -1,7 +1,7 @@
 import type { Block, Props, Refs } from 'src/core';
 import { StoreEvents } from 'src/core/store';
+import { isEqual } from 'src/helpers/is-equal';
 import type { MapStateToProps } from 'src/utils/connect/connect.type';
-import { isEqual } from 'src/utils/is-equal';
 
 export const connect = (mapStateToProps: MapStateToProps) => {
   return <P extends Props, R extends Refs>(Component: typeof Block<P, R>) => {

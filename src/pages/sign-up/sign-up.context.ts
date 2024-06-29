@@ -1,7 +1,7 @@
 import type { UserSignUp } from 'src/api/user/user.type';
 import { authController } from 'src/controllers/auth';
-import { router } from 'src/core';
 import type { AuthProps } from 'src/layouts/auth';
+import { router } from 'src/utils/init-router';
 
 export const SignUpContext: AuthProps = {
   title: 'Hey 🙌, let’s get to know each other!',

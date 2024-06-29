@@ -1,6 +1,6 @@
 import type { UpdateAvatar, UpdatePassword, UserLogin, UserUpdate } from 'src/api/user/user.type';
+import { HttpTransport } from 'src/core/http-transport';
 import { API_URL } from 'src/utils/constants';
-import { HttpTransport } from 'src/utils/http-transport';
 
 const userTransport = new HttpTransport(API_URL);
 

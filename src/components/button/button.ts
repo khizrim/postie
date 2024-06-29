@@ -10,10 +10,10 @@ export class ButtonComponent extends Block<ButtonProps, Refs> {
   }
 
   init(): void {
-    const { onClick } = this._meta.props;
+    const { onClick } = this.meta.props;
 
     if (onClick) {
-      this._meta.events = {
+      this.meta.events = {
         click: onClick?.bind(this),
       };
     }

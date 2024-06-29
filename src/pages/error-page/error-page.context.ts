@@ -1,7 +1,7 @@
 import notFound from 'src/assets/images/not-found.png';
 import serverError from 'src/assets/images/server-error.png';
-import { router } from 'src/core';
 import type { ErrorPageProps } from 'src/pages/error-page';
+import { router } from 'src/utils/init-router';
 
 export const NotFoundPageContext: ErrorPageProps = {
   error: {

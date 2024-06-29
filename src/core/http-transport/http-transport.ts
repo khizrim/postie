@@ -1,5 +1,5 @@
-import type { HTTPMethod, HTTPRequest } from './http-transport.type';
-import { METHOD } from './http-transport.type';
+import type { HTTPMethod, HTTPRequest } from './http-transport.type.ts';
+import { METHOD } from './http-transport.type.ts';
 
 export class HttpTransport {
   private readonly baseURL: string;
@@ -58,17 +58,14 @@ export class HttpTransport {
 
       xhr.onload = () => {
         if (xhr.status >= 200 && xhr.status < 300) {
-          // TODO: Fix by adding a proper type for xhr
-          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-          // @ts-expect-error
           resolve(xhr);
         } else {
-          reject(xhr);
+          reject(new Error(`Request failed with status code ${xhr.status}`));
         }
       };
 
       xhr.onerror = () => {
-        reject(xhr);
+        reject(new Error('Request failed due to a network error'));
       };
 
       if (method === METHOD.GET || !data) {
