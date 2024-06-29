@@ -18,7 +18,9 @@
     "lint:prettier:fix": "prettier --write './src' './public'",
     "lint:fix": "npm run lint:code:fix && npm run lint:styles:fix && npm run lint:prettier:fix",
     "lint": "npm run lint:code && npm run lint:styles && npm run lint:prettier",
-    "test": "mocha"
+    "test": "mocha",
+    "check": "npm run lint && npm run test",
+    "prepare": "husky"
   },
   "devDependencies": {
     "@types/chai": "4.3.16",
@@ -36,6 +38,7 @@
     "eslint-plugin-import": "2.29.1",
     "express": "4.19.2",
     "handlebars": "4.7.8",
+    "husky": "^9.0.11",
     "ignore-styles": "^5.0.1",
     "jsdom": "^24.1.0",
     "mocha": "10.5.2",
@@ -55,7 +58,10 @@
     "vite": "5.2.11",
     "vite-plugin-handlebars": "^2.0.0"
   },
-  "dependencies": {
-    "@handlebars/allow-prototype-access": "^1.0.5"
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm-run lint:fix && npm run test",
+      "pre-push": "npm-run lint && npm run test"
+    }
   }
 }
