@@ -13,7 +13,9 @@ users to exchange messages in real-time, providing a convenient and intuitive in
 2. [Design](#design)
 3. [Installation](#installation)
 4. [Getting Started](#getting-started)
-5. [Contact and Support](#contact-and-support)
+5. [Testing](#testing)
+6. [Git Hooks](#git-hooks)
+7. [Contact and Support](#contact-and-support)
 
 ## Preview
 
@@ -31,8 +33,8 @@ It's deployed using [Netlify](https://www.netlify.com) from the [`deploy`](https
 Design is available in Figma [here](https://www.figma.com/file/zY19U0ZsjN22U7jp6JbLc0/Postie-%7C-Pages?type=design&t=YByCR6fDA28VvzmX-6).
 
 What I used:
-— [Gravity Icons](<https://www.figma.com/file/A90POkEH3t2HQPhBUWfYnf/Gravity-UI-Icons-(Community)?type=design&t=YByCR6fDA28VvzmX-6>)
-— Easy illustration pack from [Ultima Free Illustrations Bundle](<https://www.figma.com/file/BCikNseyJW0b8XGgbI5YDE/Ultima-Free-Illustrations-Bundle-(Community)?type=design&t=YByCR6fDA28VvzmX-6>)
+* [Gravity Icons](<https://www.figma.com/file/A90POkEH3t2HQPhBUWfYnf/Gravity-UI-Icons-(Community)?type=design&t=YByCR6fDA28VvzmX-6>)
+* Easy illustration pack from [Ultima Free Illustrations Bundle](<https://www.figma.com/file/BCikNseyJW0b8XGgbI5YDE/Ultima-Free-Illustrations-Bundle-(Community)?type=design&t=YByCR6fDA28VvzmX-6>)
 
 ## Installation
 
@@ -52,6 +54,23 @@ What I used:
 2. Open your browser and navigate to http://localhost:3000.
 3. Sign in or create a new account to start using Postié.
 4. Explore the intuitive interface to send and receive messages in real-time.
+
+## Testing
+
+Unit tests have been implemented using Mocha and Chai for various helper functions and components.
+
+Added tests for Block, HTTP-Transport, and Router functionalities.
+
+To run tests:
+
+   ```bash
+   npm run test
+   ```
+
+## Git Hooks
+
+* Integrated Husky for Git hooks to ensure code quality checks before commits.
+* A pre-commit script runs 'npm check' to enforce checks before allowing commits.
 
 ## Contact and Support
 
