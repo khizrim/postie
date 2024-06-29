@@ -1,5 +1,4 @@
 import { JSDOM } from 'jsdom';
-import { ROOT_QUERY_SELECTOR } from 'src/utils/constants';
 
 const jsdom = new JSDOM(`<div class='app'><div>`, {
   url: 'http://localhost',
