@@ -5,7 +5,7 @@
   "main": "server.ts",
   "type": "module",
   "scripts": {
-    "node-run": "node --import tsx",
+    "node-run": "node --loader tsx",
     "start": "npm run build && npm run node-run ./server.ts",
     "dev": "vite --open --port 3000",
     "build": "tsc && vite build",
