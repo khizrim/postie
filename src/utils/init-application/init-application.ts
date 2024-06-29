@@ -20,7 +20,7 @@ export const initApplication = async (): Promise<void> => {
       router.go('/not-found');
       return;
     }
-    
+
     if (location === '/' || location === '/sign-up') {
       router.go('/messenger');
       return;
